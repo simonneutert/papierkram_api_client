@@ -1,4 +1,4 @@
-# Papierkram Api Client<!-- omit in toc -->
+# Papierkram API Client<!-- omit in toc -->
 
 Der erste ~~illegale~~ inoffizielle API Client in [Ruby](https://www.ruby-lang.org/de/) für [Papierkram.de](https://www.papierkram.de)!
 
