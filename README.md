@@ -1,6 +1,8 @@
 # Papierkram Api Client<!-- omit in toc -->
 
-Der erste illegale API Client in [Ruby](https://www.ruby-lang.org/de/) für [Papierkram.de](https://www.papierkram.de)!
+Der erste ~~illegale~~ inoffizielle API Client in [Ruby](https://www.ruby-lang.org/de/) für [Papierkram.de](https://www.papierkram.de)!
+
+<img src="pac.svg" alt="PAC Logo, Zunge leckt an Karl Klammer und zieht Daten aus dem Papierkram-Account wie Frosch die Fliege vom Teich" width="250">
 
 **WICHTIG** Dieses Projekt befindet sich im Entwicklungsstatus bis V1.0.0! Ich werde versuchen, die Änderungen so gut wie möglich zu dokumentieren. Wenn du einen Fehler findest, kannst du gerne einen Issue erstellen oder einen Pull Request mit einer Verbesserung erstellen. Ich freue mich über jede Hilfe!
 
