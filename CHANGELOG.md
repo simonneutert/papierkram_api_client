@@ -1,3 +1,7 @@
+## [unreleased]
+
+[#PR](https://github.com/simonneutert/papierkram_api_client/pull/<PRNUMBER>) Changelog und Readme angepasst. [@<yourtag>](https://github.com/<yourtag>)
+
 ## [0.1.1] - 2023-04-12
 
 ### Changed
