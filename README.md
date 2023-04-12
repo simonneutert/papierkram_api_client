@@ -1,5 +1,7 @@
 # Papierkram API Client<!-- omit in toc -->
 
+[![Ruby](https://github.com/simonneutert/papierkram_api_client/actions/workflows/main.yml/badge.svg?branch=main)](https://github.com/simonneutert/papierkram_api_client/actions/workflows/main.yml)
+
 Der erste ~~illegale~~ inoffizielle API Client in [Ruby](https://www.ruby-lang.org/de/) für [Papierkram.de](https://www.papierkram.de)!
 
 <img src="pac.svg" alt="PAC Logo, Zunge leckt an Karl Klammer und zieht Daten aus dem Papierkram-Account wie Frosch die Fliege vom Teich" width="250">
