@@ -263,8 +263,9 @@ puts voucher.body
 #### einen Ausgabe Beleg als PDF
 
 ```ruby
-voucher = client.expense.vouchers.pdf(id: 1, pdf: true)
-puts Api::V1::Helpers::PdfFromResponse.new(voucher).to_pdf # => {response: Faraday::Response, path_to_pdf_file: 'path/to/tempfile_pdf.pdf'}
+voucher = client.expense.vouchers.by(id: 1, pdf: true)
+puts Api::V1::Helpers::PdfFromResponse.new(voucher).to_pdf 
+# => {response: Faraday::Response, path_to_pdf_file: 'path/to/tempfile_pdf.pdf'}
 ```
 
 ### Income::Estimate (Angebot)
@@ -292,8 +293,9 @@ puts estimate.body
 #### ein Angebot als PDF
 
 ```ruby
-estimate = client.income.estimates.pdf(id: 1, pdf: true)
-puts Api::V1::Helpers::PdfFromResponse.new(estimate).to_pdf # => {response: Faraday::Response, path_to_pdf_file: 'path/to/tempfile_pdf.pdf'}
+estimate = client.income.estimates.by(id: 1, pdf: true)
+puts Api::V1::Helpers::PdfFromResponse.new(estimate).to_pdf 
+# => {response: Faraday::Response, path_to_pdf_file: 'path/to/tempfile_pdf.pdf'}
 ```
 
 ### Income::Invoice (Rechnung)
@@ -321,8 +323,9 @@ puts invoice.body
 #### eine Rechnung als PDF
 
 ```ruby
-invoice = client.income.invoices.pdf(id: 1, pdf: true)
-puts Api::V1::Helpers::PdfFromResponse.new(invoice).to_pdf # => {response: Faraday::Response, path_to_pdf_file: 'path/to/tempfile_pdf.pdf'}
+invoice = client.income.invoices.by(id: 1, pdf: true)
+puts Api::V1::Helpers::PdfFromResponse.new(invoice).to_pdf 
+# => {response: Faraday::Response, path_to_pdf_file: 'path/to/tempfile_pdf.pdf'}
 ```
 
 ### Income::Proposition (Waren / Dienstleistungen)
