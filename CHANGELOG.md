@@ -2,6 +2,10 @@
 
 [#PR](https://github.com/simonneutert/papierkram_api_client/pull/<PRNUMBER>) Changelog und Readme angepasst. [@<yourtag>](https://github.com/<yourtag>)
 
+### Changed
+
+[#3](https://github.com/simonneutert/papierkram_api_client/pull/3) Readme angepasst. [@simonneutert](https://github.com/simonneutert)
+
 ## [0.1.1] - 2023-04-12
 
 ### Changed
