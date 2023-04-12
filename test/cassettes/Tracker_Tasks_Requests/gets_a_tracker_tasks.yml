@@ -1,0 +1,77 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://simonneutert.papierkram.de/api/v1/tracker/tasks/1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.4
+      Authorization:
+      - Bearer <API BEARER>
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      content-type:
+      - application/json; charset=utf-8
+      status:
+      - 200 OK
+      cache-control:
+      - no-store
+      access-control-allow-origin:
+      - "*"
+      vary:
+      - Accept
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      x-remaining-quota:
+      - '9873'
+      x-permitted-cross-domain-policies:
+      - none
+      pragma:
+      - no-cache
+      x-request-id:
+      - 6042ebac-651b-4090-8ddb-a8e6f9f1b057
+      x-download-options:
+      - noopen
+      etag:
+      - W/"7be895931ac412a5dd2d5f9e12254e58"
+      x-frame-options:
+      - SAMEORIGIN
+      x-runtime:
+      - '0.087631'
+      expires:
+      - Fri, 01 Jan 1990 00:00:00 GMT
+      date:
+      - Wed, 12 Apr 2023 15:19:22 GMT
+      set-cookie:
+      - redis_session_store=<UNICORN>; path=/; expires=Wed, 26 Apr 2023 15:19:22 GMT;
+        HttpOnly; SameSite=Lax
+      x-powered-by:
+      - Phusion Passenger(R) 6.0.15
+      server:
+      - nginx/1.18.0 + Phusion Passenger(R) 6.0.15
+      x-version:
+      - STABLE
+      x-robots-tag:
+      - noindex, nofollow;
+      strict-transport-security:
+      - max-age=31536000; includeSubdomains;;
+      x-xss-protection:
+      - 1; mode=block;
+      x-content-type-options:
+      - nosniff;
+      x-debug-subdomain:
+      - simonneutert
+    body:
+      encoding: UTF-8
+      string: '{"type":"task","id":1,"name":"A","project_id":3,"relative_costs":null,"complete":null,"deadline":null,"flagged":null,"record_state":"active","created_at":"2019-05-02T11:43:50.000+02:00","updated_at":"2019-11-19T17:56:57.000+01:00","project":{"type":"project","id":3,"name":"Kein
+        Projekt","description":null,"start_date":null,"end_date":null,"flagged":null,"budget_type":null,"budget_money":null,"budget_time":null,"budget_time_unit":null,"customer_default":true,"record_state":"active","created_at":"2018-03-06T15:57:36.000+01:00","updated_at":"2023-04-12T08:13:56.000+02:00","company_id":3,"color":null},"proposition":{"type":"proposition","id":2,"name":"Website","proposition_type":"service","description":"Codes
+        n Clicks","price":"13.37","time_unit":"hour","unit_name_1":"Stunde","unit_name_n":"Stunden","record_state":"active","flagged":null,"favorite":null,"created_at":"2018-03-06T15:57:18.000+01:00","updated_at":"2018-03-06T15:57:18.000+01:00"},"user":{"type":"user","id":3,"full_name":"Simon
+        Neutert","first_name":"Simon","last_name":"Neutert","role_f":"Accountinhaber","email":"<EMAIL>"}}'
+  recorded_at: Wed, 12 Apr 2023 15:19:22 GMT
+recorded_with: VCR 6.1.0

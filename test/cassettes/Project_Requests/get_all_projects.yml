@@ -1,0 +1,76 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://simonneutert.papierkram.de/api/v1/projects?page=1&per_page=100
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.4
+      Authorization:
+      - Bearer <API BEARER>
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      content-type:
+      - application/json; charset=utf-8
+      status:
+      - 200 OK
+      cache-control:
+      - no-store
+      access-control-allow-origin:
+      - "*"
+      vary:
+      - Accept
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      x-remaining-quota:
+      - '9876'
+      x-permitted-cross-domain-policies:
+      - none
+      pragma:
+      - no-cache
+      x-request-id:
+      - 53a02c3e-93da-472f-9dff-facde69796b3
+      x-download-options:
+      - noopen
+      etag:
+      - W/"339a445e284fa982ffb37fecc11c19bc"
+      x-frame-options:
+      - SAMEORIGIN
+      x-runtime:
+      - '0.076888'
+      expires:
+      - Fri, 01 Jan 1990 00:00:00 GMT
+      date:
+      - Wed, 12 Apr 2023 15:19:21 GMT
+      set-cookie:
+      - redis_session_store=<UNICORN>; path=/; expires=Wed, 26 Apr 2023 15:19:21 GMT;
+        HttpOnly; SameSite=Lax
+      x-powered-by:
+      - Phusion Passenger(R) 6.0.15
+      server:
+      - nginx/1.18.0 + Phusion Passenger(R) 6.0.15
+      x-version:
+      - STABLE
+      x-robots-tag:
+      - noindex, nofollow;
+      strict-transport-security:
+      - max-age=31536000; includeSubdomains;;
+      x-xss-protection:
+      - 1; mode=block;
+      x-content-type-options:
+      - nosniff;
+      x-debug-subdomain:
+      - simonneutert
+    body:
+      encoding: UTF-8
+      string: '{"type":"list","page":1,"page_size":100,"total_pages":1,"total_entries":3,"has_more":false,"entries":[{"type":"project","id":3,"name":"Kein
+        Projekt","description":null,"start_date":null,"end_date":null,"flagged":null,"budget_type":null,"budget_money":null,"budget_time":null,"budget_time_unit":null,"customer_default":true,"record_state":"active","created_at":"2018-03-06T15:57:36.000+01:00","updated_at":"2023-04-12T08:13:56.000+02:00","company_id":3,"color":null},{"type":"project","id":4,"name":"Yo","description":"","start_date":null,"end_date":null,"flagged":null,"budget_type":"money","budget_money":null,"budget_time":null,"budget_time_unit":"hour","customer_default":false,"record_state":"active","created_at":"2020-02-26T10:25:15.000+01:00","updated_at":"2020-02-26T10:25:15.000+01:00","company_id":3,"color":"blue"},{"type":"project","id":5,"name":"Simlinger
+        Büffeln","description":"","start_date":null,"end_date":null,"flagged":null,"budget_type":"working_time","budget_money":null,"budget_time":"1.0","budget_time_unit":"hour","customer_default":false,"record_state":"active","created_at":"2020-09-02T11:00:58.000+02:00","updated_at":"2020-09-02T11:00:58.000+02:00","company_id":3,"color":"pink"}]}'
+  recorded_at: Wed, 12 Apr 2023 15:19:21 GMT
+recorded_with: VCR 6.1.0

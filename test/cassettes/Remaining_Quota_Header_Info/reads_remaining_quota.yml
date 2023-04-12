@@ -1,0 +1,74 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://simonneutert.papierkram.de/api/v1/info
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.4
+      Authorization:
+      - Bearer <API BEARER>
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      content-type:
+      - application/json; charset=utf-8
+      status:
+      - 200 OK
+      cache-control:
+      - no-store
+      access-control-allow-origin:
+      - "*"
+      vary:
+      - Accept
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      x-remaining-quota:
+      - '9868'
+      x-permitted-cross-domain-policies:
+      - none
+      pragma:
+      - no-cache
+      x-request-id:
+      - eb830f92-d5aa-467b-b3d1-591345c62b0b
+      x-download-options:
+      - noopen
+      etag:
+      - W/"0f47d080236d2e818f0e15c42ef32a1b"
+      x-frame-options:
+      - SAMEORIGIN
+      x-runtime:
+      - '0.125211'
+      expires:
+      - Fri, 01 Jan 1990 00:00:00 GMT
+      date:
+      - Wed, 12 Apr 2023 15:19:22 GMT
+      set-cookie:
+      - redis_session_store=<UNICORN>; path=/; expires=Wed, 26 Apr 2023 15:19:22 GMT;
+        HttpOnly; SameSite=Lax
+      x-powered-by:
+      - Phusion Passenger(R) 6.0.15
+      server:
+      - nginx/1.18.0 + Phusion Passenger(R) 6.0.15
+      x-version:
+      - STABLE
+      x-robots-tag:
+      - noindex, nofollow;
+      strict-transport-security:
+      - max-age=31536000; includeSubdomains;;
+      x-xss-protection:
+      - 1; mode=block;
+      x-content-type-options:
+      - nosniff;
+      x-debug-subdomain:
+      - simonneutert
+    body:
+      encoding: UTF-8
+      string: '{"api":{"version":"1.0.0"},"settings":{"custom_templates":{"invoices":[]}}}'
+  recorded_at: Wed, 12 Apr 2023 15:19:22 GMT
+recorded_with: VCR 6.1.0

@@ -1,0 +1,25 @@
+require:
+  - rubocop-minitest
+
+AllCops:
+  NewCops: enable
+  TargetRubyVersion: 2.7
+  Exclude:
+    - "papierkram_api_client.gemspec"
+
+Metrics/BlockLength:
+  Enabled: true
+  Exclude:
+    - "test/**/*"
+
+Layout/LineLength:
+  Exclude:
+    - "test/cassettes/**/*"
+
+Metrics/MethodLength:
+  Max: 16
+
+Metrics/ParameterLists:
+  Max: 8
+  Exclude:
+    - "lib/api/v1/**/*"
