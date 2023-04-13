@@ -29,5 +29,5 @@ jobs:
           bundler-cache: true
       - name: Run the default task
         run: bundle exec rake
-      # - name: Run rubocop
-      #   run: bundle exec rubocop
+      - name: Run rubocop
+        run: bundle exec rubocop --no-server # lib test Rakefile

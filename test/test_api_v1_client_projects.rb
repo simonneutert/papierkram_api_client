@@ -10,6 +10,7 @@ class TestProjects < Minitest::Test
       response_body = response.body
 
       assert_equal(200, response.status)
+      refute_empty(response_body)
     end
 
     it 'get all projects', :vcr do
@@ -18,6 +19,7 @@ class TestProjects < Minitest::Test
       response_body = response.body
 
       assert_equal(200, response.status)
+      refute_empty(response_body)
     end
   end
 end

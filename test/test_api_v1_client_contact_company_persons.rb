@@ -9,7 +9,8 @@ class TestContactCompany < Minitest::Test
       response = client.contact_companies_persons.by(company_id: 3, id: 3)
       response_body = response.body
 
-      assert_equal 200, response.status
+      assert_equal(200, response.status)
+      refute_empty(response_body)
     end
 
     it 'get all contact companies persons paginated', :vcr do
@@ -17,7 +18,8 @@ class TestContactCompany < Minitest::Test
       response = client.contact_companies_persons.all(company_id: 3)
       response_body = response.body
 
-      assert_equal 200, response.status
+      assert_equal(200, response.status)
+      refute_empty(response_body)
     end
   end
 end

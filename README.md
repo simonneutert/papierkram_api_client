@@ -83,6 +83,7 @@ Ziele:
     - [ein Projekt](#ein-projekt)
   - [Tracker::Task (Aufgabe)](#trackertask-aufgabe)
     - [alle Aufgaben](#alle-aufgaben)
+    - [eine Aufgabe](#eine-aufgabe)
   - [Tracker::TimeEntry (Zeiteintrag)](#trackertimeentry-zeiteintrag)
     - [alle Zeiteinträge](#alle-zeiteinträge)
     - [einen Zeiteintrag](#einen-zeiteintrag)
@@ -158,7 +159,7 @@ client = PapierkramApiClient::Client.new
 
 Der Endpunkt `/api/v1/banking/bank_connections` liefert Informationen über die Bankverbindungen. Die Informationen werden als `Faraday::Response` zurückgegeben.
 
-[BankConnections](/lib/api/v1/banking/bank_connections.rb)
+Siehe [BankConnections](/lib/api/v1/banking/bank_connections.rb) für mögliche Parameter.
 
 #### alle Bankverbindungen
 
@@ -227,7 +228,7 @@ WORK IN PROGRESS
 
 Der Endpunkt `/api/v1/contact/companies` liefert Informationen über die Unternehmen. Die Informationen werden als `Faraday::Response` zurückgegeben.
 
-[Companies](/lib/api/v1/contact/companies.rb)
+Siehe [Companies](/lib/api/v1/contact/companies.rb) für mögliche Parameter.
 
 #### alle Unternehmen
 
@@ -249,6 +250,8 @@ puts company.body
 
 Der Endpunkt `/api/v1/contact/companies/{company_id}` liefert Informationen über die Kontaktpersonen. Die Informationen werden als `Faraday::Response` zurückgegeben.
 
+Siehe [CompaniesPersons](/lib/api/v1/contact/companies_persons.rb) für mögliche Parameter.
+
 #### alle Kontaktpersonen (eines Unternehmens)
 
 ```ruby
@@ -269,7 +272,7 @@ puts company.body
 
 Der Endpunkt `/api/v1/expense/vouchers` liefert Informationen über die Ausgabe Belege. Die Informationen werden als `Faraday::Response` zurückgegeben.
 
-[Vouchers](/lib/api/v1/expense/vouchers.rb)
+Siehe [Vouchers](/lib/api/v1/expense/vouchers.rb) für mögliche Parameter.
 
 #### alle Ausgabe Belege
 
@@ -299,7 +302,7 @@ puts Api::V1::Helpers::PdfFromResponse.new(voucher).to_pdf
 
 Der Endpunkt `/api/v1/income/estimates` liefert Informationen über die Angebote. Die Informationen werden als `Faraday::Response` zurückgegeben.
 
-[Estimates](/lib/api/v1/income/estimates.rb)
+Siehe [Estimates](/lib/api/v1/income/estimates.rb) für mögliche Parameter.
 
 #### alle Angebote
 
@@ -329,7 +332,7 @@ puts Api::V1::Helpers::PdfFromResponse.new(estimate).to_pdf
 
 Der Endpunkt `/api/v1/income/invoices` liefert Informationen über die Rechnungen. Die Informationen werden als `Faraday::Response` zurückgegeben.
 
-[Invoices](/lib/api/v1/income/invoices.rb)
+Siehe [Invoices](/lib/api/v1/income/invoices.rb) für mögliche Parameter.
 
 #### alle Rechnungen
 
@@ -359,7 +362,7 @@ puts Api::V1::Helpers::PdfFromResponse.new(invoice).to_pdf
 
 Der Endpunkt `/api/v1/income/propositions` liefert Informationen über die Waren / Dienstleistungen. Die Informationen werden als `Faraday::Response` zurückgegeben.
 
-[Propositions](/lib/api/v1/income/propositions.rb)
+Siehe [Propositions](/lib/api/v1/income/propositions.rb) für mögliche Parameter.
 
 #### alle Waren / Dienstleistungen
 
@@ -381,7 +384,7 @@ puts proposition.body
 
 Der Endpunkt `/api/v1/info` liefert Informationen über die API. Die Informationen werden als `Faraday::Response` zurückgegeben.
 
-[Info](/lib/api/v1/info.rb)
+Siehe [Info](/lib/api/v1/info.rb).
 
 ```ruby
 info = client.info.details
@@ -393,7 +396,7 @@ puts info.body
 
 Der Endpunkt `/api/v1/projects` liefert Informationen über die Projekte. Die Informationen werden als `Faraday::Response` zurückgegeben.
 
-[Projects](/lib/api/v1/projects.rb)
+Siehe [Projects](/lib/api/v1/projects.rb) für mögliche Parameter.
 
 #### alle Projekte
 
@@ -415,12 +418,22 @@ puts project.body
 
 Der Endpunkt `/api/v1/tracker/tasks` liefert Informationen über die Aufgaben. Die Informationen werden als `Faraday::Response` zurückgegeben.
 
+Siehe [Tasks](/lib/api/v1/tracker/tasks.rb) für mögliche Parameter.
+
 #### alle Aufgaben
 
 ```ruby
-tasks = client.tracker.tasks.all
+tasks = client.tracker_tasks.all
 puts tasks.headers
 puts tasks.body
+```
+
+#### eine Aufgabe
+
+```ruby
+task = client.tracker_tasks.by(id: 1)
+puts task.headers
+puts task.body
 ```
 
 ### Tracker::TimeEntry (Zeiteintrag)
@@ -432,7 +445,7 @@ Der Endpunkt `/api/v1/tracker/time_entries` liefert Informationen über die Zeit
 #### alle Zeiteinträge
 
 ```ruby
-time_entries = client.tracker.time_entries.all
+time_entries = client.tracker_time_entries.all
 puts time_entries.headers
 puts time_entries.body
 ```
@@ -440,7 +453,7 @@ puts time_entries.body
 #### einen Zeiteintrag
 
 ```ruby
-time_entry = client.tracker.time_entries.by(id: 1)
+time_entry = client.tracker_time_entries.by(id: 1)
 puts time_entry.headers
 puts time_entry.body
 ```
@@ -474,7 +487,7 @@ Unterstützte Endpunkte sind beispielsweise: `Income::Estimate`, `Income::Invoic
 [Api::V1::Helpers::PdfFromResponse](/lib/api/v1/helpers/pdf_from_response.rb)
 
 ```ruby
-response = client.income.invoices.by(id: 1, pdf: true)
+response = client.income_invoices.by(id: 1, pdf: true)
 pdf = Api::V1::Helpers::PdfFromResponse.new(response).to_pdf("Rechnung Nummer XXX")
 puts pdf
 ```
