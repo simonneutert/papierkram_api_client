@@ -8,12 +8,12 @@ class TestTrackerTimeEntries < Minitest::Test
 
     it 'raises an error on faulty billing_state params', :vcr do
       assert_raises ArgumentError do
-        response = client.tracker_time_entries.all(billing_state: 'xxx')
+        client.tracker_time_entries.all(billing_state: 'xxx')
       end
     end
     it 'raises an error on faulty order_direction params', :vcr do
       assert_raises ArgumentError do
-        response = client.tracker_time_entries.all(order_direction: 'xxx')
+        client.tracker_time_entries.all(order_direction: 'xxx')
       end
     end
   end

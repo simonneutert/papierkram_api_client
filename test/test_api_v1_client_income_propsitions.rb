@@ -9,7 +9,8 @@ class TestIncomePropositions < Minitest::Test
       response = client.income_propositions.by(id: 2)
       response_body = response.body
 
-      assert_equal 200, response.status
+      assert_equal(200, response.status)
+      refute_empty(response_body)
     end
 
     it 'gets all income propositions', :vcr do
@@ -17,7 +18,8 @@ class TestIncomePropositions < Minitest::Test
       response = client.income_propositions.all
       response_body = response.body
 
-      assert_equal 200, response.status
+      assert_equal(200, response.status)
+      refute_empty(response_body)
     end
   end
 end

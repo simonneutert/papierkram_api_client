@@ -58,7 +58,7 @@ module PapierkramApiClient
 
     def banking_transactions
       raise ArgumentError, 'not implemented'
-      @banking_transactions ||= Api::V1::Banking::Transactions.new(@client)
+      # @banking_transactions ||= Api::V1::Banking::Transactions.new(@client)
     end
 
     def contact_companies
