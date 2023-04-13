@@ -49,6 +49,7 @@ Ziele:
 ---
 
 - [Installation](#installation)
+- [Schnellstart](#schnellstart)
 - [API Client](#api-client)
   - [Initialisierung](#initialisierung)
   - [Banking::BankConnection (Bankverbindung)](#bankingbankconnection-bankverbindung)
@@ -101,6 +102,32 @@ Install the gem and add to the application's Gemfile by executing:
 If bundler is not being used to manage dependencies, install the gem by executing:
 
     $ gem install papierkram_api_client
+
+## Schnellstart
+
+1. Repository klonen
+2. `bundle install`
+3. `bin/console`
+
+```ruby
+# client instanziieren
+
+# wenn ENV gesetzt sind (siehe Readme)
+client = PapierkramApiClient::Client.new
+
+# ODER per Variablen
+client = PapierkramApiClient::Client.new('subdomain', "YOUR-API-KEY");
+
+# info Endpunkt abfragen
+info_details = client.info.details
+puts info_details.headers
+puts info_details.body
+
+# erste Seite von "allen Rechnungen" abfragen
+invoices = client.income_invoices.all(page: 1, page_size: 5)
+puts invoices.headers
+puts invoices.body
+```
 
 ## API Client
 
