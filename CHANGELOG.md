@@ -8,6 +8,7 @@
 
 ### Changed
 
+- [#11](https://github.com/simonneutert/papierkram_api_client/pull/11) Create .github/dependabot.yml. [@simonneutert](https://github.com/simonneutert)
 - [#9](https://github.com/simonneutert/papierkram_api_client/pull/9) Hinweis VCR/Testing in Readme. [@simonneutert](https://github.com/simonneutert)
 - [#8](https://github.com/simonneutert/papierkram_api_client/pull/8) Ergänzt Schnellstart Kapitel in Readme. [@simonneutert](https://github.com/simonneutert)
 - [#7](https://github.com/simonneutert/papierkram_api_client/pull/7) Logo Version 3. [@rabocalypse](https://github.com/rabocalypse)
