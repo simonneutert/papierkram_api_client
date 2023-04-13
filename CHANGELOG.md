@@ -4,7 +4,8 @@
 
 ### Changed
 
-[#5](https://github.com/simonneutert/papierkram_api_client/pull/1) Logo geändert. [@rabocalypse](https://github.com/rabocalypse)
+[#7](https://github.com/simonneutert/papierkram_api_client/pull/7) Logo Version 3. [@rabocalypse](https://github.com/rabocalypse)
+[#5](https://github.com/simonneutert/papierkram_api_client/pull/5) Logo geändert. [@rabocalypse](https://github.com/rabocalypse)
 [#4](https://github.com/simonneutert/papierkram_api_client/pull/4) Verbesserung der Docs für PDF endpoints. [@simonneutert](https://github.com/simonneutert)
 [#3](https://github.com/simonneutert/papierkram_api_client/pull/3) Readme angepasst. [@simonneutert](https://github.com/simonneutert)
 
