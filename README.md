@@ -8,7 +8,7 @@ Der erste ~~illegale~~ inoffizielle API Client in [Ruby](https://www.ruby-lang.o
 
 **WICHTIG** Dieses Projekt befindet sich im Entwicklungsstatus bis V1.0.0! Ich werde versuchen, die Änderungen so gut wie möglich zu dokumentieren. Wenn du einen Fehler findest, kannst du gerne einen Issue erstellen oder einen Pull Request mit einer Verbesserung erstellen. Ich freue mich über jede Hilfe!
 
-> 🚨 **Bitte beachte**, dass DU UNBEDINGT die Requests/Responses (VCR Cassettes) von privaten Daten befreien musst, bevor du einen Pull Request erstellst oder einen Commit ins Web lädst! Ich werde die Cassettes auch nochmal durchgehen, bevor ich die Version 1.0.0 veröffentliche. ABER BITTE, BITTE, BITTE, mach das selbst auch! Ich habe keine Lust, dass irgendwelche Daten von dir oder deinen Kunden auf Github landen. Danke! 🙏
+> 🚨 **Bitte beachte**, dass DU UNBEDINGT die Requests/Responses der VCR Cassettes (die ausschliesslich bei Nutzung der Testsuite angelegt werden) von privaten Daten befreien musst, bevor du einen Pull Request erstellst oder einen Commit ins Web lädst! Ich werde die Cassettes auch nochmal durchgehen, bevor ich die Version 1.0.0 veröffentliche. ABER BITTE, BITTE, BITTE, mach das selbst auch! Ich habe keine Lust, dass irgendwelche Daten von dir oder deinen Kunden auf Github landen. Danke! 🙏
 
 Check das [CHANGELOG.md](CHANGELOG.md), Baby!
 
