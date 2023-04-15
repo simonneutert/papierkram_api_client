@@ -1,3 +1,9 @@
+# Changelog
+
+## [unreleased]
+
+please add your changes here, following the format below
+
 ## [0.1.3] - 2023-04-15
 
 Solltest du diesen Client mithilfe von Umgebungsvariablen einrichten, musst du deinen Code aktualisieren, um die neuen Variablen zu verwenden. Siehe `.env.sample` für die aktualisierten Variablen.
