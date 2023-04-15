@@ -1,8 +1,14 @@
-## [unreleased]
+## [0.1.3] - 2023-04-15
 
-[#PR](https://github.com/simonneutert/papierkram_api_client/pull/<PRNUMBER>) Changelog und Readme angepasst. [@<yourtag>](https://github.com/<yourtag>)
+Solltest du diesen Client mithilfe von Umgebungsvariablen einrichten, musst du deinen Code aktualisieren, um die neuen Variablen zu verwenden. Siehe `.env.sample` für die aktualisierten Variablen.
 
-## [v0.1.2] - 2023-04-13
+- `PAPIERKRAM_SUBDOMAIN` ist jetzt `PAPIERKRAM_API_SUBDOMAIN`
+
+### Changed
+
+[#17](https://github.com/simonneutert/papierkram_api_client/pull/17) tests expense vouchers endpoint and parameters. [@simonneutert](https://github.com/simonneutert)
+
+## [0.1.2] - 2023-04-13
 
 ### Fixed
 

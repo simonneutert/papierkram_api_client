@@ -10,7 +10,6 @@ module Api
             return get("#{@url_api_path}/expense/vouchers/#{id}/pdf", nil,
                        { headers: { 'Content-Type' => 'application/pdf' } })
           end
-
           get("#{@url_api_path}/expense/vouchers/#{id}")
         end
 
