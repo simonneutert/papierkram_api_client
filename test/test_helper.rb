@@ -13,6 +13,8 @@ VCR.configure do |c|
   c.hook_into :faraday
   c.filter_sensitive_data('<API BEARER>') { ENV.fetch('PAPIERKRAM_API_KEY', nil) }
   c.filter_sensitive_data('<UNICORN>') do |interaction|
+    next unless interaction.response.headers['set-cookie']
+
     interaction.response.headers['set-cookie'].first.split(';').first.split('=').last
   end
   c.before_record do |interaction|
@@ -20,7 +22,7 @@ VCR.configure do |c|
       interaction.response.body.gsub!(email, '<EMAIL>')
     end
   end
-  # c.filter_sensitive_data('<DOMAIN>') { ENV.fetch('PAPIERKRAM_SUBDOMAIN', nil) }
+  # c.filter_sensitive_data('<DOMAIN>') { ENV.fetch('PAPIERKRAM_API_SUBDOMAIN', nil) }
   # c.filter_sensitive_data('<DOMAIN>') { 'http://localhost:3000/' }
 end
 

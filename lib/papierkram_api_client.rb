@@ -35,7 +35,7 @@ module PapierkramApiClient
     def_delegators :@client, :get, :post, :put, :patch, :delete
 
     def initialize(subdomain = nil, api_key = nil)
-      @subdomain = subdomain || ENV.fetch('PAPIERKRAM_SUBDOMAIN', nil)
+      @subdomain = subdomain || ENV.fetch('PAPIERKRAM_API_SUBDOMAIN', nil)
       @api_key = api_key || ENV.fetch('PAPIERKRAM_API_KEY', nil)
       @base_url = base_url_env
       @remaining_quota = nil

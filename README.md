@@ -156,7 +156,7 @@ Entweder werden die Zugangsdaten als Argumente übergeben:
 client = PapierkramApiClient::Client.new('subdomain', "SUPER-LONG-API-KEY")
 ```
 
-Oder es werden die Umgebungsvariablen `PAPIERKRAM_SUBDOMAIN` und `PAPIERKRAM_API_KEY` gesetzt und der Client ohne Argumente initialisiert.
+Oder es werden die Umgebungsvariablen `PAPIERKRAM_API_SUBDOMAIN` und `PAPIERKRAM_API_KEY` gesetzt und der Client ohne Argumente initialisiert.
 
 ```ruby
 # usage with environment variables
