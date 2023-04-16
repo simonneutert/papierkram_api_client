@@ -19,6 +19,11 @@ Layout/LineLength:
 
 Metrics/MethodLength:
   Max: 16
+  CountAsOne:
+    - "array"
+    - "hash"
+    - "heredoc"
+    - "method_call"
 
 Metrics/ParameterLists:
   Max: 8

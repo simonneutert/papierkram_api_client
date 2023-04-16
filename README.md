@@ -4,7 +4,13 @@
 
 Der erste ~~illegale~~ inoffizielle API Client in [Ruby](https://www.ruby-lang.org/de/) für [Papierkram.de](https://www.papierkram.de)!
 
+### Hol mehr aus deinen Daten raus! Dieser Client bietet dir bald einige Features im Bereich [Business Intelligence](#business-intelligence)!<!-- omit in toc -->
+
+---
+
 <img src="pac.svg" alt="PAC Logo, Zunge leckt an Karl Klammer und zieht Daten aus dem Papierkram-Account wie Frosch die Fliege vom Teich" width="300">
+
+Hol dir den [Papierkram API Client](https://rubygems.org/gems/papierkram_api_client) als [Ruby Gem](https://rubygems.org/gems/papierkram_api_client)!
 
 ---
 
@@ -21,7 +27,7 @@ Das Gleiche, nur in grün, also für [NodeJS](https://github.com/simonneutert/pa
 Check das [CHANGELOG.md](CHANGELOG.md), Baby!
 
 Hier geht es zu den offiziellen API Docs  
-https://DEINE-SUBDOMAIN.papierkram.de/api/v1/api-docs/index.html  
+https://DEINE-SUBDOMAIN.papierkram.de/papierkram_api/v1/api-docs/index.html  
 (wenn du bereits ein Papierkram-Konto hast).  
 Schau bitte dort um alle Rückgabefelder/-werte zu checken, bis ich die Dokumentation hier komplett habe.
 
@@ -46,7 +52,7 @@ Aktuell unterstützte Endpunkte / Objekte:
 
 ## Was, wie, warum?<!-- omit in toc -->
 
-Papierkram.de hat nun endlich eine API Schnittstelle für die Programmierung von eigenen Anwendungen. Die Dokumentation findest du hier: [https://DEINE-SUBDOMAIN.papierkram.de/api/v1/api-docs/index.html](https://DEINE-SUBDOMAIN.papierkram.de/api/v1/api-docs/index.html). Dieses Projekt soll eine einfache Schnittstelle für die Papierkram API bereitstellen.
+Papierkram.de hat nun endlich eine API Schnittstelle für die Programmierung von eigenen Anwendungen. Die Dokumentation findest du hier: [https://DEINE-SUBDOMAIN.papierkram.de/papierkram_api/v1/api-docs/index.html](https://DEINE-SUBDOMAIN.papierkram.de/papierkram_api/v1/api-docs/index.html). Dieses Projekt soll eine einfache Schnittstelle für die Papierkram API bereitstellen.
 
 Ziele:
 
@@ -96,6 +102,10 @@ Ziele:
     - [alle Zeiteinträge](#alle-zeiteinträge)
     - [einen Zeiteintrag](#einen-zeiteintrag)
   - [Verbleibendes Quota](#verbleibendes-quota)
+- [Business Intelligence](#business-intelligence)
+  - [Business::Intelligence (BI) ExpenseByCategory (Ausgaben nach Kategorie)](#businessintelligence-bi-expensebycategory-ausgaben-nach-kategorie)
+    - [alle Ausgaben eines Monats nach Kategorie](#alle-ausgaben-eines-monats-nach-kategorie)
+    - [alle Ausgaben eines Monats nach Kategorie gefiltert nach Steuersatz](#alle-ausgaben-eines-monats-nach-kategorie-gefiltert-nach-steuersatz)
 - [Helpers](#helpers)
   - [Generiere ein PDF aus Response](#generiere-ein-pdf-aus-response)
 - [Development](#development)
@@ -122,10 +132,10 @@ If bundler is not being used to manage dependencies, install the gem by executin
 # client instanziieren
 
 # wenn ENV gesetzt sind (siehe Readme)
-client = PapierkramApiClient::Client.new
+client = PapierkramApi::Client.new
 
 # ODER per Variablen
-client = PapierkramApiClient::Client.new('subdomain', "YOUR-API-KEY");
+client = PapierkramApi::Client.new('subdomain', "YOUR-API-KEY");
 
 # info Endpunkt abfragen
 info_details = client.info.details
@@ -142,7 +152,7 @@ puts invoices.body
 
 Der API Client ist die Hauptklasse für die Kommunikation mit der Papierkram API. Er wird mit den Zugangsdaten initialisiert.
 
-[Client](/lib/papierkram_api_client.rb)
+[Client](lib/papierkram_api/client.rb)
 
 Wenn du etwas hinter die Kulissen sehen willst, schau dir diese [Faraday](https://github.com/lostisland/faraday) Klasse an [Faraday::Response](https://github.com/lostisland/faraday/blob/main/lib/faraday/response.rb).
 
@@ -152,21 +162,21 @@ Entweder werden die Zugangsdaten als Argumente übergeben:
 
 ```ruby
 # usage with subdomain and api key
-client = PapierkramApiClient::Client.new('subdomain', "SUPER-LONG-API-KEY")
+client = PapierkramApi::Client.new('subdomain', "SUPER-LONG-API-KEY")
 ```
 
 Oder es werden die Umgebungsvariablen `PAPIERKRAM_API_SUBDOMAIN` und `PAPIERKRAM_API_KEY` gesetzt und der Client ohne Argumente initialisiert.
 
 ```ruby
 # usage with environment variables
-client = PapierkramApiClient::Client.new
+client = PapierkramApi::Client.new
 ```
 
 ### Banking::BankConnection (Bankverbindung)
 
-Der Endpunkt `/api/v1/banking/bank_connections` liefert Informationen über die Bankverbindungen. Die Informationen werden als `Faraday::Response` zurückgegeben.
+Der Endpunkt `/papierkram_api/v1/endpoints/banking/bank_connections` liefert Informationen über die Bankverbindungen. Die Informationen werden als `Faraday::Response` zurückgegeben.
 
-Siehe [BankConnections](/lib/api/v1/banking/bank_connections.rb) für mögliche Parameter.
+Siehe [BankConnections](lib/papierkram_api/v1/endpoints/banking/bank_connections.rb) für mögliche Parameter.
 
 #### alle Bankverbindungen
 
@@ -241,13 +251,13 @@ puts bank_connection.body
 
 WORK IN PROGRESS
 
-[Transactions](/lib/api/v1/banking/transactions.rb)
+[Transactions](lib/papierkram_api/v1/endpoints/banking/transactions.rb)
 
 ### Contact::Company (Unternehmen)
 
-Der Endpunkt `/api/v1/contact/companies` liefert Informationen über die Unternehmen. Die Informationen werden als `Faraday::Response` zurückgegeben.
+Der Endpunkt `/papierkram_api/v1/endpoints/contact/companies` liefert Informationen über die Unternehmen. Die Informationen werden als `Faraday::Response` zurückgegeben.
 
-Siehe [Companies](/lib/api/v1/contact/companies.rb) für mögliche Parameter.
+Siehe [Companies](lib/papierkram_api/v1/endpoints/contact/companies.rb) für mögliche Parameter.
 
 #### alle Unternehmen
 
@@ -267,9 +277,9 @@ puts company.body
 
 ### Contact::Company (Kontaktperson eines Unternehmens)
 
-Der Endpunkt `/api/v1/contact/companies/{company_id}` liefert Informationen über die Kontaktpersonen. Die Informationen werden als `Faraday::Response` zurückgegeben.
+Der Endpunkt `/papierkram_api/v1/endpoints/contact/companies/{company_id}` liefert Informationen über die Kontaktpersonen. Die Informationen werden als `Faraday::Response` zurückgegeben.
 
-Siehe [CompaniesPersons](/lib/api/v1/contact/companies_persons.rb) für mögliche Parameter.
+Siehe [CompaniesPersons](lib/papierkram_api/v1/endpoints/contact/companies_persons.rb) für mögliche Parameter.
 
 #### alle Kontaktpersonen (eines Unternehmens)
 
@@ -289,9 +299,9 @@ puts company.body
 
 ### Expense::Voucher (Ausgabe Beleg)
 
-Der Endpunkt `/api/v1/expense/vouchers` liefert Informationen über die Ausgabe Belege. Die Informationen werden als `Faraday::Response` zurückgegeben.
+Der Endpunkt `/papierkram_api/v1/endpoints/expense/vouchers` liefert Informationen über die Ausgabe Belege. Die Informationen werden als `Faraday::Response` zurückgegeben.
 
-Siehe [Vouchers](/lib/api/v1/expense/vouchers.rb) für mögliche Parameter.
+Siehe [Vouchers](lib/papierkram_api/v1/endpoints/expense/vouchers.rb) für mögliche Parameter.
 
 #### alle Ausgabe Belege
 
@@ -313,15 +323,15 @@ puts voucher.body
 
 ```ruby
 voucher = client.expense_vouchers.by(id: 1, pdf: true)
-puts Api::V1::Helpers::PdfFromResponse.new(voucher).to_pdf
+puts PapierkramApi::V1::Helpers::PdfFromResponse.new(voucher).to_pdf
 # => {response: Faraday::Response, path_to_pdf_file: 'path/to/tempfile_pdf.pdf'}
 ```
 
 ### Income::Estimate (Angebot)
 
-Der Endpunkt `/api/v1/income/estimates` liefert Informationen über die Angebote. Die Informationen werden als `Faraday::Response` zurückgegeben.
+Der Endpunkt `/papierkram_api/v1/endpoints/income/estimates` liefert Informationen über die Angebote. Die Informationen werden als `Faraday::Response` zurückgegeben.
 
-Siehe [Estimates](/lib/api/v1/income/estimates.rb) für mögliche Parameter.
+Siehe [Estimates](lib/papierkram_api/v1/endpoints/income/estimates.rb) für mögliche Parameter.
 
 #### alle Angebote
 
@@ -343,15 +353,15 @@ puts estimate.body
 
 ```ruby
 estimate = client.income_estimates.by(id: 1, pdf: true)
-puts Api::V1::Helpers::PdfFromResponse.new(estimate).to_pdf
+puts PapierkramApi::V1::Helpers::PdfFromResponse.new(estimate).to_pdf
 # => {response: Faraday::Response, path_to_pdf_file: 'path/to/tempfile_pdf.pdf'}
 ```
 
 ### Income::Invoice (Rechnung)
 
-Der Endpunkt `/api/v1/income/invoices` liefert Informationen über die Rechnungen. Die Informationen werden als `Faraday::Response` zurückgegeben.
+Der Endpunkt `/papierkram_api/v1/endpoints/income/invoices` liefert Informationen über die Rechnungen. Die Informationen werden als `Faraday::Response` zurückgegeben.
 
-Siehe [Invoices](/lib/api/v1/income/invoices.rb) für mögliche Parameter.
+Siehe [Invoices](lib/papierkram_api/v1/endpoints/income/invoices.rb) für mögliche Parameter.
 
 #### alle Rechnungen
 
@@ -373,15 +383,15 @@ puts invoice.body
 
 ```ruby
 invoice = client.income_invoices.by(id: 1, pdf: true)
-puts Api::V1::Helpers::PdfFromResponse.new(invoice).to_pdf
+puts PapierkramApi::V1::Helpers::PdfFromResponse.new(invoice).to_pdf
 # => {response: Faraday::Response, path_to_pdf_file: 'path/to/tempfile_pdf.pdf'}
 ```
 
 ### Income::Proposition (Waren / Dienstleistungen)
 
-Der Endpunkt `/api/v1/income/propositions` liefert Informationen über die Waren / Dienstleistungen. Die Informationen werden als `Faraday::Response` zurückgegeben.
+Der Endpunkt `/papierkram_api/v1/endpoints/income/propositions` liefert Informationen über die Waren / Dienstleistungen. Die Informationen werden als `Faraday::Response` zurückgegeben.
 
-Siehe [Propositions](/lib/api/v1/income/propositions.rb) für mögliche Parameter.
+Siehe [Propositions](lib/papierkram_api/v1/endpoints/income/propositions.rb) für mögliche Parameter.
 
 #### alle Waren / Dienstleistungen
 
@@ -401,9 +411,9 @@ puts proposition.body
 
 ### Info
 
-Der Endpunkt `/api/v1/info` liefert Informationen über die API. Die Informationen werden als `Faraday::Response` zurückgegeben.
+Der Endpunkt `lib/papierkram_api/v1/endpoints/info.rb` liefert Informationen über die API. Die Informationen werden als `Faraday::Response` zurückgegeben.
 
-Siehe [Info](/lib/api/v1/info.rb).
+Siehe [Info](lib/papierkram_api/v1/endpoints/info.rb).
 
 ```ruby
 info = client.info.details
@@ -413,9 +423,9 @@ puts info.body
 
 ### Project::Project (Projekt)
 
-Der Endpunkt `/api/v1/projects` liefert Informationen über die Projekte. Die Informationen werden als `Faraday::Response` zurückgegeben.
+Der Endpunkt `/papierkram_api/v1/endpoints/projects` liefert Informationen über die Projekte. Die Informationen werden als `Faraday::Response` zurückgegeben.
 
-Siehe [Projects](/lib/api/v1/projects.rb) für mögliche Parameter.
+Siehe [Projects](lib/papierkram_api/v1/endpoints/projects.rb) für mögliche Parameter.
 
 #### alle Projekte
 
@@ -435,9 +445,9 @@ puts project.body
 
 ### Tracker::Task (Aufgabe)
 
-Der Endpunkt `/api/v1/tracker/tasks` liefert Informationen über die Aufgaben. Die Informationen werden als `Faraday::Response` zurückgegeben.
+Der Endpunkt `/papierkram_api/v1/tracker/tasks` liefert Informationen über die Aufgaben. Die Informationen werden als `Faraday::Response` zurückgegeben.
 
-Siehe [Tasks](/lib/api/v1/tracker/tasks.rb) für mögliche Parameter.
+Siehe [Tasks](lib/papierkram_api/v1/endpoints/tracker/tasks.rb) für mögliche Parameter.
 
 #### alle Aufgaben
 
@@ -457,9 +467,9 @@ puts task.body
 
 ### Tracker::TimeEntry (Zeiteintrag)
 
-Der Endpunkt `/api/v1/tracker/time_entries` liefert Informationen über die Zeiteinträge. Die Informationen werden als `Faraday::Response` zurückgegeben.
+Der Endpunkt `/papierkram_api/v1/tracker/time_entries` liefert Informationen über die Zeiteinträge. Die Informationen werden als `Faraday::Response` zurückgegeben.
 
-[TimeEntries](/lib/api/v1/tracker/time_entries.rb)
+[TimeEntries](lib/papierkram_api/v1/endpoints/tracker/time_entries.rb)
 
 #### alle Zeiteinträge
 
@@ -481,7 +491,7 @@ puts time_entry.body
 
 Jede API Anfrage "kostet" 1 Quota. Das Quota wird bei jedem Request aktualisiert. Um das verbleibende Quota zu erhalten, kann die Methode `remaining_quota` aufgerufen werden.
 
-[Base](/lib/api/v1/base.rb)
+[Base](lib/papierkram_api/v1/endpoints/base.rb)
 
 Du kannst dein Quota über die Papierkram Webseite einsehen. Die Anzahl der verbleibenden Anfragen wird dir dort angezeigt.
 
@@ -493,21 +503,100 @@ response = client.info.details
 quota = client.info.remaining_quota(response)
 ```
 
+## Business Intelligence
+
+TODO ergänzen wie man `SmartQueries` erstellt und verwendet.  
+TODO ergänzen wie man `SmartQueries` funktioneren.  
+TODO ergänzen wie die Rückgabewerte von `SmartQueries` gestaltet werden sollten.
+
+### Business::Intelligence (BI) ExpenseByCategory (Ausgaben nach Kategorie)
+
+Der Endpunkt `/papierkram_api/v1/business_intelligence/expense_by_categories` liefert Informationen über die Ausgaben nach Kategorie. Die Informationen werden als `Hash` zurückgegeben.
+
+#### alle Ausgaben eines Monats nach Kategorie
+
+```ruby
+client = PapierkramApi::Client.new
+expense_voucher_data_service = client.expense_vouchers.data_service(:for_month_in_year_service)
+expense_vouchers_in_date_range = expense_voucher_data_service.for_month_in_year(year: 2020, month: 8)
+
+service = client.business_intelligence.expenses_by_category
+result = service.call(expense_vouchers: expense_vouchers_in_date_range)
+puts result
+```
+
+```ruby
+{"Betriebsbedarf"=>
+  {"amount"=>476.0,
+   "amount_by_creditor"=>{nil=>476.0},
+   "line_items"=>
+    [{"name"=>"2020-01-03",
+      "amount"=>119.0,
+      "category"=>"Betriebsbedarf",
+      "vat_rate"=>"19%",
+      "billing"=>nil,
+      "depreciation"=>nil,
+      "voucher_name"=>"B-00214 - 2020-08-01",
+      "voucher_id"=>641,
+      "creditor"=>nil},
+     {"name"=>"2020-01-03",
+      "amount"=>119.0,
+      "category"=>"Betriebsbedarf",
+      "vat_rate"=>"19%",
+      "billing"=>nil,
+      "depreciation"=>nil,
+      "voucher_name"=>"B-00215 - 2020-08-02",
+      "voucher_id"=>644,
+      "creditor"=>nil},
+     {"name"=>"2020-01-03",
+      "amount"=>119.0,
+      "category"=>"Betriebsbedarf",
+      "vat_rate"=>"19%",
+      "billing"=>nil,
+      "depreciation"=>nil,
+      "voucher_name"=>"B-00216 - 2020-08-03",
+      "voucher_id"=>647,
+      "creditor"=>nil},
+     {"name"=>"2020-01-03",
+      "amount"=>119.0,
+      "category"=>"Betriebsbedarf",
+      "vat_rate"=>"19%",
+      "billing"=>nil,
+      "depreciation"=>nil,
+      "voucher_name"=>"B-00217 - 2020-08-04",
+      "voucher_id"=>650,
+      "creditor"=>nil}]}}
+```
+
+#### alle Ausgaben eines Monats nach Kategorie gefiltert nach Steuersatz
+
+```ruby
+client = PapierkramApi::Client.new
+expense_voucher_data_service = client.expense_vouchers.data_service(:for_month_in_year_service)
+expense_vouchers_in_date_range = expense_voucher_data_service.for_month_in_year(year: 2020, month: 8)
+
+service = client.business_intelligence.expenses_by_category
+result = service.call(expense_vouchers: expense_vouchers_in_date_range) do |line_items|
+  line_items.select { |v| v['vat_rate'] == '19%' }
+end
+puts result
+```
+
 ## Helpers
 
 Es gibt einige Helper, die dir das Leben leichter machen.
 
 ### Generiere ein PDF aus Response
 
-Mit dem Helper `Api::V1::Helpers::PdfFromResponse` kannst du für unterstützte Endpunkte aus einer `Faraday::Response` ein PDF schreiben.
+Mit dem Helper `PapierkramApi::V1::Helpers::PdfFromResponse` kannst du für unterstützte Endpunkte aus einer `Faraday::Response` ein PDF schreiben.
 
 Unterstützte Endpunkte sind beispielsweise: `Income::Estimate`, `Income::Invoice`, `Expense::Voucher`.
 
-[Api::V1::Helpers::PdfFromResponse](/lib/api/v1/helpers/pdf_from_response.rb)
+[Api::V1::Helpers::PdfFromResponse](lib/papierkram_api/v1/helper/pdf_from_response.rb)
 
 ```ruby
 response = client.income_invoices.by(id: 1, pdf: true)
-pdf = Api::V1::Helpers::PdfFromResponse.new(response).to_pdf("Rechnung Nummer XXX")
+pdf = PapierkramApi::V1::Helpers::PdfFromResponse.new(response).to_pdf("Rechnung Nummer XXX")
 puts pdf
 ```
 
