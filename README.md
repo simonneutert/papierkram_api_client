@@ -20,7 +20,7 @@ Das Gleiche, nur in grün, also für [NodeJS](https://github.com/simonneutert/pa
 
 Check das [CHANGELOG.md](CHANGELOG.md), Baby!
 
- Hier geht es zu den offiziellen API Docs  
+Hier geht es zu den offiziellen API Docs  
 https://DEINE-SUBDOMAIN.papierkram.de/api/v1/api-docs/index.html  
 (wenn du bereits ein Papierkram-Konto hast).  
 Schau bitte dort um alle Rückgabefelder/-werte zu checken, bis ich die Dokumentation hier komplett habe.
@@ -146,7 +146,6 @@ Der API Client ist die Hauptklasse für die Kommunikation mit der Papierkram API
 
 Wenn du etwas hinter die Kulissen sehen willst, schau dir diese [Faraday](https://github.com/lostisland/faraday) Klasse an [Faraday::Response](https://github.com/lostisland/faraday/blob/main/lib/faraday/response.rb).
 
-
 ### Initialisierung
 
 Entweder werden die Zugangsdaten als Argumente übergeben:
@@ -177,6 +176,10 @@ puts bank_connections.headers
 puts bank_connections.body
 ```
 
+<details>
+
+<summary>Response</summary>
+
 ```ruby
 # body
 {
@@ -194,6 +197,8 @@ puts bank_connections.body
 }
 ```
 
+</details>
+
 #### eine Bankverbindung
 
 ```ruby
@@ -201,6 +206,10 @@ bank_connection = client.banking_bank_connections.by(id: 1)
 puts bank_connection.headers
 puts bank_connection.body
 ```
+
+<details>
+
+<summary>Response</summary>
 
 ```ruby
 # body
@@ -225,6 +234,8 @@ puts bank_connection.body
   "iban"=>""
 }
 ```
+
+</details>
 
 ### Banking::Transaction (Kontoumsatz)
 
@@ -302,7 +313,7 @@ puts voucher.body
 
 ```ruby
 voucher = client.expense_vouchers.by(id: 1, pdf: true)
-puts Api::V1::Helpers::PdfFromResponse.new(voucher).to_pdf 
+puts Api::V1::Helpers::PdfFromResponse.new(voucher).to_pdf
 # => {response: Faraday::Response, path_to_pdf_file: 'path/to/tempfile_pdf.pdf'}
 ```
 
@@ -332,7 +343,7 @@ puts estimate.body
 
 ```ruby
 estimate = client.income_estimates.by(id: 1, pdf: true)
-puts Api::V1::Helpers::PdfFromResponse.new(estimate).to_pdf 
+puts Api::V1::Helpers::PdfFromResponse.new(estimate).to_pdf
 # => {response: Faraday::Response, path_to_pdf_file: 'path/to/tempfile_pdf.pdf'}
 ```
 
@@ -362,7 +373,7 @@ puts invoice.body
 
 ```ruby
 invoice = client.income_invoices.by(id: 1, pdf: true)
-puts Api::V1::Helpers::PdfFromResponse.new(invoice).to_pdf 
+puts Api::V1::Helpers::PdfFromResponse.new(invoice).to_pdf
 # => {response: Faraday::Response, path_to_pdf_file: 'path/to/tempfile_pdf.pdf'}
 ```
 
@@ -522,7 +533,7 @@ Bitte achte darauf, dass du die Tests ausführst und die Tests dann auch grün s
 
 🚨 **SEHR WICHTIG!** Dein API Key wird in den Tests verwendet werden. **Bitte achte darauf**, dass du den API Key nicht in deinen Commits hast! Wenn du per Environment Variable arbeitest, dann wird dein API Key **nicht von VCR aufgezeichnet**. Das bedeutet, dass du deine Tests nicht mit deinem API Key ausführen solltest. ⚠️
 
-🚨 **NOCH WICHTIGER!** deine Kundendaten, also Klarnamen, E-Mails und Telefonnummern haben hier nichts verloren! Bitte sorge dafür, dass du deine Tests mit einem Testaccount ausführst. 🙏 ODER editiere deine Kundendaten in den *VCR Cassettes* nach dem Test. 🙏
+🚨 **NOCH WICHTIGER!** deine Kundendaten, also Klarnamen, E-Mails und Telefonnummern haben hier nichts verloren! Bitte sorge dafür, dass du deine Tests mit einem Testaccount ausführst. 🙏 ODER editiere deine Kundendaten in den _VCR Cassettes_ nach dem Test. 🙏
 
 Wenn du unsicher bist, sprich mich an oder erstelle ein Issue. Ich helfe dir gerne weiter. 🤗
 
