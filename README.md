@@ -172,7 +172,7 @@ Siehe [BankConnections](/lib/api/v1/banking/bank_connections.rb) für mögliche 
 #### alle Bankverbindungen
 
 ```ruby
-bank_connections = client.banking.bank_connections.all
+bank_connections = client.banking_bank_connections.all
 puts bank_connections.headers
 puts bank_connections.body
 ```
@@ -197,7 +197,7 @@ puts bank_connections.body
 #### eine Bankverbindung
 
 ```ruby
-bank_connection = client.banking.bank_connections.by(id: 1)
+bank_connection = client.banking_bank_connections.by(id: 1)
 puts bank_connection.headers
 puts bank_connection.body
 ```
@@ -263,7 +263,7 @@ Siehe [CompaniesPersons](/lib/api/v1/contact/companies_persons.rb) für möglich
 #### alle Kontaktpersonen (eines Unternehmens)
 
 ```ruby
-companies = client.contact.companies_persons.all(company_id: 1)
+companies = client.contact_companies_persons.all(company_id: 1)
 puts companies.headers
 puts companies.body
 ```
@@ -271,7 +271,7 @@ puts companies.body
 #### eine Kontaktperson (eines Unternehmens)
 
 ```ruby
-company = client.contact.companies_persons.by(company_id: 1, id: 1)
+company = client.contact_companies_persons.by(company_id: 1, id: 1)
 puts company.headers
 puts company.body
 ```
@@ -285,7 +285,7 @@ Siehe [Vouchers](/lib/api/v1/expense/vouchers.rb) für mögliche Parameter.
 #### alle Ausgabe Belege
 
 ```ruby
-vouchers = client.expense.vouchers.all
+vouchers = client.expense_vouchers.all
 puts vouchers.headers
 puts vouchers.body
 ```
@@ -293,7 +293,7 @@ puts vouchers.body
 #### einen Ausgabe Beleg
 
 ```ruby
-voucher = client.expense.vouchers.by(id: 1)
+voucher = client.expense_vouchers.by(id: 1)
 puts voucher.headers
 puts voucher.body
 ```
@@ -301,7 +301,7 @@ puts voucher.body
 #### einen Ausgabe Beleg als PDF
 
 ```ruby
-voucher = client.expense.vouchers.by(id: 1, pdf: true)
+voucher = client.expense_vouchers.by(id: 1, pdf: true)
 puts Api::V1::Helpers::PdfFromResponse.new(voucher).to_pdf 
 # => {response: Faraday::Response, path_to_pdf_file: 'path/to/tempfile_pdf.pdf'}
 ```
@@ -315,7 +315,7 @@ Siehe [Estimates](/lib/api/v1/income/estimates.rb) für mögliche Parameter.
 #### alle Angebote
 
 ```ruby
-estimates = client.income.estimates.all
+estimates = client.income_estimates.all
 puts estimates.headers
 puts estimates.body
 ```
@@ -323,7 +323,7 @@ puts estimates.body
 #### ein Angebot
 
 ```ruby
-estimate = client.income.estimates.by(id: 1)
+estimate = client.income_estimates.by(id: 1)
 puts estimate.headers
 puts estimate.body
 ```
@@ -331,7 +331,7 @@ puts estimate.body
 #### ein Angebot als PDF
 
 ```ruby
-estimate = client.income.estimates.by(id: 1, pdf: true)
+estimate = client.income_estimates.by(id: 1, pdf: true)
 puts Api::V1::Helpers::PdfFromResponse.new(estimate).to_pdf 
 # => {response: Faraday::Response, path_to_pdf_file: 'path/to/tempfile_pdf.pdf'}
 ```
@@ -345,7 +345,7 @@ Siehe [Invoices](/lib/api/v1/income/invoices.rb) für mögliche Parameter.
 #### alle Rechnungen
 
 ```ruby
-invoices = client.income.invoices.all
+invoices = client.income_invoices.all
 puts invoices.headers
 puts invoices.body
 ```
@@ -353,7 +353,7 @@ puts invoices.body
 #### eine Rechnung
 
 ```ruby
-invoice = client.income.invoices.by(id: 1)
+invoice = client.income_invoices.by(id: 1)
 puts invoice.headers
 puts invoice.body
 ```
@@ -361,7 +361,7 @@ puts invoice.body
 #### eine Rechnung als PDF
 
 ```ruby
-invoice = client.income.invoices.by(id: 1, pdf: true)
+invoice = client.income_invoices.by(id: 1, pdf: true)
 puts Api::V1::Helpers::PdfFromResponse.new(invoice).to_pdf 
 # => {response: Faraday::Response, path_to_pdf_file: 'path/to/tempfile_pdf.pdf'}
 ```
@@ -375,7 +375,7 @@ Siehe [Propositions](/lib/api/v1/income/propositions.rb) für mögliche Paramete
 #### alle Waren / Dienstleistungen
 
 ```ruby
-propositions = client.income.propositions.all
+propositions = client.income_propositions.all
 puts propositions.headers
 puts propositions.body
 ```
@@ -383,7 +383,7 @@ puts propositions.body
 #### eine Ware / Dienstleistung
 
 ```ruby
-proposition = client.income.propositions.by(id: 1)
+proposition = client.income_propositions.by(id: 1)
 puts proposition.headers
 puts proposition.body
 ```
