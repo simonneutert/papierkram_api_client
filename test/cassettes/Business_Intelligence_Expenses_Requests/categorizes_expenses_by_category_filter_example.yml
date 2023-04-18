@@ -1,0 +1,362 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://simonneutert.papierkram.de/api/v1/expense/vouchers?document_date_range_end=2020-08-31&document_date_range_start=2020-08-01&page=1&page_size=100
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.4
+      Authorization:
+      - Bearer <API BEARER>
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      content-type:
+      - application/json; charset=utf-8
+      status:
+      - 200 OK
+      cache-control:
+      - no-store
+      access-control-allow-origin:
+      - "*"
+      vary:
+      - Accept
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      x-remaining-quota:
+      - '8788'
+      x-permitted-cross-domain-policies:
+      - none
+      pragma:
+      - no-cache
+      x-request-id:
+      - 2e9c0a8a-fb6c-4dd6-a71c-015bfd223a15
+      x-download-options:
+      - noopen
+      etag:
+      - W/"e464a7b7bf8e48937f4f5cda7c1b5a47"
+      x-frame-options:
+      - SAMEORIGIN
+      x-runtime:
+      - '0.119837'
+      expires:
+      - Fri, 01 Jan 1990 00:00:00 GMT
+      date:
+      - Sun, 16 Apr 2023 09:12:00 GMT
+      set-cookie:
+      - redis_session_store=<UNICORN>; path=/; expires=Sun, 30 Apr 2023 09:12:00 GMT;
+        HttpOnly; SameSite=Lax
+      x-powered-by:
+      - Phusion Passenger(R) 6.0.15
+      server:
+      - nginx/1.18.0 + Phusion Passenger(R) 6.0.15
+      x-version:
+      - STABLE
+      x-robots-tag:
+      - noindex, nofollow;
+      strict-transport-security:
+      - max-age=31536000; includeSubdomains;;
+      x-xss-protection:
+      - 1; mode=block;
+      x-content-type-options:
+      - nosniff;
+      x-debug-subdomain:
+      - simonneutert
+    body:
+      encoding: UTF-8
+      string: '{"type":"list","page":1,"page_size":100,"total_pages":1,"total_entries":4,"has_more":false,"entries":[{"type":"expense_voucher","id":641,"name":"B-00214
+        - 2020-08-01","due_date":"2020-08-01","document_date":"2020-08-01","description":"","entertainment_reason":"","flagged":false,"provenance":"domestic","voucher_no":"B-00214","state":"unpaid","record_state":"active","amount":119.0,"invoice_amount":0.0,"entertainment_persons":[]},{"type":"expense_voucher","id":644,"name":"B-00215
+        - 2020-08-02","due_date":"2020-08-02","document_date":"2020-08-02","description":"","entertainment_reason":"","flagged":false,"provenance":"domestic","voucher_no":"B-00215","state":"unpaid","record_state":"active","amount":119.0,"invoice_amount":0.0,"entertainment_persons":[]},{"type":"expense_voucher","id":647,"name":"B-00216
+        - 2020-08-03","due_date":"2020-08-03","document_date":"2020-08-03","description":"","entertainment_reason":"","flagged":false,"provenance":"domestic","voucher_no":"B-00216","state":"unpaid","record_state":"active","amount":119.0,"invoice_amount":0.0,"entertainment_persons":[]},{"type":"expense_voucher","id":650,"name":"B-00217
+        - 2020-08-04","due_date":"2020-08-04","document_date":"2020-08-04","description":"","entertainment_reason":"","flagged":false,"provenance":"domestic","voucher_no":"B-00217","state":"unpaid","record_state":"active","amount":119.0,"invoice_amount":0.0,"entertainment_persons":[]}]}'
+  recorded_at: Sun, 16 Apr 2023 09:12:00 GMT
+- request:
+    method: get
+    uri: https://simonneutert.papierkram.de/api/v1/expense/vouchers/641
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.4
+      Authorization:
+      - Bearer <API BEARER>
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      content-type:
+      - application/json; charset=utf-8
+      status:
+      - 200 OK
+      cache-control:
+      - no-store
+      access-control-allow-origin:
+      - "*"
+      vary:
+      - Accept
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      x-remaining-quota:
+      - '8787'
+      x-permitted-cross-domain-policies:
+      - none
+      pragma:
+      - no-cache
+      x-request-id:
+      - 8f8fa1e2-b19a-4a88-961d-10b827a449b0
+      x-download-options:
+      - noopen
+      etag:
+      - W/"3980f1e3c458adc5cc0a025dc2b243e2"
+      x-frame-options:
+      - SAMEORIGIN
+      x-runtime:
+      - '0.086712'
+      expires:
+      - Fri, 01 Jan 1990 00:00:00 GMT
+      date:
+      - Sun, 16 Apr 2023 09:12:00 GMT
+      set-cookie:
+      - redis_session_store=<UNICORN>; path=/; expires=Sun, 30 Apr 2023 09:12:00 GMT;
+        HttpOnly; SameSite=Lax
+      x-powered-by:
+      - Phusion Passenger(R) 6.0.15
+      server:
+      - nginx/1.18.0 + Phusion Passenger(R) 6.0.15
+      x-version:
+      - STABLE
+      x-robots-tag:
+      - noindex, nofollow;
+      strict-transport-security:
+      - max-age=31536000; includeSubdomains;;
+      x-xss-protection:
+      - 1; mode=block;
+      x-content-type-options:
+      - nosniff;
+      x-debug-subdomain:
+      - simonneutert
+    body:
+      encoding: UTF-8
+      string: '{"type":"expense_voucher","id":641,"name":"B-00214 - 2020-08-01","due_date":"2020-08-01","document_date":"2020-08-01","description":"","entertainment_reason":"","flagged":false,"provenance":"domestic","voucher_no":"B-00214","state":"unpaid","record_state":"active","amount":119.0,"invoice_amount":0.0,"entertainment_persons":[],"creditor":null,"line_items":[{"name":"2020-01-03","amount":119.0,"category":"Betriebsbedarf","vat_rate":"19%","billing":null,"depreciation":null}],"documents":[]}'
+  recorded_at: Sun, 16 Apr 2023 09:12:00 GMT
+- request:
+    method: get
+    uri: https://simonneutert.papierkram.de/api/v1/expense/vouchers/644
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.4
+      Authorization:
+      - Bearer <API BEARER>
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      content-type:
+      - application/json; charset=utf-8
+      status:
+      - 200 OK
+      cache-control:
+      - no-store
+      access-control-allow-origin:
+      - "*"
+      vary:
+      - Accept
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      x-remaining-quota:
+      - '8786'
+      x-permitted-cross-domain-policies:
+      - none
+      pragma:
+      - no-cache
+      x-request-id:
+      - 2349c67c-61c1-453e-b605-67c075c3067f
+      x-download-options:
+      - noopen
+      etag:
+      - W/"71217e5a2d0d22e992d42de7198c6e5b"
+      x-frame-options:
+      - SAMEORIGIN
+      x-runtime:
+      - '0.107646'
+      expires:
+      - Fri, 01 Jan 1990 00:00:00 GMT
+      date:
+      - Sun, 16 Apr 2023 09:12:01 GMT
+      set-cookie:
+      - redis_session_store=<UNICORN>; path=/; expires=Sun, 30 Apr 2023 09:12:01 GMT;
+        HttpOnly; SameSite=Lax
+      x-powered-by:
+      - Phusion Passenger(R) 6.0.15
+      server:
+      - nginx/1.18.0 + Phusion Passenger(R) 6.0.15
+      x-version:
+      - STABLE
+      x-robots-tag:
+      - noindex, nofollow;
+      strict-transport-security:
+      - max-age=31536000; includeSubdomains;;
+      x-xss-protection:
+      - 1; mode=block;
+      x-content-type-options:
+      - nosniff;
+      x-debug-subdomain:
+      - simonneutert
+    body:
+      encoding: UTF-8
+      string: '{"type":"expense_voucher","id":644,"name":"B-00215 - 2020-08-02","due_date":"2020-08-02","document_date":"2020-08-02","description":"","entertainment_reason":"","flagged":false,"provenance":"domestic","voucher_no":"B-00215","state":"unpaid","record_state":"active","amount":119.0,"invoice_amount":0.0,"entertainment_persons":[],"creditor":null,"line_items":[{"name":"2020-01-03","amount":119.0,"category":"Betriebsbedarf","vat_rate":"19%","billing":null,"depreciation":null}],"documents":[]}'
+  recorded_at: Sun, 16 Apr 2023 09:12:01 GMT
+- request:
+    method: get
+    uri: https://simonneutert.papierkram.de/api/v1/expense/vouchers/647
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.4
+      Authorization:
+      - Bearer <API BEARER>
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      content-type:
+      - application/json; charset=utf-8
+      status:
+      - 200 OK
+      cache-control:
+      - no-store
+      access-control-allow-origin:
+      - "*"
+      vary:
+      - Accept
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      x-remaining-quota:
+      - '8785'
+      x-permitted-cross-domain-policies:
+      - none
+      pragma:
+      - no-cache
+      x-request-id:
+      - 9394254b-621f-4f7b-9df6-3dbc03202f11
+      x-download-options:
+      - noopen
+      etag:
+      - W/"f4b1e41d5cfcce7d3e479cad00b081b9"
+      x-frame-options:
+      - SAMEORIGIN
+      x-runtime:
+      - '0.157985'
+      expires:
+      - Fri, 01 Jan 1990 00:00:00 GMT
+      date:
+      - Sun, 16 Apr 2023 09:12:01 GMT
+      set-cookie:
+      - redis_session_store=<UNICORN>; path=/; expires=Sun, 30 Apr 2023 09:12:01 GMT;
+        HttpOnly; SameSite=Lax
+      x-powered-by:
+      - Phusion Passenger(R) 6.0.15
+      server:
+      - nginx/1.18.0 + Phusion Passenger(R) 6.0.15
+      x-version:
+      - STABLE
+      x-robots-tag:
+      - noindex, nofollow;
+      strict-transport-security:
+      - max-age=31536000; includeSubdomains;;
+      x-xss-protection:
+      - 1; mode=block;
+      x-content-type-options:
+      - nosniff;
+      x-debug-subdomain:
+      - simonneutert
+    body:
+      encoding: UTF-8
+      string: '{"type":"expense_voucher","id":647,"name":"B-00216 - 2020-08-03","due_date":"2020-08-03","document_date":"2020-08-03","description":"","entertainment_reason":"","flagged":false,"provenance":"domestic","voucher_no":"B-00216","state":"unpaid","record_state":"active","amount":119.0,"invoice_amount":0.0,"entertainment_persons":[],"creditor":null,"line_items":[{"name":"2020-01-03","amount":119.0,"category":"Betriebsbedarf","vat_rate":"19%","billing":null,"depreciation":null}],"documents":[]}'
+  recorded_at: Sun, 16 Apr 2023 09:12:01 GMT
+- request:
+    method: get
+    uri: https://simonneutert.papierkram.de/api/v1/expense/vouchers/650
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.4
+      Authorization:
+      - Bearer <API BEARER>
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      content-type:
+      - application/json; charset=utf-8
+      status:
+      - 200 OK
+      cache-control:
+      - no-store
+      access-control-allow-origin:
+      - "*"
+      vary:
+      - Accept
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      x-remaining-quota:
+      - '8784'
+      x-permitted-cross-domain-policies:
+      - none
+      pragma:
+      - no-cache
+      x-request-id:
+      - e1afc821-ab8f-448c-ae84-4d2cd477eaa8
+      x-download-options:
+      - noopen
+      etag:
+      - W/"336c1f934bc7cf3b1661ffea213dc3cf"
+      x-frame-options:
+      - SAMEORIGIN
+      x-runtime:
+      - '0.121526'
+      expires:
+      - Fri, 01 Jan 1990 00:00:00 GMT
+      date:
+      - Sun, 16 Apr 2023 09:12:01 GMT
+      set-cookie:
+      - redis_session_store=<UNICORN>; path=/; expires=Sun, 30 Apr 2023 09:12:01 GMT;
+        HttpOnly; SameSite=Lax
+      x-powered-by:
+      - Phusion Passenger(R) 6.0.15
+      server:
+      - nginx/1.18.0 + Phusion Passenger(R) 6.0.15
+      x-version:
+      - STABLE
+      x-robots-tag:
+      - noindex, nofollow;
+      strict-transport-security:
+      - max-age=31536000; includeSubdomains;;
+      x-xss-protection:
+      - 1; mode=block;
+      x-content-type-options:
+      - nosniff;
+      x-debug-subdomain:
+      - simonneutert
+    body:
+      encoding: UTF-8
+      string: '{"type":"expense_voucher","id":650,"name":"B-00217 - 2020-08-04","due_date":"2020-08-04","document_date":"2020-08-04","description":"","entertainment_reason":"","flagged":false,"provenance":"domestic","voucher_no":"B-00217","state":"unpaid","record_state":"active","amount":119.0,"invoice_amount":0.0,"entertainment_persons":[],"creditor":null,"line_items":[{"name":"2020-01-03","amount":119.0,"category":"Betriebsbedarf","vat_rate":"19%","billing":null,"depreciation":null}],"documents":[]}'
+  recorded_at: Sun, 16 Apr 2023 09:12:01 GMT
+recorded_with: VCR 6.1.0

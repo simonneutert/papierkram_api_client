@@ -1,8 +1,15 @@
 # Changelog
 
-## [unreleased]
+## [0.2.0] - 2023-04-18
 
-please add your changes here, following the format below
+Das Namespacing hat sich geändert. Die Klasse `PapierkramApiClient` ist jetzt `PapierkramApi::Client`.
+
+Bitte schaue für Details in die upgedatete Dokumentation in [README.md](README.md) und passe gegebenenfalls deinen Code an.
+
+### Changed
+
+- [#19](https://github.com/simonneutert/papierkram_api_client/pull/19) Bump rubocop from 1.50.1 to 1.50.2. [@simonneutert](https://github.com/simonneutert)
+- [#18](https://github.com/simonneutert/papierkram_api_client/pull/18) Stub basic business intelligence module. [@simonneutert](https://github.com/simonneutert)
 
 ## [0.1.3] - 2023-04-15
 

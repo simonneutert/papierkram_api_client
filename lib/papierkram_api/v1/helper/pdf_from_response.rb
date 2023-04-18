@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module Api
+module PapierkramApi
   module V1
     module Helper
       # This class is responsible to convert a response to a pdf file.

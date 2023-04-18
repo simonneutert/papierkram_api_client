@@ -5,7 +5,7 @@ require 'test_helper'
 class TestContactCompany < Minitest::Test
   describe 'Contact Company Persons Requests' do
     it 'get a contact company person', :vcr do
-      client = PapierkramApiClient::Client.new('simonneutert')
+      client = PapierkramApi::Client.new('simonneutert')
       response = client.contact_companies_persons.by(company_id: 3, id: 3)
       response_body = response.body
 
@@ -14,7 +14,7 @@ class TestContactCompany < Minitest::Test
     end
 
     it 'get all contact companies persons paginated', :vcr do
-      client = PapierkramApiClient::Client.new('simonneutert')
+      client = PapierkramApi::Client.new('simonneutert')
       response = client.contact_companies_persons.all(company_id: 3)
       response_body = response.body
 
