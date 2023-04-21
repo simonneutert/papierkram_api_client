@@ -1,5 +1,11 @@
 # Changelog
 
+## [Unreleased]
+
+### Added
+
+- [#20](https://github.com/simonneutert/papierkram_api_client/pull/20) Adds Banking::Transactions as endpoint with tests. [@simonneutert](https://github.com/simonneutert)
+
 ## [0.2.0] - 2023-04-18
 
 Das Namespacing hat sich geändert. Die Klasse `PapierkramApiClient` ist jetzt `PapierkramApi::Client`.

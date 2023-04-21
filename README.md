@@ -36,7 +36,7 @@ Ruby client für die Papierkram API (V1).
 Aktuell unterstützte Endpunkte / Objekte:
 
 - [x] Banking::BankConnection
-- [ ] Banking::BankTransaction
+- [x] Banking::BankTransaction
 - [x] Contact::Company (Unternehmen)
 - [x] Contact::Company (Kontaktpersonen)
 - [x] Expense::Voucher (Ausgabe Belege)
