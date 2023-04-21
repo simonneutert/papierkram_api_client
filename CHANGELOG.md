@@ -1,5 +1,9 @@
 # Changelog
 
+## [Unreleased]
+
+- [#PR](https://github.com/simonneutert/papierkram_api_client/pull/<PRNUMBER>) Description of your PR. [@ghusername](https://github.com/<ghusername>)
+
 ## [0.2.1] - 2023-04-21
 
 ### Added
