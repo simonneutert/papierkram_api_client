@@ -2,7 +2,11 @@
 
 ## [Unreleased]
 
-- [#PR](https://github.com/simonneutert/papierkram_api_client/pull/<PRNUMBER>) Description of your PR. [@ghusername](https://github.com/<ghusername>)
+### Added
+
+- [#21](https://github.com/simonneutert/papierkram_api_client/pull/21>) Adds more auto-sanitizing in VCR. [@simonneutert](https://github.com/simonneutert)
+
+- [#PR](https://github.com/simonneutert/papierkram_api_client/pull/<PRNUMBER>) Description of your PR contribution here. [@ghusername](https://github.com/<ghusername>)
 
 ## [0.2.1] - 2023-04-21
 

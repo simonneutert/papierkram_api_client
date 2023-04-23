@@ -75,8 +75,6 @@ class TestBankingTransactions < Minitest::Test
       assert_equal(145, bank_connection['id'])
       assert(bank_connection['state'].is_a?(String))
       assert_equal('cleared', bank_connection['state'])
-      assert(bank_connection['value'].is_a?(Float))
-      assert_in_delta(-200.0, bank_connection['value'])
       assert(bank_connection['currency'].is_a?(String))
       assert_equal('EUR', bank_connection['currency'])
       assert(bank_connection['storno'].is_a?(FalseClass) || bank_connection['storno'].nil?)
