@@ -26,7 +26,7 @@ GEM
       minispec-metadata (~> 2.0)
       minitest (>= 4.7.5)
       vcr (>= 2.9)
-    parallel (1.22.1)
+    parallel (1.23.0)
     parser (3.2.2.0)
       ast (~> 2.4.1)
     pry (0.14.2)
@@ -36,7 +36,7 @@ GEM
     rake (13.0.6)
     regexp_parser (2.8.0)
     rexml (3.2.5)
-    rubocop (1.50.2)
+    rubocop (1.49.0)
       json (~> 2.3)
       parallel (~> 1.10)
       parser (>= 3.2.0.0)
@@ -50,6 +50,11 @@ GEM
       parser (>= 3.2.1.0)
     rubocop-minitest (0.30.0)
       rubocop (>= 1.39, < 2.0)
+    rubocop-performance (1.17.1)
+      rubocop (>= 1.7.0, < 2.0)
+      rubocop-ast (>= 0.4.0)
+    rubocop-rake (0.6.0)
+      rubocop (~> 1.0)
     ruby-progressbar (1.13.0)
     ruby2_keywords (0.0.5)
     unicode-display_width (2.4.2)
@@ -66,9 +71,11 @@ DEPENDENCIES
   papierkram_api_client!
   pry (~> 0.14.2)
   rake (~> 13.0)
-  rubocop (~> 1.50)
+  rubocop (~> 1.49)
   rubocop-minitest (~> 0.30.0)
+  rubocop-performance (~> 1.17)
+  rubocop-rake (~> 0.6.0)
   vcr (~> 6.1)
 
 BUNDLED WITH
-   2.4.8
+   2.4.12

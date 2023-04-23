@@ -31,55 +31,68 @@ module PapierkramApi
     end
 
     def business_intelligence
-      @business_intelligence ||= PapierkramApi::V1::BusinessIntelligence::Base.new
+      @business_intelligence ||=
+        PapierkramApi::V1::BusinessIntelligence::Base.new
     end
 
     def banking_bank_connections
-      @banking_bank_connections ||= PapierkramApi::V1::Endpoints::Banking::BankConnections.new(@client)
+      @banking_bank_connections ||=
+        PapierkramApi::V1::Endpoints::Banking::BankConnections.new(@client)
     end
 
     def banking_transactions
-      @banking_transactions ||= PapierkramApi::V1::Endpoints::Banking::Transactions.new(@client)
+      @banking_transactions ||=
+        PapierkramApi::V1::Endpoints::Banking::Transactions.new(@client)
     end
 
     def contact_companies
-      @contact_companies ||= PapierkramApi::V1::Endpoints::Contact::Companies.new(@client)
+      @contact_companies ||=
+        PapierkramApi::V1::Endpoints::Contact::Companies.new(@client)
     end
 
     def contact_companies_persons
-      @contact_companies_persons ||= PapierkramApi::V1::Endpoints::Contact::CompaniesPersons.new(@client)
+      @contact_companies_persons ||=
+        PapierkramApi::V1::Endpoints::Contact::CompaniesPersons.new(@client)
     end
 
     def expense_vouchers
-      @expense_vouchers ||= PapierkramApi::V1::Endpoints::Expense::Vouchers.new(@client)
+      @expense_vouchers ||=
+        PapierkramApi::V1::Endpoints::Expense::Vouchers.new(@client)
     end
 
     def income_estimates
-      @income_estimates ||= PapierkramApi::V1::Endpoints::Income::Estimates.new(@client)
+      @income_estimates ||=
+        PapierkramApi::V1::Endpoints::Income::Estimates.new(@client)
     end
 
     def income_invoices
-      @income_invoices ||= PapierkramApi::V1::Endpoints::Income::Invoices.new(@client)
+      @income_invoices ||=
+        PapierkramApi::V1::Endpoints::Income::Invoices.new(@client)
     end
 
     def income_propositions
-      @income_propositions ||= PapierkramApi::V1::Endpoints::Income::Propositions.new(@client)
+      @income_propositions ||=
+        PapierkramApi::V1::Endpoints::Income::Propositions.new(@client)
     end
 
     def info
-      @info ||= PapierkramApi::V1::Endpoints::Info.new(@client)
+      @info ||=
+        PapierkramApi::V1::Endpoints::Info.new(@client)
     end
 
     def projects
-      @projects ||= PapierkramApi::V1::Endpoints::Projects.new(@client)
+      @projects ||=
+        PapierkramApi::V1::Endpoints::Projects.new(@client)
     end
 
     def tracker_tasks
-      @tracker_tasks ||= PapierkramApi::V1::Endpoints::Tracker::Tasks.new(@client)
+      @tracker_tasks ||=
+        PapierkramApi::V1::Endpoints::Tracker::Tasks.new(@client)
     end
 
     def tracker_time_entries
-      @tracker_time_entries ||= PapierkramApi::V1::Endpoints::Tracker::TimeEntries.new(@client)
+      @tracker_time_entries ||=
+        PapierkramApi::V1::Endpoints::Tracker::TimeEntries.new(@client)
     end
 
     private
