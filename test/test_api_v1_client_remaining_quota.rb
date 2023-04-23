@@ -5,7 +5,7 @@ require 'test_helper'
 class TestRemainingQuota < Minitest::Test
   describe 'Remaining Quota Header Info' do
     it 'reads remaining quota', :vcr do
-      client = PapierkramApi::Client.new('simonneutert')
+      client = PapierkramApi::Client.new
       response = client.info.details
       # response_body = response.body
       response_headers = response.headers

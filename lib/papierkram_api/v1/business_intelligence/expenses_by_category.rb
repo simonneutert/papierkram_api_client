@@ -18,11 +18,9 @@ module PapierkramApi
           return {} if expense_vouchers.is_a?(Array) && expense_vouchers.empty?
 
           validate_expense_vouchers!(expense_vouchers)
-          if block_given?
-            results(expense_vouchers, &block)
-          else
-            results(expense_vouchers)
-          end
+          return results(expense_vouchers, &block) if block
+
+          results(expense_vouchers)
         end
 
         private

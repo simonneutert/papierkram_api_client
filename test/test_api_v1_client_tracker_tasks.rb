@@ -5,7 +5,7 @@ require 'test_helper'
 class TestTrackerTasks < Minitest::Test
   describe 'Tracker Tasks Requests' do
     it 'gets a tracker tasks', :vcr do
-      client = PapierkramApi::Client.new('simonneutert')
+      client = PapierkramApi::Client.new
       response = client.tracker_tasks.by(id: 1)
       response_body = response.body
 
@@ -14,7 +14,7 @@ class TestTrackerTasks < Minitest::Test
     end
 
     it 'get all tracker tasks', :vcr do
-      client = PapierkramApi::Client.new('simonneutert')
+      client = PapierkramApi::Client.new
       response = client.tracker_tasks.all
       response_body = response.body
 

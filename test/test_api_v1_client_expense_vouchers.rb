@@ -5,7 +5,7 @@ require 'test_helper'
 class TestExpenseVouchers < Minitest::Test
   describe 'ExpenseVouchers Requests' do
     it 'gets a single expense voucher', :vcr do
-      client = PapierkramApi::Client.new('simonneutert')
+      client = PapierkramApi::Client.new
       response = client.expense_vouchers.by(id: 650)
       response_body = response.body
 
@@ -14,7 +14,7 @@ class TestExpenseVouchers < Minitest::Test
     end
 
     it 'gets all expense vouchers', :vcr do
-      client = PapierkramApi::Client.new('simonneutert')
+      client = PapierkramApi::Client.new
       response = client.expense_vouchers.all
       response_body = response.body
 
@@ -23,7 +23,7 @@ class TestExpenseVouchers < Minitest::Test
     end
 
     it 'gets all expense vouchers ordered by id desc', :vcr do
-      client = PapierkramApi::Client.new('simonneutert')
+      client = PapierkramApi::Client.new
       response = client.expense_vouchers.all(order_direction: 'desc', order_by: 'id')
       response_body = response.body
 
@@ -34,7 +34,7 @@ class TestExpenseVouchers < Minitest::Test
     end
 
     it 'gets all expense vouchers ordered by id asc', :vcr do
-      client = PapierkramApi::Client.new('simonneutert')
+      client = PapierkramApi::Client.new
       response = client.expense_vouchers.all(order_direction: 'asc', order_by: 'id')
       response_body = response.body
 

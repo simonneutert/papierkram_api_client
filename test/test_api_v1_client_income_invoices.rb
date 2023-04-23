@@ -5,7 +5,7 @@ require 'test_helper'
 class TestIncomeInvoices < Minitest::Test
   describe 'Income Invoice Requests' do
     it 'downloads a pdf', :vcr do
-      client = PapierkramApi::Client.new('simonneutert')
+      client = PapierkramApi::Client.new
       response = client.income_invoices.by(id: 35, pdf: true)
 
       assert_equal(200, response.status)
@@ -16,7 +16,7 @@ class TestIncomeInvoices < Minitest::Test
     end
 
     it 'get all income invoices paginated', :vcr do
-      client = PapierkramApi::Client.new('simonneutert')
+      client = PapierkramApi::Client.new
       response = client.income_invoices.all
       response_body = response.body
 

@@ -5,7 +5,7 @@ require 'test_helper'
 class TestProjects < Minitest::Test
   describe 'Project Requests' do
     it 'gets a project', :vcr do
-      client = PapierkramApi::Client.new('simonneutert')
+      client = PapierkramApi::Client.new
       response = client.projects.by(id: 5)
       response_body = response.body
 
@@ -14,7 +14,7 @@ class TestProjects < Minitest::Test
     end
 
     it 'get all projects', :vcr do
-      client = PapierkramApi::Client.new('simonneutert')
+      client = PapierkramApi::Client.new
       response = client.projects.all
       response_body = response.body
 

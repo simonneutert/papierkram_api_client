@@ -5,7 +5,7 @@ require 'test_helper'
 class TestIncomeEstimates < Minitest::Test
   describe 'Income Estimate Requests' do
     it 'downloads a pdf', :vcr do
-      client = PapierkramApi::Client.new('simonneutert')
+      client = PapierkramApi::Client.new
       response = client.income_estimates.by(id: 1, pdf: true)
 
       assert_equal(200, response.status)
@@ -16,7 +16,7 @@ class TestIncomeEstimates < Minitest::Test
     end
 
     it 'get all income estimates paginated', :vcr do
-      client = PapierkramApi::Client.new('simonneutert')
+      client = PapierkramApi::Client.new
       response = client.income_estimates.all
       response_body = response.body
 
