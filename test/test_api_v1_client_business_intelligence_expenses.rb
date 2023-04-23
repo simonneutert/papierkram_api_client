@@ -5,7 +5,7 @@ require 'test_helper'
 class TestBusinessIntelligenceExpenses < Minitest::Test
   describe 'Business Intelligence Expenses Requests' do
     it 'categorizes expenses by category', :vcr do
-      client = PapierkramApi::Client.new
+      client = PapierkramApi::Client.new('simonneutert')
       expense_vouchers_api = client.expense_vouchers
       expense_voucher_data_service =
         PapierkramApi::V1::BusinessIntelligence::SmartQueries::ExpenseVouchersForMonthInYear.new(expense_vouchers_api)
@@ -26,7 +26,7 @@ class TestBusinessIntelligenceExpenses < Minitest::Test
     end
 
     it 'categorizes expenses by category filter example', :vcr do
-      client = PapierkramApi::Client.new
+      client = PapierkramApi::Client.new('simonneutert')
       expense_vouchers_api = client.expense_vouchers
       expense_voucher_data_service =
         PapierkramApi::V1::BusinessIntelligence::SmartQueries::ExpenseVouchersForMonthInYear.new(expense_vouchers_api)

@@ -4,7 +4,7 @@ require 'test_helper'
 
 class TestTrackerTimeEntries < Minitest::Test
   describe 'Tracker TimeEntries Requests' do
-    client = PapierkramApi::Client.new
+    client = PapierkramApi::Client.new('simonneutert')
 
     it 'raises an error on faulty billing_state params', :vcr do
       assert_raises ArgumentError do

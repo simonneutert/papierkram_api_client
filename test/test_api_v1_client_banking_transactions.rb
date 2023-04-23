@@ -5,7 +5,7 @@ require 'test_helper'
 class TestBankingTransactions < Minitest::Test
   describe 'Banking Transaction Requests' do
     it 'get a banking transaction', :vcr do
-      client = PapierkramApi::Client.new
+      client = PapierkramApi::Client.new('simonneutert')
       response = client.banking_transactions.by(id: 4)
       response_body = response.body
 
@@ -46,7 +46,7 @@ class TestBankingTransactions < Minitest::Test
     end
 
     it 'get all banking bank connections paginated', :vcr do
-      client = PapierkramApi::Client.new
+      client = PapierkramApi::Client.new('simonneutert')
       response = client.banking_transactions.all(bank_connection_id: 4,
                                                  page: 1,
                                                  page_size: 2)
