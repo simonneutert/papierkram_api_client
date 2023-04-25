@@ -50,7 +50,8 @@ Aktuell unterstützte Endpunkte / Objekte:
 
 ## Was, wie, warum?<!-- omit in toc -->
 
-Papierkram.de hat nun endlich eine API Schnittstelle für die Programmierung von eigenen Anwendungen. Die Dokumentation findest du hier: [https://DEINE-SUBDOMAIN.papierkram.de/papierkram_api/v1/api-docs/index.html](https://DEINE-SUBDOMAIN.papierkram.de/papierkram_api/v1/api-docs/index.html). Dieses Projekt soll eine einfache Schnittstelle für die Papierkram API bereitstellen.
+Papierkram.de hat nun eine API Schnittstelle für die Programmierung von eigenen Anwendungen. Die Dokumentation dazu findest du [hier](https://demo.papierkram.de/papierkram_api/v1/api-docs/index.html).  
+Dieses Projekt soll eine einfach zu handhabende Schnittstelle für die Papierkram API bereitstellen.
 
 Ziele:
 
