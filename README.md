@@ -8,7 +8,9 @@ Der erste ~~illegale~~ inoffizielle API Client in [Ruby](https://www.ruby-lang.o
 
 ---
 
-<img src="pac.svg" alt="PAC Logo, Zunge leckt an Karl Klammer und zieht Daten aus dem Papierkram-Account wie Frosch die Fliege vom Teich" width="300">
+<div align="center">
+  <img src="logo.svg" alt="PAC Logo, Zunge leckt an Karl Klammer und zieht Daten aus dem Papierkram-Account wie Frosch die Fliege vom Teich" width="300">
+<div>
 
 Hol dir den [Papierkram API Client](https://rubygems.org/gems/papierkram_api_client) als [Ruby Gem](https://rubygems.org/gems/papierkram_api_client)!
 
