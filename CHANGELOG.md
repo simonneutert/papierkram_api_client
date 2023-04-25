@@ -2,12 +2,16 @@
 
 ## [Unreleased]
 
+- [#PR](https://github.com/simonneutert/papierkram_api_client/pull/<PRNUMBER>) Description of your PR contribution here. [@ghusername](https://github.com/<ghusername>)
+
+### Changed
+
+- [#24](https://github.com/simonneutert/papierkram_api_client/pull/24) Changes logo to a red version one, to match the NodeJS sister project. [@simonneutert](https://github.com/simonneutert), [@rabocalypse](https://github.com/rabocalypse)
+
 ### Added
 
-- [#22](https://github.com/simonneutert/papierkram_api_client/pull/22>) Factors out VcrSanitizer and adds some more Rubocop goodness. [@simonneutert](https://github.com/simonneutert)
-- [#21](https://github.com/simonneutert/papierkram_api_client/pull/21>) Adds more auto-sanitizing in VCR. [@simonneutert](https://github.com/simonneutert)
-
-- [#PR](https://github.com/simonneutert/papierkram_api_client/pull/<PRNUMBER>) Description of your PR contribution here. [@ghusername](https://github.com/<ghusername>)
+- [#22](https://github.com/simonneutert/papierkram_api_client/pull/22) Factors out VcrSanitizer and adds some more Rubocop goodness. [@simonneutert](https://github.com/simonneutert)
+- [#21](https://github.com/simonneutert/papierkram_api_client/pull/21) Adds more auto-sanitizing in VCR. [@simonneutert](https://github.com/simonneutert)
 
 ## [0.2.1] - 2023-04-21
 
