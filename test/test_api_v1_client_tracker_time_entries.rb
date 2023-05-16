@@ -3,7 +3,7 @@
 require 'test_helper'
 
 class TestTrackerTimeEntries < Minitest::Test
-  describe 'Tracker TimeEntries Requests' do
+  describe 'Tracker::TimeEntries Requests' do
     it 'gets a tracker time_entry', :vcr do
       client = PapierkramApi::Client.new('simonneutert')
       response = client.tracker_time_entries.by(id: 1)

@@ -2,7 +2,9 @@
 
 ## [Unreleased]
 
-- [#PR](https://github.com/simonneutert/papierkram_api_client/pull/<PRNUMBER>) Description of your PR contribution here. [@ghusername](https://github.com/<ghusername>)
+### Fixed
+
+- [#29](https://github.com/simonneutert/papierkram_api_client/pull/29) Fixing namespaces in tests. [@simonneutert](https://github.com/simonneutert)
 
 ### Changed
 

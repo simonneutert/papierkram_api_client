@@ -3,7 +3,7 @@
 require 'test_helper'
 
 class TestBankingBankConnections < Minitest::Test
-  describe 'Banking Bank Connections Requests' do
+  describe 'Banking::BankConnections Requests' do
     it 'get a banking bank connections', :vcr do
       client = PapierkramApi::Client.new('simonneutert')
       response = client.banking_bank_connections.by(id: 4)
