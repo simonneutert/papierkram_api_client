@@ -3,7 +3,7 @@
 require 'test_helper'
 
 class TestValidatorsExpenseVoucher < Minitest::Test
-  describe 'Expense Voucher Validators' do
+  describe 'Expense::Voucher Validators' do
     it 'validates structe in sample is valid', :vcr do
       client = PapierkramApi::Client.new('simonneutert')
       res_all_page1 = client.expense_vouchers.all(page: 1, page_size: 10)

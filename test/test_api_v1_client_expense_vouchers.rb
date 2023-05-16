@@ -3,7 +3,7 @@
 require 'test_helper'
 
 class TestExpenseVouchers < Minitest::Test
-  describe 'ExpenseVouchers Requests' do
+  describe 'Expense::Vouchers Requests' do
     it 'gets a single expense voucher', :vcr do
       client = PapierkramApi::Client.new('simonneutert')
       response = client.expense_vouchers.by(id: 650)

@@ -3,7 +3,7 @@
 require 'test_helper'
 
 class TestIncomePropositions < Minitest::Test
-  describe 'Income Propositions Requests' do
+  describe 'Income::Propositions Requests' do
     it 'gets a single income proposition', :vcr do
       client = PapierkramApi::Client.new('simonneutert')
       response = client.income_propositions.by(id: 2)

@@ -3,7 +3,7 @@
 require 'test_helper'
 
 class TestIncomeInvoices < Minitest::Test
-  describe 'Income Invoice Requests' do
+  describe 'Income::Invoice Requests' do
     it 'downloads a pdf', :vcr do
       client = PapierkramApi::Client.new('simonneutert')
       response = client.income_invoices.by(id: 35, pdf: true)
