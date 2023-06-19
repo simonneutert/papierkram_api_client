@@ -3,7 +3,7 @@ PATH
   specs:
     papierkram_api_client (0.2.1)
       faraday (~> 2.7)
-      httpx (>= 0.22.5, < 0.24.0)
+      httpx (>= 0.22.5, < 0.25.0)
 
 GEM
   remote: https://rubygems.org/
@@ -15,7 +15,7 @@ GEM
       ruby2_keywords (>= 0.0.4)
     faraday-net_http (3.0.2)
     http-2-next (0.5.1)
-    httpx (0.23.4)
+    httpx (0.24.0)
       http-2-next (>= 0.4.1)
     json (2.6.3)
     method_source (1.0.0)
