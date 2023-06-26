@@ -13,4 +13,4 @@ gem 'rubocop', '~> 1.52', require: false
 gem 'rubocop-minitest', '~> 0.31.0', require: false
 gem 'rubocop-performance', '~> 1.18', require: false
 gem 'rubocop-rake', '~> 0.6.0', require: false
-gem 'vcr', '~> 6.1'
+gem 'vcr', '~> 6.2'
