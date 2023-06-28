@@ -5,6 +5,7 @@
 - [#<PRNUMBER>](https://github.com/simonneutert/papierkram_api_client/pull/<PRNUMBER>) description. [@<githubusername>](https://github.com/<githubusername>)
 ### Added
 
+- [#47](https://github.com/simonneutert/papierkram_api_client/pull/47) Adds CRUD endpoint support for income propositions. [@simonneutert](https://github.com/simonneutert)
 - [#46](https://github.com/simonneutert/papierkram_api_client/pull/46) Adds CRUD endpoint support for projects. [@simonneutert](https://github.com/simonneutert)
 - [#45](https://github.com/simonneutert/papierkram_api_client/pull/45) Adds CRUD endpoint support for contact companies persons. [@simonneutert](https://github.com/simonneutert)
 
