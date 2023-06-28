@@ -102,6 +102,8 @@ Ziele:
     - [erstelle ein Projekt](#erstelle-ein-projekt)
     - [aktualisiere ein Projekt](#aktualisiere-ein-projekt)
     - [lösche ein Projekt](#lösche-ein-projekt)
+    - [archiviere ein Projekt](#archiviere-ein-projekt)
+    - [unarchiviere ein Projekt](#unarchiviere-ein-projekt)
   - [Tracker::Task (Aufgabe)](#trackertask-aufgabe)
     - [alle Aufgaben](#alle-aufgaben)
     - [eine Aufgabe](#eine-aufgabe)
@@ -558,6 +560,22 @@ Siehe [Projects](lib/papierkram_api/v1/endpoints/projects.rb) für mögliche Par
 
 ```ruby
 project = client.projects.delete_by(id: 1)
+puts project.headers
+puts project.body
+```
+
+#### archiviere ein Projekt
+
+```ruby
+project = client.projects.archive_by(id: 1)
+puts project.headers
+puts project.body
+```
+
+#### unarchiviere ein Projekt
+
+```ruby
+project = client.projects.unarchive_by(id: 1)
 puts project.headers
 puts project.body
 ```

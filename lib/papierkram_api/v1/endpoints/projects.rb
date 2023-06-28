@@ -64,6 +64,14 @@ module PapierkramApi
         def delete_by(id:)
           delete("#{@url_api_path}/projects/#{id}")
         end
+
+        def archive_by(id:)
+          post("#{@url_api_path}/projects/#{id}/archive")
+        end
+
+        def unarchive_by(id:)
+          post("#{@url_api_path}/projects/#{id}/unarchive")
+        end
       end
     end
   end

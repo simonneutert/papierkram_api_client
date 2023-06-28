@@ -140,5 +140,19 @@ class TestProjects < Minitest::Test
 
       assert_equal(204, response.status)
     end
+
+    it 'archive a project', :vcr do
+      client = PapierkramApi::Client.new('simonneutert')
+      response = client.projects.archive_by(id: 15)
+
+      assert_equal(200, response.status)
+    end
+
+    it 'unarchive a project', :vcr do
+      client = PapierkramApi::Client.new('simonneutert')
+      response = client.projects.unarchive_by(id: 15)
+
+      assert_equal(200, response.status)
+    end
   end
 end
