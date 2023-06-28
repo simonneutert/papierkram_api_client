@@ -3,6 +3,9 @@
 [next] - unreleased
 
 - [#<PRNUMBER>](https://github.com/simonneutert/papierkram_api_client/pull/<PRNUMBER>) description. [@<githubusername>](https://github.com/<githubusername>)
+### Added
+
+- [#45](https://github.com/simonneutert/papierkram_api_client/pull/45) Adds CRUD endpoint support for contact companies persons. [@simonneutert](https://github.com/simonneutert)
 
 ## [0.2.2] - 2023-06-28
 

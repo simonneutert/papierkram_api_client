@@ -77,6 +77,9 @@ Ziele:
   - [Contact::Company (Kontaktperson eines Unternehmens)](#contactcompany-kontaktperson-eines-unternehmens)
     - [alle Kontaktpersonen (eines Unternehmens)](#alle-kontaktpersonen-eines-unternehmens)
     - [eine Kontaktperson (eines Unternehmens)](#eine-kontaktperson-eines-unternehmens)
+    - [erstelle eine Kontaktperson (eines Unternehmens)](#erstelle-eine-kontaktperson-eines-unternehmens)
+    - [aktualisiere eine Kontaktperson (eines Unternehmens)](#aktualisiere-eine-kontaktperson-eines-unternehmens)
+    - [lösche eine Kontaktperson (eines Unternehmens)](#lösche-eine-kontaktperson-eines-unternehmens)
   - [Expense::Voucher (Ausgabe Beleg)](#expensevoucher-ausgabe-beleg)
     - [alle Ausgabe Belege](#alle-ausgabe-belege)
     - [einen Ausgabe Beleg](#einen-ausgabe-beleg)
@@ -343,6 +346,41 @@ puts companies.body
 
 ```ruby
 company = client.contact_companies_persons.by(company_id: 1, id: 1)
+puts company.headers
+puts company.body
+```
+
+#### erstelle eine Kontaktperson (eines Unternehmens)
+
+```ruby
+company = client.contact_companies_persons.create(
+  company_id: 1, 
+  attributes: { 
+    first_name: 'Max',
+    last_name: 'Mustermann'
+  }
+)
+puts company.headers
+puts company.body
+```
+
+Siehe [CompaniesPersons#create](lib/papierkram_api/v1/endpoints/contact/companies_persons.rb) für mögliche Parameter.
+
+#### aktualisiere eine Kontaktperson (eines Unternehmens)
+
+```ruby
+company = client.contact_companies_persons
+                .update_by(company_id: 1, id: 1, attributes: { first_name: 'Moritz' })
+puts company.headers
+puts company.body
+```
+
+Siehe [CompaniesPersons#update_by](lib/papierkram_api/v1/endpoints/contact/companies_persons.rb) für mögliche Parameter.
+
+#### lösche eine Kontaktperson (eines Unternehmens)
+
+```ruby
+company = client.contact_companies_persons.delete_by(company_id: 1, id: 1)
 puts company.headers
 puts company.body
 ```
