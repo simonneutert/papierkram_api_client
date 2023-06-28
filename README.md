@@ -31,9 +31,8 @@ Schau bitte dort um alle Rückgabefelder/-werte zu checken, bis ich die Dokument
 
 ---
 
-Ruby client für die Papierkram API (V1).
+## Aktuell unterstützte Endpunkte der Papierkram API (V1)<!-- omit in toc -->
 
-Aktuell unterstützte Endpunkte / Objekte:
 
 - [x] Banking::BankConnection
 - [x] Banking::BankTransaction
@@ -50,12 +49,10 @@ Aktuell unterstützte Endpunkte / Objekte:
 
 ## Was, wie, warum?<!-- omit in toc -->
 
-Papierkram.de hat nun eine API Schnittstelle für die Programmierung von eigenen Anwendungen. Die Dokumentation dazu findest du [hier](https://demo.papierkram.de/papierkram_api/v1/api-docs/index.html).  
-Dieses Projekt soll eine einfach zu handhabende Schnittstelle für die Papierkram API bereitstellen.
+Papierkram.de hat nun eine API Schnittstelle für die Programmierung von eigenen Anwendungen. Die Dokumentation dazu findest du [hier](https://demo.papierkram.de/papierkram_api/v1/api-docs/index.html).
 
 Ziele:
 
-- Eine einfache als Gem verfügbare Schnittstelle für die Papierkram API.
 - Rückgabe von Hashes, Arrays, etc. statt von komplexeren Objekten (der gefürchtete DIY-Ansatz).
 - Einfach zu testen und zu erweitern.
 
