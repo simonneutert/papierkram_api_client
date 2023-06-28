@@ -1,5 +1,9 @@
 # Changelog
 
+[next] - unreleased
+
+- [#<PRNUMBER>](https://github.com/simonneutert/papierkram_api_client/pull/<PRNUMBER>) description. [@<githubusername>](https://github.com/<githubusername>)
+
 ## [0.2.2] - 2023-06-28
 
 ### Fixed
