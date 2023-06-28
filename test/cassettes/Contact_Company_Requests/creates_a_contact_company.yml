@@ -1,0 +1,81 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://simonneutert.papierkram.de/api/v1/contact/companies
+    body:
+      encoding: UTF-8
+      string: '{"contact_type":"customer","name":"Büffelranch Bongodude","phone":null,"fax":null,"email":null,"delivery_method":null,"ust_idnr":null,"website":null,"twitter":null,"postal_street":null,"postal_city":null,"postal_zip":null,"postal_country":null,"physical_street":null,"physical_city":null,"physical_zip":null,"physical_country":null,"bank_blz":null,"bank_institute":null,"bank_account_no":null,"bank_bic":null,"bank_iban":null,"notes":null,"color":null}'
+    headers:
+      User-Agent:
+      - Faraday v2.7.7
+      Authorization:
+      - Bearer <API BEARER>
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      content-type:
+      - application/json; charset=utf-8
+      status:
+      - 201 Created
+      cache-control:
+      - no-store
+      access-control-allow-origin:
+      - "*"
+      vary:
+      - Accept
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      x-remaining-quota:
+      - '9989'
+      x-permitted-cross-domain-policies:
+      - none
+      pragma:
+      - no-cache
+      x-consumed-quota:
+      - '10'
+      x-request-id:
+      - 6b6bbd40-0495-456d-bb34-2c9f0eadaf5a
+      location:
+      - https://simonneutert.papierkram.de/adressbuch/eintraege/6
+      x-download-options:
+      - noopen
+      etag:
+      - W/"dc7851abcc27647b52d35e147107f4ff"
+      x-frame-options:
+      - SAMEORIGIN
+      x-runtime:
+      - '0.372145'
+      expires:
+      - Fri, 01 Jan 1990 00:00:00 GMT
+      date:
+      - Wed, 28 Jun 2023 15:01:08 GMT
+      set-cookie:
+      - redis_session_store=<UNICORN>; path=/; expires=Wed, 12 Jul 2023 15:01:08 GMT;
+        HttpOnly; SameSite=Lax
+      x-powered-by:
+      - Phusion Passenger(R) 6.0.15
+      server:
+      - nginx/1.18.0 + Phusion Passenger(R) 6.0.15
+      x-version:
+      - STABLE
+      x-robots-tag:
+      - noindex, nofollow;
+      strict-transport-security:
+      - max-age=31536000; includeSubdomains;;
+      x-xss-protection:
+      - 1; mode=block;
+      x-content-type-options:
+      - nosniff;
+      x-debug-subdomain:
+      - simonneutert
+    body:
+      encoding: UTF-8
+      string: '{"type":"company","id":6,"name":"Büffelranch Bongodude","contact_type":"customer","supplier_no":null,"customer_no":null,"email":null,"phone":null,"website":null,"twitter":null,"fax":null,"postal_street":null,"postal_zip":null,"postal_city":null,"postal_country":"Deutschland","physical_street":null,"physical_zip":null,"physical_city":null,"physical_country":"Deutschland","delivery_method":null,"ust_idnr":null,"logo_file_name":null,"logo_content_type":null,"logo_file_size":null,"logo_updated_at":null,"bank_blz":null,"bank_institute":null,"bank_account_no":null,"bank_bic":null,"bank_sepa_mandate_reference":"SEPAMRBB","bank_sepa_mandate_accepted":null,"bank_iban":null,"inbound_address":"t02l","notes":null,"record_state":"active","flagged":null,"created_at":"2023-06-28T17:01:08.000+02:00","updated_at":"2023-06-28T17:01:08.000+02:00","color":null,"people":{"type":"list","has_more":false,"url":"/api/v1/contact/companies/6/persons","entries":[]},"projects":{"type":"list","has_more":false,"url":"/api/v1/projects?company_id=6","entries":[{"type":"project","id":6,"name":"Kein
+        Projekt"}]},"invoices":{"type":"list","has_more":false,"url":"/api/v1/income/invoices?company_id=6","entries":[]},"vouchers":{"type":"list","has_more":false,"url":"/api/v1/expense/vouchers?company_id=6","entries":[]}}'
+  recorded_at: Wed, 28 Jun 2023 15:01:08 GMT
+recorded_with: VCR 6.2.0
