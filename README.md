@@ -99,6 +99,11 @@ Ziele:
   - [Project::Project (Projekt)](#projectproject-projekt)
     - [alle Projekte](#alle-projekte)
     - [ein Projekt](#ein-projekt)
+    - [erstelle ein Projekt](#erstelle-ein-projekt)
+    - [aktualisiere ein Projekt](#aktualisiere-ein-projekt)
+    - [lösche ein Projekt](#lösche-ein-projekt)
+    - [archiviere ein Projekt](#archiviere-ein-projekt)
+    - [unarchiviere ein Projekt](#unarchiviere-ein-projekt)
   - [Tracker::Task (Aufgabe)](#trackertask-aufgabe)
     - [alle Aufgaben](#alle-aufgaben)
     - [eine Aufgabe](#eine-aufgabe)
@@ -527,6 +532,50 @@ puts projects.body
 
 ```ruby
 project = client.projects.by(id: 1)
+puts project.headers
+puts project.body
+```
+
+#### erstelle ein Projekt
+
+```ruby
+project = client.projects.create(name: 'Projekt 1')
+puts project.headers
+puts project.body
+```
+
+Siehe [Projects](lib/papierkram_api/v1/endpoints/projects.rb) für mögliche Parameter.
+
+#### aktualisiere ein Projekt
+
+```ruby
+project = client.projects.update_by(id: 1, attributes: { name: 'Projekt 2' })
+puts project.headers
+puts project.body
+```
+
+Siehe [Projects](lib/papierkram_api/v1/endpoints/projects.rb) für mögliche Parameter.
+
+#### lösche ein Projekt
+
+```ruby
+project = client.projects.delete_by(id: 1)
+puts project.headers
+puts project.body
+```
+
+#### archiviere ein Projekt
+
+```ruby
+project = client.projects.archive_by(id: 1)
+puts project.headers
+puts project.body
+```
+
+#### unarchiviere ein Projekt
+
+```ruby
+project = client.projects.unarchive_by(id: 1)
 puts project.headers
 puts project.body
 ```

@@ -1,0 +1,80 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://simonneutert.papierkram.de/api/v1/projects/15/unarchive
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      User-Agent:
+      - Faraday v2.7.7
+      Authorization:
+      - Bearer <API BEARER>
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      content-type:
+      - application/json; charset=utf-8
+      status:
+      - 200 OK
+      cache-control:
+      - no-store
+      access-control-allow-origin:
+      - "*"
+      vary:
+      - Accept
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      x-remaining-quota:
+      - '9916'
+      x-permitted-cross-domain-policies:
+      - none
+      pragma:
+      - no-cache
+      x-consumed-quota:
+      - '1'
+      x-request-id:
+      - c6b4d872-b088-4adf-af64-234ea586751c
+      x-download-options:
+      - noopen
+      etag:
+      - W/"674ec03754c1abf79f17a8f6cd0f7f94"
+      x-frame-options:
+      - SAMEORIGIN
+      x-runtime:
+      - '0.128956'
+      expires:
+      - Fri, 01 Jan 1990 00:00:00 GMT
+      date:
+      - Wed, 28 Jun 2023 18:32:29 GMT
+      set-cookie:
+      - redis_session_store=<UNICORN>; path=/; expires=Wed, 12 Jul 2023 18:32:29 GMT;
+        HttpOnly; SameSite=Lax
+      x-powered-by:
+      - Phusion Passenger(R) 6.0.15
+      server:
+      - nginx/1.18.0 + Phusion Passenger(R) 6.0.15
+      x-version:
+      - STABLE
+      x-robots-tag:
+      - noindex, nofollow;
+      strict-transport-security:
+      - max-age=31536000; includeSubdomains;;
+      x-xss-protection:
+      - 1; mode=block;
+      x-content-type-options:
+      - nosniff;
+      x-debug-subdomain:
+      - simonneutert
+    body:
+      encoding: UTF-8
+      string: '{"type":"project","id":15,"name":"Test Project","description":null,"start_date":"2020-01-01","end_date":"2020-12-31","flagged":null,"budget_type":null,"budget_money":null,"budget_time":null,"budget_time_unit":null,"customer_default":false,"record_state":"active","created_at":"2023-06-28T20:31:30.000+02:00","updated_at":"2023-06-28T20:32:29.000+02:00","company_id":3,"color":null,"default_proposition":null,"customer":{"type":"company","id":3,"name":"adsad
+        asd","contact_type":"customer","supplier_no":null,"customer_no":"K-00001","email":null,"phone":"<PHONE>","website":null,"twitter":null,"fax":null,"postal_street":"as
+        d","postal_zip":"16845","postal_city":"Kyritz Holzhausen","postal_country":"Deutschland","physical_street":null,"physical_zip":null,"physical_city":null,"physical_country":"Deutschland","delivery_method":null,"ust_idnr":null,"logo_file_name":null,"logo_content_type":null,"logo_file_size":null,"logo_updated_at":null,"bank_blz":null,"bank_institute":null,"bank_account_no":null,"bank_bic":null,"bank_sepa_mandate_reference":"SEPAMRK00001AA","bank_sepa_mandate_accepted":null,"bank_iban":null,"inbound_address":"xaja","notes":null,"record_state":"active","flagged":null,"created_at":"2023-04-27T17:07:47.000+02:00","updated_at":"2023-06-28T17:05:46.000+02:00","color":null},"team_members":[],"tasks":{"type":"list","has_more":false,"url":"/api/v1/tracker/tasks?project_id=15","entries":[]},"invoices":{"type":"list","has_more":false,"url":"/api/v1/income/invoices?project_id=15","entries":[]},"vouchers":{"type":"list","has_more":false,"url":"/api/v1/expense/vouchers?project_id=15","entries":[]}}'
+  recorded_at: Wed, 28 Jun 2023 18:32:29 GMT
+recorded_with: VCR 6.2.0
