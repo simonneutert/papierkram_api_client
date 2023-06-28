@@ -12,6 +12,7 @@
 
 ### Added
 
+- [#44](https://github.com/simonneutert/papierkram_api_client/pull/44) Adds CRUD endpoint support for contact companies. [@simonneutert](https://github.com/simonneutert)
 - [#22](https://github.com/simonneutert/papierkram_api_client/pull/22) Factors out VcrSanitizer and adds some more Rubocop goodness. [@simonneutert](https://github.com/simonneutert)
 - [#21](https://github.com/simonneutert/papierkram_api_client/pull/21) Adds more auto-sanitizing in VCR. [@simonneutert](https://github.com/simonneutert)
 

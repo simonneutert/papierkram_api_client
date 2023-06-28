@@ -1,0 +1,71 @@
+---
+http_interactions:
+- request:
+    method: delete
+    uri: https://simonneutert.papierkram.de/api/v1/contact/companies/123456789
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.7
+      Authorization:
+      - Bearer <API BEARER>
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      content-type:
+      - application/json; charset=utf-8
+      status:
+      - 404 Not Found
+      cache-control:
+      - no-store
+      access-control-allow-origin:
+      - "*"
+      vary:
+      - Accept
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      x-permitted-cross-domain-policies:
+      - none
+      pragma:
+      - no-cache
+      x-request-id:
+      - 0d09e0f3-e9e1-43da-84c0-4e4e27c60c53
+      x-download-options:
+      - noopen
+      x-runtime:
+      - '0.076106'
+      x-frame-options:
+      - SAMEORIGIN
+      expires:
+      - Fri, 01 Jan 1990 00:00:00 GMT
+      date:
+      - Wed, 28 Jun 2023 15:05:47 GMT
+      set-cookie:
+      - redis_session_store=<UNICORN>; path=/; expires=Wed, 12 Jul 2023 15:05:47 GMT;
+        HttpOnly; SameSite=Lax
+      x-powered-by:
+      - Phusion Passenger(R) 6.0.15
+      server:
+      - nginx/1.18.0 + Phusion Passenger(R) 6.0.15
+      x-version:
+      - STABLE
+      x-robots-tag:
+      - noindex, nofollow;
+      strict-transport-security:
+      - max-age=31536000; includeSubdomains;;
+      x-xss-protection:
+      - 1; mode=block;
+      x-content-type-options:
+      - nosniff;
+      x-debug-subdomain:
+      - simonneutert
+    body:
+      encoding: UTF-8
+      string: '{"type":"error","error_type":"not_found","message":"Couldn''t find
+        Contact::Company with ''id''=123456789","correlation_id":"0d09e0f3-e9e1-43da-84c0-4e4e27c60c53"}'
+  recorded_at: Wed, 28 Jun 2023 15:05:47 GMT
+recorded_with: VCR 6.2.0

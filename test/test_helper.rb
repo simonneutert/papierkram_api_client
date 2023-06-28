@@ -36,7 +36,12 @@ VCR.configure do |c|
       interaction.response.body.gsub!(email, '<EMAIL>')
     end
 
-    json_body = JSON.parse(interaction.response.body)
+    json_body = begin
+      JSON.parse(interaction.response.body)
+    rescue JSON::ParserError => e
+      puts e
+      {}
+    end
 
     # auto sanitize by key in json body
     iterate_throgh_hash(json_body) do |hash, k, v|

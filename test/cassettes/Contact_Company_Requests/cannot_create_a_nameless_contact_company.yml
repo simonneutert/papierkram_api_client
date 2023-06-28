@@ -1,0 +1,77 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://simonneutert.papierkram.de/api/v1/contact/companies
+    body:
+      encoding: UTF-8
+      string: '{"contact_type":"customer","name":"","phone":"123456789","fax":null,"email":null,"delivery_method":null,"ust_idnr":null,"website":null,"twitter":null,"postal_street":null,"postal_city":null,"postal_zip":null,"postal_country":null,"physical_street":null,"physical_city":null,"physical_zip":null,"physical_country":null,"bank_blz":null,"bank_institute":null,"bank_account_no":null,"bank_bic":null,"bank_iban":null,"notes":null,"color":null}'
+    headers:
+      User-Agent:
+      - Faraday v2.7.7
+      Authorization:
+      - Bearer <API BEARER>
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 422
+      message: Unprocessable Entity
+    headers:
+      content-type:
+      - application/json; charset=utf-8
+      status:
+      - 422 Unprocessable Entity
+      cache-control:
+      - no-store
+      access-control-allow-origin:
+      - "*"
+      vary:
+      - Accept
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      x-remaining-quota:
+      - '9979'
+      x-permitted-cross-domain-policies:
+      - none
+      pragma:
+      - no-cache
+      x-consumed-quota:
+      - '10'
+      x-request-id:
+      - 04de9f0e-d2de-417d-9993-f4ed9c47d63e
+      x-download-options:
+      - noopen
+      x-runtime:
+      - '0.104189'
+      x-frame-options:
+      - SAMEORIGIN
+      expires:
+      - Fri, 01 Jan 1990 00:00:00 GMT
+      date:
+      - Wed, 28 Jun 2023 15:01:09 GMT
+      set-cookie:
+      - redis_session_store=<UNICORN>; path=/; expires=Wed, 12 Jul 2023 15:01:09 GMT;
+        HttpOnly; SameSite=Lax
+      x-powered-by:
+      - Phusion Passenger(R) 6.0.15
+      server:
+      - nginx/1.18.0 + Phusion Passenger(R) 6.0.15
+      x-version:
+      - STABLE
+      x-robots-tag:
+      - noindex, nofollow;
+      strict-transport-security:
+      - max-age=31536000; includeSubdomains;;
+      x-xss-protection:
+      - 1; mode=block;
+      x-content-type-options:
+      - nosniff;
+      x-debug-subdomain:
+      - simonneutert
+    body:
+      encoding: UTF-8
+      string: '{"type":"error","error_type":"unprocessable_entity","message":"Name
+        muss ausgefüllt werden","correlation_id":"04de9f0e-d2de-417d-9993-f4ed9c47d63e"}'
+  recorded_at: Wed, 28 Jun 2023 15:01:09 GMT
+recorded_with: VCR 6.2.0

@@ -150,6 +150,112 @@ class TestContactCompany < Minitest::Test
       assert contact_company['name'].is_a?(String)
       assert_equal 'Büffelranch Johnny', contact_company['name']
     end
+
+    it 'creates a contact company', :vcr do
+      client = PapierkramApi::Client.new('simonneutert')
+      response = client.contact_companies.create_customer(
+        name: 'Büffelranch Bongodude'
+      )
+      response_body = response.body
+
+      assert_equal 201, response.status
+      assert_equal %w[type
+                      id
+                      name
+                      contact_type
+                      supplier_no
+                      customer_no
+                      email
+                      phone
+                      website
+                      twitter
+                      fax
+                      postal_street
+                      postal_zip
+                      postal_city
+                      postal_country
+                      physical_street
+                      physical_zip
+                      physical_city
+                      physical_country
+                      delivery_method
+                      ust_idnr
+                      logo_file_name
+                      logo_content_type
+                      logo_file_size
+                      logo_updated_at
+                      bank_blz
+                      bank_institute
+                      bank_account_no
+                      bank_bic
+                      bank_sepa_mandate_reference
+                      bank_sepa_mandate_accepted
+                      bank_iban
+                      inbound_address
+                      notes
+                      record_state
+                      flagged
+                      created_at
+                      updated_at
+                      color
+                      people
+                      projects
+                      invoices
+                      vouchers].sort, response_body.keys.sort
+    end
+
+    it 'deletes a contact company', :vcr do
+      client = PapierkramApi::Client.new('simonneutert')
+      response = client.contact_companies.delete_by(id: 6)
+
+      assert_equal 204, response.status
+    end
+
+    it 'cannot create a nameless contact company', :vcr do
+      client = PapierkramApi::Client.new('simonneutert')
+      response = client.contact_companies.create_customer(
+        name: '',
+        phone: '123456789'
+      )
+      response_body = response.body
+
+      assert_equal('error', response_body['type'])
+      assert_equal('Name muss ausgefüllt werden', response_body['message'])
+      assert_equal('unprocessable_entity', response_body['error_type'])
+      assert response_body.key?('correlation_id')
+      assert_equal 422, response.status
+    end
+
+    it 'updates a contact company', :vcr do
+      client = PapierkramApi::Client.new('simonneutert')
+      response = client.contact_companies.update_by(id: 3, attributes: { phone: '123456789' })
+
+      assert_equal 200, response.status
+    end
+
+    it 'cannot delete contact company without matching ID', :vcr do
+      client = PapierkramApi::Client.new('simonneutert')
+      response = client.contact_companies.delete_by(id: 123_456_789)
+
+      assert_equal 404, response.status
+      response_body = response.body
+
+      assert_equal('error', response_body['type'])
+      assert_equal("Couldn't find Contact::Company with 'id'=123456789", response_body['message'])
+      assert_equal('not_found', response_body['error_type'])
+      assert response_body.key?('correlation_id')
+    end
+
+    it 'archives and unarchives a contact company', :vcr do
+      client = PapierkramApi::Client.new('simonneutert')
+      response = client.contact_companies.archive_by(id: 3)
+
+      assert_equal 200, response.status
+
+      response = client.contact_companies.unarchive_by(id: 3)
+
+      assert_equal 200, response.status
+    end
   end
 end
 

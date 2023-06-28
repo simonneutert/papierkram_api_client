@@ -72,6 +72,11 @@ Ziele:
   - [Contact::Company (Unternehmen)](#contactcompany-unternehmen)
     - [alle Unternehmen](#alle-unternehmen)
     - [ein Unternehmen](#ein-unternehmen)
+    - [erstelle ein Unternehmen](#erstelle-ein-unternehmen)
+    - [aktualisiere ein Unternehmen](#aktualisiere-ein-unternehmen)
+    - [lösche ein Unternehmen](#lösche-ein-unternehmen)
+    - [archiviere ein Unternehmen](#archiviere-ein-unternehmen)
+    - [unarchiviere ein Unternehmen](#unarchiviere-ein-unternehmen)
   - [Contact::Company (Kontaktperson eines Unternehmens)](#contactcompany-kontaktperson-eines-unternehmens)
     - [alle Kontaktpersonen (eines Unternehmens)](#alle-kontaktpersonen-eines-unternehmens)
     - [eine Kontaktperson (eines Unternehmens)](#eine-kontaktperson-eines-unternehmens)
@@ -261,7 +266,7 @@ Siehe [Companies](lib/papierkram_api/v1/endpoints/contact/companies.rb) für mö
 #### alle Unternehmen
 
 ```ruby
-companies = client.contact.companies.all
+companies = client.contact_companies.all
 puts companies.headers
 puts companies.body
 ```
@@ -269,7 +274,56 @@ puts companies.body
 #### ein Unternehmen
 
 ```ruby
-company = client.contact.companies.by(id: 1)
+company = client.contact_companies.by(id: 1)
+puts company.headers
+puts company.body
+```
+
+#### erstelle ein Unternehmen
+
+```ruby
+# supplier
+company = client.contact_companies.create_supplier(name: 'Test GmbH')
+puts company.headers
+puts company.body
+
+# customer
+company = client.contact_companies.create_customer(name: 'Test GmbH')
+puts company.headers
+puts company.body
+```
+
+Siehe [Companies#create_customer](lib/papierkram_api/v1/endpoints/contact/companies.rb) und [Companies#create_supplier](lib/papierkram_api/v1/endpoints/contact/companies.rb) für mögliche Parameter.
+
+#### aktualisiere ein Unternehmen
+
+```ruby
+company = client.contact_companies
+                .update_by(id: 1, attributes: { name: 'Test GmbH' })
+puts company.headers
+puts company.body
+```
+
+#### lösche ein Unternehmen
+
+```ruby
+company = client.contact_companies.delete_by(id: 1)
+puts company.headers
+puts company.body
+```
+
+#### archiviere ein Unternehmen
+
+```ruby
+company = client.contact_companies.archive_by(id: 1)
+puts company.headers
+puts company.body
+```
+
+#### unarchiviere ein Unternehmen
+
+```ruby
+company = client.contact_companies.unarchive_by(id: 1)
 puts company.headers
 puts company.body
 ```
