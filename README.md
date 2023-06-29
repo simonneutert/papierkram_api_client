@@ -95,6 +95,11 @@ Ziele:
   - [Income::Proposition (Waren / Dienstleistungen)](#incomeproposition-waren--dienstleistungen)
     - [alle Waren / Dienstleistungen](#alle-waren--dienstleistungen)
     - [eine Ware / Dienstleistung](#eine-ware--dienstleistung)
+    - [eine Ware / Dienstleistung erstellen](#eine-ware--dienstleistung-erstellen)
+    - [eine Ware / Dienstleistung aktualisieren](#eine-ware--dienstleistung-aktualisieren)
+    - [eine Ware / Dienstleistung löschen](#eine-ware--dienstleistung-löschen)
+    - [eine Ware / Dienstleistung archivieren](#eine-ware--dienstleistung-archivieren)
+    - [eine Ware / Dienstleistung unarchivieren](#eine-ware--dienstleistung-unarchivieren)
   - [Info](#info)
   - [Project::Project (Projekt)](#projectproject-projekt)
     - [alle Projekte](#alle-projekte)
@@ -500,6 +505,56 @@ puts propositions.body
 proposition = client.income_propositions.by(id: 1)
 puts proposition.headers
 puts proposition.body
+```
+
+#### eine Ware / Dienstleistung erstellen
+
+```ruby
+proposition = client.income_propositions.create(
+  name: 'Software design',
+  article_no: '12345',
+  description: 'Here, we can describe what "Software design" actually entails.',
+  time_unit: 'hour',
+  proposition_type: 'service',
+  price: '150.0',
+  vat_rate: '19%'
+)
+puts proposition.headers
+puts proposition.body
+```
+
+Siehe [Propositions#create](lib/papierkram_api/v1/endpoints/income/propositions.rb) für mögliche Parameter.
+
+#### eine Ware / Dienstleistung aktualisieren
+
+```ruby
+client.income_propositions.update_by(
+  id: 1,
+  attributes: {
+    name: 'Software design',
+    vat_rate: '19%' # verpflichtend bei Änderung
+  }
+)
+```
+
+Siehe [Propositions#update_by](lib/papierkram_api/v1/endpoints/income/propositions.rb) für mögliche Parameter.
+
+#### eine Ware / Dienstleistung löschen
+
+```ruby
+client.income_propositions.delete_by(id: 1)
+```
+
+#### eine Ware / Dienstleistung archivieren
+
+```ruby
+client.income_propositions.archive_by(id: 1)
+```
+
+#### eine Ware / Dienstleistung unarchivieren
+
+```ruby
+client.income_propositions.unarchive_by(id: 1)
 ```
 
 ### Info
