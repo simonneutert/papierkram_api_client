@@ -16,14 +16,16 @@ module PapierkramApi
 
           def create(
             name:,
+            article_no:,
             description: nil,
             time_unit: nil,
             proposition_type: nil,
             price: nil,
-            vat_rate: nil
+            vat_rate: ''
           )
             body = {
               name: name,
+              article_no: article_no,
               description: description,
               time_unit: time_unit,
               proposition_type: proposition_type,
@@ -35,7 +37,8 @@ module PapierkramApi
 
           def update_by(id:, attributes: {})
             attributes[:vat_rate] ||= attributes['vat_rate']
-            if attributes[:vat_rate].present? && !attributes[:vat_rate].include?('%')
+            attributes[:vat_rate] ||= ''
+            if attributes[:vat_rate].empty? || (!attributes[:vat_rate].to_s.empty? && !attributes[:vat_rate].include?('%'))
               raise ArgumentError, 'vat_rate must be a percentage and include a % sign'
             end
 
