@@ -1,8 +1,7 @@
 # Changelog
 
-[next] - unreleased
+[0.2.3] - 2023-06-29
 
-- [#<PRNUMBER>](https://github.com/simonneutert/papierkram_api_client/pull/<PRNUMBER>) description. [@<githubusername>](https://github.com/<githubusername>)
 ### Added
 
 - [#47](https://github.com/simonneutert/papierkram_api_client/pull/47) Adds CRUD endpoint support for income propositions. [@simonneutert](https://github.com/simonneutert)
