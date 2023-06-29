@@ -38,7 +38,7 @@ module PapierkramApi
           def update_by(id:, attributes: {})
             attributes[:vat_rate] ||= attributes['vat_rate']
             attributes[:vat_rate] ||= ''
-            if attributes[:vat_rate].empty? || (!attributes[:vat_rate].to_s.empty? && !attributes[:vat_rate].include?('%'))
+            if attributes[:vat_rate].empty? || !attributes[:vat_rate].include?('%')
               raise ArgumentError, 'vat_rate must be a percentage and include a % sign'
             end
 
