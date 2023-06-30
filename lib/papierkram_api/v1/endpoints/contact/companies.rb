@@ -24,7 +24,7 @@ module PapierkramApi
             get("#{@url_api_path}/contact/companies", query)
           end
 
-          def create_supplier( # rubocop:disable Metrics/ParameterLists
+          def create_supplier( # rubocop:disable Metrics/ParameterLists, Metrics/AbcSize, Metrics/CyclomaticComplexity, Metrics/MethodLength, Metrics/PerceivedComplexity
             name:,
             phone: nil,
             fax: nil,

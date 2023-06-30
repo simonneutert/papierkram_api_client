@@ -2,6 +2,9 @@
 
 [next] - unreleased
 
+#### Fixed
+
+- [#48](https://github.com/simonneutert/papierkram_api_client/pull/48) Arguments weren't truly optional when possible. [@simonneutert](https://github.com/simonneutert)
 - [#<PRNUMBER>](https://github.com/simonneutert/papierkram_api_client/pull/<PRNUMBER>) description. [@<githubusername>](https://github.com/<githubusername>)
 
 [0.2.3] - 2023-06-29
