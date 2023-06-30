@@ -22,7 +22,7 @@ module PapierkramApi
             get("#{@url_api_path}/contact/companies/#{company_id}/persons", query)
           end
 
-          def create( # rubocop:disable Metrics/ParameterLists
+          def create( # rubocop:disable Metrics/ParameterLists, Metrics/AbcSize, Metrics/CyclomaticComplexity, Metrics/PerceivedComplexity
             company_id:,
             first_name:,
             last_name:,
@@ -37,20 +37,19 @@ module PapierkramApi
             skype: nil,
             comment: nil
           )
-            body = {
-              first_name: first_name,
-              last_name: last_name,
-              title: title,
-              salutation: salutation,
-              position: position,
-              department: department,
-              email: email,
-              phone: phone,
-              mobile: mobile,
-              fax: fax,
-              skype: skype,
-              comment: comment
-            }
+            body = {}
+            body[:first_name] = first_name
+            body[:last_name] = last_name
+            body[:title] = title if title
+            body[:salutation] = salutation if salutation
+            body[:position] = position if position
+            body[:department] = department if department
+            body[:email] = email if email
+            body[:phone] = phone if phone
+            body[:mobile] = mobile if mobile
+            body[:fax] = fax if fax
+            body[:skype] = skype if skype
+            body[:comment] = comment if comment
 
             post("#{@url_api_path}/contact/companies/#{company_id}/persons", body)
           end

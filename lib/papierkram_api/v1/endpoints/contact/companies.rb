@@ -50,37 +50,36 @@ module PapierkramApi
             color: nil
           )
 
-            body = {
-              contact_type: :supplier,
-              name: name,
-              phone: phone,
-              fax: fax,
-              email: email,
-              delivery_method: delivery_method,
-              ust_idnr: ust_idnr,
-              website: website,
-              twitter: twitter,
-              postal_street: postal_street,
-              postal_city: postal_city,
-              postal_zip: postal_zip,
-              postal_country: postal_country,
-              physical_street: physical_street,
-              physical_city: physical_city,
-              physical_zip: physical_zip,
-              physical_country: physical_country,
-              bank_blz: bank_blz,
-              bank_institute: bank_institute,
-              bank_account_no: bank_account_no,
-              bank_bic: bank_bic,
-              bank_iban: bank_iban,
-              notes: notes,
-              color: color
-            }
+            body = {}
+            body[:contact_type] = 'supplier'
+            body[:name] = name
+            body[:phone] = phone if phone
+            body[:fax] = fax if fax
+            body[:email] = email if email
+            body[:delivery_method] = delivery_method if delivery_method
+            body[:ust_idnr] = ust_idnr if ust_idnr
+            body[:website] = website if website
+            body[:twitter] = twitter if twitter
+            body[:postal_street] = postal_street if postal_street
+            body[:postal_city] = postal_city if postal_city
+            body[:postal_zip] = postal_zip if postal_zip
+            body[:postal_country] = postal_country if postal_country
+            body[:physical_street] = physical_street if physical_street
+            body[:physical_city] = physical_city if physical_city
+            body[:physical_zip] = physical_zip if physical_zip
+            body[:physical_country] = physical_country if physical_country
+            body[:bank_blz] = bank_blz if bank_blz
+            body[:bank_institute] = bank_institute if bank_institute
+            body[:bank_account_no] = bank_account_no if bank_account_no
+            body[:bank_bic] = bank_bic if bank_bic
+            body[:bank_iban] = bank_iban if bank_iban
+            body[:notes] = notes if notes
+            body[:color] = color if color
 
             post("#{@url_api_path}/contact/companies", body)
           end
 
-          def create_customer( # rubocop:disable Metrics/ParameterLists
+          def create_customer( # rubocop:disable Metrics/ParameterLists, Metrics/AbcSize, Metrics/CyclomaticComplexity, Metrics/MethodLength, Metrics/PerceivedComplexity
             name:,
             phone: nil,
             fax: nil,
@@ -106,32 +105,31 @@ module PapierkramApi
             color: nil
           )
 
-            body = {
-              contact_type: :customer,
-              name: name,
-              phone: phone,
-              fax: fax,
-              email: email,
-              delivery_method: delivery_method,
-              ust_idnr: ust_idnr,
-              website: website,
-              twitter: twitter,
-              postal_street: postal_street,
-              postal_city: postal_city,
-              postal_zip: postal_zip,
-              postal_country: postal_country,
-              physical_street: physical_street,
-              physical_city: physical_city,
-              physical_zip: physical_zip,
-              physical_country: physical_country,
-              bank_blz: bank_blz,
-              bank_institute: bank_institute,
-              bank_account_no: bank_account_no,
-              bank_bic: bank_bic,
-              bank_iban: bank_iban,
-              notes: notes,
-              color: color
-            }
+            body = {}
+            body[:contact_type] = 'customer'
+            body[:name] = name
+            body[:phone] = phone if phone
+            body[:fax] = fax if fax
+            body[:email] = email if email
+            body[:delivery_method] = delivery_method if delivery_method
+            body[:ust_idnr] = ust_idnr if ust_idnr
+            body[:website] = website if website
+            body[:twitter] = twitter if twitter
+            body[:postal_street] = postal_street if postal_street
+            body[:postal_city] = postal_city if postal_city
+            body[:postal_zip] = postal_zip if postal_zip
+            body[:postal_country] = postal_country if postal_country
+            body[:physical_street] = physical_street if physical_street
+            body[:physical_city] = physical_city if physical_city
+            body[:physical_zip] = physical_zip if physical_zip
+            body[:physical_country] = physical_country if physical_country
+            body[:bank_blz] = bank_blz if bank_blz
+            body[:bank_institute] = bank_institute if bank_institute
+            body[:bank_account_no] = bank_account_no if bank_account_no
+            body[:bank_bic] = bank_bic if bank_bic
+            body[:bank_iban] = bank_iban if bank_iban
+            body[:notes] = notes if notes
+            body[:color] = color if color
 
             post("#{@url_api_path}/contact/companies", body)
           end

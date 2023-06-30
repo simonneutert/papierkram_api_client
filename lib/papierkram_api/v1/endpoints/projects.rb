@@ -21,7 +21,7 @@ module PapierkramApi
           get("#{@url_api_path}/projects", query)
         end
 
-        def create( # rubocop:disable Metrics/ParameterLists
+        def create( # rubocop:disable Metrics/ParameterLists, Metrics/AbcSize, Metrics/CyclomaticComplexity, Metrics/PerceivedComplexity
           name:,
           customer_id:,
           description: nil,
@@ -33,24 +33,24 @@ module PapierkramApi
           budget_time: nil,
           budget_time_unit: nil,
           color: nil,
-          default_proposition: {},
-          team_members: []
+          default_proposition: nil,
+          team_members: nil
         )
-          body = {
-            name: name,
-            description: description,
-            start_date: start_date,
-            end_date: end_date,
-            flagged: flagged,
-            budget_type: budget_type,
-            budget_money: budget_money,
-            budget_time: budget_time,
-            budget_time_unit: budget_time_unit,
-            color: color,
-            customer: { id: customer_id },
-            default_proposition: default_proposition,
-            team_members: team_members
-          }
+
+          body = {}
+          body[:name] = name
+          body[:customer] = { id: customer_id }
+          body[:description] = description if description
+          body[:start_date] = start_date if start_date
+          body[:end_date] = end_date if end_date
+          body[:flagged] = flagged if flagged
+          body[:budget_type] = budget_type if budget_type
+          body[:budget_money] = budget_money if budget_money
+          body[:budget_time] = budget_time if budget_time
+          body[:budget_time_unit] = budget_time_unit if budget_time_unit
+          body[:color] = color if color
+          body[:default_proposition] = default_proposition if default_proposition
+          body[:team_members] = team_members if team_members
 
           post("#{@url_api_path}/projects", body)
         end

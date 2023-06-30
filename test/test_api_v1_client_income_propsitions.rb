@@ -43,10 +43,9 @@ class TestIncomePropositions < Minitest::Test
     it 'updates an income proposition', :vcr do
       client = PapierkramApi::Client.new('simonneutert')
       response = client.income_propositions.update_by(
-        id: 3,
+        id: 6,
         attributes: {
-          article_no: '123456',
-          vat_rate: '19%'
+          article_no: '123456'
         }
       )
 
