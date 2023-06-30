@@ -21,24 +21,23 @@ module PapierkramApi
             time_unit: nil,
             proposition_type: nil,
             price: nil,
-            vat_rate: ''
+            vat_rate: nil
           )
-            body = {
-              name: name,
-              article_no: article_no,
-              description: description,
-              time_unit: time_unit,
-              proposition_type: proposition_type,
-              price: price,
-              vat_rate: vat_rate
-            }
+
+            body = {}
+            body[:name] = name
+            body[:article_no] = article_no
+            body[:description] = description if description
+            body[:time_unit] = time_unit if time_unit
+            body[:proposition_type] = proposition_type if proposition_type
+            body[:price] = price if price
+            body[:vat_rate] = vat_rate if vat_rate
+
             post("#{@url_api_path}/income/propositions", body)
           end
 
           def update_by(id:, attributes: {})
-            attributes[:vat_rate] ||= attributes['vat_rate']
-            attributes[:vat_rate] ||= ''
-            if attributes[:vat_rate].empty? || !attributes[:vat_rate].include?('%')
+            if attributes[:vat_rate] && (attributes[:vat_rate].empty? || !attributes[:vat_rate].include?('%'))
               raise ArgumentError, 'vat_rate must be a percentage and include a % sign'
             end
 

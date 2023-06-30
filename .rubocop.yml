@@ -33,6 +33,7 @@ Metrics/ParameterLists:
     - "lib/api/v1/**/*"
 
 Metrics/ClassLength:
+  Max: 150
   CountAsOne:
     - "array"
     - "hash"
