@@ -2,6 +2,7 @@
 
 [next] - unreleased
 
+- [#55](https://github.com/simonneutert/papierkram_api_client/pull/55) Adds missing chapter for Transactions. [@simonneutert](https://github.com/simonneutert)
 - [#<PRNUMBER>](https://github.com/simonneutert/papierkram_api_client/pull/<PRNUMBER>) description. [@<githubusername>](https://github.com/<githubusername>)
 
 [0.2.4] - 2023-06-30

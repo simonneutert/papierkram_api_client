@@ -33,7 +33,6 @@ Schau bitte dort um alle Rückgabefelder/-werte zu checken, bis ich die Dokument
 
 ## Aktuell unterstützte Endpunkte der Papierkram API (V1)<!-- omit in toc -->
 
-
 - [x] Banking::BankConnection
 - [x] Banking::BankTransaction
 - [x] Contact::Company (Unternehmen)
@@ -66,6 +65,8 @@ Ziele:
     - [alle Bankverbindungen](#alle-bankverbindungen)
     - [eine Bankverbindung](#eine-bankverbindung)
   - [Banking::Transaction (Kontoumsatz)](#bankingtransaction-kontoumsatz)
+    - [alle Kontoumsätze einer Bankverbindung](#alle-kontoumsätze-einer-bankverbindung)
+    - [einen Kontoumsatz](#einen-kontoumsatz)
   - [Contact::Company (Unternehmen)](#contactcompany-unternehmen)
     - [alle Unternehmen](#alle-unternehmen)
     - [ein Unternehmen](#ein-unternehmen)
@@ -263,9 +264,28 @@ puts bank_connection.body
 
 ### Banking::Transaction (Kontoumsatz)
 
-WORK IN PROGRESS
+Der Endpunkt `/papierkram_api/v1/endpoints/banking/transactions` liefert Informationen über die Kontoumsätze. Die Informationen werden als `Faraday::Response` zurückgegeben.
 
-[Transactions](lib/papierkram_api/v1/endpoints/banking/transactions.rb)
+Siehe [Transactions](lib/papierkram_api/v1/endpoints/banking/transactions.rb) für mögliche Parameter.
+
+#### alle Kontoumsätze einer Bankverbindung
+
+```ruby
+bank_connection_id = 4
+transactions = client.banking_transactions.all(bank_connection_id: bank_connection_id,
+                                               page: 1,
+                                               page_size: 2)
+puts transactions.headers
+puts transactions.body
+```
+
+#### einen Kontoumsatz
+
+```ruby
+transactions = client.banking_transactions.by(id: bank_connection_id)
+puts transactions.headers
+puts transactions.body
+```
 
 ### Contact::Company (Unternehmen)
 
