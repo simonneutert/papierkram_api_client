@@ -10,10 +10,6 @@ Der erste ~~illegale~~ inoffizielle API Client in [Ruby](https://www.ruby-lang.o
 
 ---
 
-Hol mehr aus deinen Daten raus! Dieser Client bietet dir bald einige Features im Bereich [Business Intelligence](#business-intelligence)!
-
----
-
 **WERBUNG** (es ist ein Aufruf zur Mitarbeit 🫠)
 JETZT NEU! Ohne Lack und frei von Glamour!  
 Das Gleiche, nur in grün, also für [NodeJS](https://github.com/simonneutert/papierkram-api-client). Und als Mega-Baustelle 😬
@@ -716,6 +712,8 @@ quota = client.info.remaining_quota(response)
 ```
 
 ## Business Intelligence
+
+Ich lasse diesen ersten Ausflug in Auswertungen erstmal hier im Gem. Aber sollte ich die Zeit finden und weitere KPIs wichtig finden, dann gehören die Auswertungen eigentlich in ein eigenes Package.
 
 TODO ergänzen wie man `SmartQueries` erstellt und verwendet.  
 TODO ergänzen wie man `SmartQueries` funktioneren.  
