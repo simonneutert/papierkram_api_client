@@ -27,7 +27,7 @@ Das Gleiche, nur in grün, also für [NodeJS](https://github.com/simonneutert/pa
 Check das [CHANGELOG.md](CHANGELOG.md), Baby!
 
 Hier geht es zu den [offiziellen API Docs](https://demo.papierkram.de/api/v1/api-docs/index.html).  
-Schau bitte dort um alle Rückgabefelder/-werte zu checken, bis ich die Dokumentation hier komplett habe.
+Schau bitte dort um alle Rückgabefelder/-werte zu checken, bis ich (oder du mit deiner Zeit und Hingabe) die Dokumentation hier komplett habe.
 
 ---
 
