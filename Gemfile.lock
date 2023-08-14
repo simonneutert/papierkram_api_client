@@ -23,7 +23,7 @@ GEM
     method_source (1.0.0)
     minispec-metadata (2.0.0)
       minitest
-    minitest (5.18.1)
+    minitest (5.19.0)
     minitest-vcr (1.4.0)
       minispec-metadata (~> 2.0)
       minitest (>= 4.7.5)
@@ -72,7 +72,7 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
-  minitest (~> 5.18)
+  minitest (~> 5.19)
   minitest-vcr (~> 1.4)
   papierkram_api_client!
   pry (~> 0.14.2)
