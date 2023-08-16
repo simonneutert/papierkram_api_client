@@ -8,6 +8,9 @@ on:
     branches:
       - main
 
+env:
+  MT_COMPAT: true
+
 jobs:
   build:
     runs-on: ubuntu-latest
