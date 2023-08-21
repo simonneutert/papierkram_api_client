@@ -1,2 +1,3 @@
 export PAPIERKRAM_API_SUBDOMAIN=princescammer3000
 export PAPIERKRAM_API_KEY=123lang33shlang321
+export MT_COMPAT=true
