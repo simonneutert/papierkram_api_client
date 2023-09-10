@@ -20,7 +20,8 @@ Das Gleiche, nur in grün, also für [NodeJS](https://github.com/simonneutert/pa
 
 > 🚨 **Bitte beachte**, dass DU UNBEDINGT die Requests/Responses der VCR Cassettes (die ausschliesslich bei Nutzung der Testsuite angelegt werden) von privaten Daten befreien musst, bevor du einen Pull Request erstellst oder einen Commit ins Web lädst! Ich werde die Cassettes auch nochmal durchgehen, bevor ich die Version 1.0.0 veröffentliche. ABER BITTE, BITTE, BITTE, mach das selbst auch! Ich habe keine Lust, dass irgendwelche Daten von dir oder deinen Kunden auf Github landen. Danke! 🙏
 
-Check das [CHANGELOG.md](CHANGELOG.md), Baby!
+Check das [CHANGELOG.md](CHANGELOG.md), Baby!  
+Schau in [UPGRADING.md](UPGRADING.md), 💃🕺!
 
 Hier geht es zu den [offiziellen API Docs](https://demo.papierkram.de/api/v1/api-docs/index.html).  
 Schau bitte dort um alle Rückgabefelder/-werte zu checken, bis ich (oder du mit deiner Zeit und Hingabe) die Dokumentation hier komplett habe.
