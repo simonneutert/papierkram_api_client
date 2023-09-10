@@ -223,7 +223,7 @@ puts bank_connections.body
 #### eine Bankverbindung
 
 ```ruby
-bank_connection = client.banking_bank_connections.by(id: 1)
+bank_connection = client.banking_bank_connections.find_by(id: 1)
 puts bank_connection.headers
 puts bank_connection.body
 ```
@@ -278,7 +278,7 @@ puts transactions.body
 #### einen Kontoumsatz
 
 ```ruby
-transactions = client.banking_transactions.by(id: bank_connection_id)
+transactions = client.banking_transactions.find_by(id: bank_connection_id)
 puts transactions.headers
 puts transactions.body
 ```
@@ -300,7 +300,7 @@ puts companies.body
 #### ein Unternehmen
 
 ```ruby
-company = client.contact_companies.by(id: 1)
+company = client.contact_companies.find_by(id: 1)
 puts company.headers
 puts company.body
 ```
@@ -371,7 +371,7 @@ puts companies.body
 #### eine Kontaktperson (eines Unternehmens)
 
 ```ruby
-company = client.contact_companies_persons.by(company_id: 1, id: 1)
+company = client.contact_companies_persons.find_by(company_id: 1, id: 1)
 puts company.headers
 puts company.body
 ```
@@ -428,7 +428,7 @@ puts vouchers.body
 #### einen Ausgabe Beleg
 
 ```ruby
-voucher = client.expense_vouchers.by(id: 1)
+voucher = client.expense_vouchers.find_by(id: 1)
 puts voucher.headers
 puts voucher.body
 ```
@@ -436,7 +436,7 @@ puts voucher.body
 #### einen Ausgabe Beleg als PDF
 
 ```ruby
-voucher = client.expense_vouchers.by(id: 1, pdf: true)
+voucher = client.expense_vouchers.find_by(id: 1, pdf: true)
 puts PapierkramApi::V1::Helpers::PdfFromResponse.new(voucher).to_pdf
 # => {response: Faraday::Response, path_to_pdf_file: 'path/to/tempfile_pdf.pdf'}
 ```
@@ -458,7 +458,7 @@ puts estimates.body
 #### ein Angebot
 
 ```ruby
-estimate = client.income_estimates.by(id: 1)
+estimate = client.income_estimates.find_by(id: 1)
 puts estimate.headers
 puts estimate.body
 ```
@@ -466,7 +466,7 @@ puts estimate.body
 #### ein Angebot als PDF
 
 ```ruby
-estimate = client.income_estimates.by(id: 1, pdf: true)
+estimate = client.income_estimates.find_by(id: 1, pdf: true)
 puts PapierkramApi::V1::Helpers::PdfFromResponse.new(estimate).to_pdf
 # => {response: Faraday::Response, path_to_pdf_file: 'path/to/tempfile_pdf.pdf'}
 ```
@@ -488,7 +488,7 @@ puts invoices.body
 #### eine Rechnung
 
 ```ruby
-invoice = client.income_invoices.by(id: 1)
+invoice = client.income_invoices.find_by(id: 1)
 puts invoice.headers
 puts invoice.body
 ```
@@ -496,7 +496,7 @@ puts invoice.body
 #### eine Rechnung als PDF
 
 ```ruby
-invoice = client.income_invoices.by(id: 1, pdf: true)
+invoice = client.income_invoices.find_by(id: 1, pdf: true)
 puts PapierkramApi::V1::Helpers::PdfFromResponse.new(invoice).to_pdf
 # => {response: Faraday::Response, path_to_pdf_file: 'path/to/tempfile_pdf.pdf'}
 ```
@@ -518,7 +518,7 @@ puts propositions.body
 #### eine Ware / Dienstleistung
 
 ```ruby
-proposition = client.income_propositions.by(id: 1)
+proposition = client.income_propositions.find_by(id: 1)
 puts proposition.headers
 puts proposition.body
 ```
@@ -602,7 +602,7 @@ puts projects.body
 #### ein Projekt
 
 ```ruby
-project = client.projects.by(id: 1)
+project = client.projects.find_by(id: 1)
 puts project.headers
 puts project.body
 ```
@@ -668,7 +668,7 @@ puts tasks.body
 #### eine Aufgabe
 
 ```ruby
-task = client.tracker_tasks.by(id: 1)
+task = client.tracker_tasks.find_by(id: 1)
 puts task.headers
 puts task.body
 ```
@@ -690,7 +690,7 @@ puts time_entries.body
 #### einen Zeiteintrag
 
 ```ruby
-time_entry = client.tracker_time_entries.by(id: 1)
+time_entry = client.tracker_time_entries.find_by(id: 1)
 puts time_entry.headers
 puts time_entry.body
 ```
@@ -805,7 +805,7 @@ Unterstützte Endpunkte sind beispielsweise: `Income::Estimate`, `Income::Invoic
 [Api::V1::Helpers::PdfFromResponse](lib/papierkram_api/v1/helper/pdf_from_response.rb)
 
 ```ruby
-response = client.income_invoices.by(id: 1, pdf: true)
+response = client.income_invoices.find_by(id: 1, pdf: true)
 pdf = PapierkramApi::V1::Helpers::PdfFromResponse.new(response).to_pdf("Rechnung Nummer XXX")
 puts pdf
 ```
