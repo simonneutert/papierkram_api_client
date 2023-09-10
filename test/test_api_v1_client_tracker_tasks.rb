@@ -6,7 +6,7 @@ class TestTrackerTasks < Minitest::Test
   describe 'Tracker::Tasks Requests' do
     it 'gets a tracker tasks', :vcr do
       client = PapierkramApi::Client.new('simonneutert')
-      response = client.tracker_tasks.by(id: 1)
+      response = client.tracker_tasks.find_by(id: 1)
       response_body = response.body
 
       assert_equal(200, response.status)

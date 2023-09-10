@@ -6,8 +6,8 @@ module PapierkramApi
       module Banking
         # This class is responsible for all the API calls related to banking transactions.
         class Transactions < PapierkramApi::V1::Endpoints::Base
-          def by(id:)
-            get("#{@url_api_path}/banking/transactions/#{id}")
+          def find_by(id:)
+            http_get("#{@url_api_path}/banking/transactions/#{id}")
           end
 
           def all(bank_connection_id:,
@@ -23,7 +23,7 @@ module PapierkramApi
             query[:order_by] = order_by if order_by
             query[:order_direction] = order_direction if order_direction
 
-            get("#{@url_api_path}/banking/transactions", query)
+            http_get("#{@url_api_path}/banking/transactions", query)
           end
         end
       end

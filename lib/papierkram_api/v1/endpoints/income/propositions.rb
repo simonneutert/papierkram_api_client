@@ -6,12 +6,12 @@ module PapierkramApi
       module Income
         # This class is responsible for all the API calls related to income propositions.
         class Propositions < PapierkramApi::V1::Endpoints::Base
-          def by(id:)
-            get("#{@url_api_path}/income/propositions/#{id}")
+          def find_by(id:)
+            http_get("#{@url_api_path}/income/propositions/#{id}")
           end
 
           def all
-            get("#{@url_api_path}/income/propositions")
+            http_get("#{@url_api_path}/income/propositions")
           end
 
           def create(
@@ -33,7 +33,7 @@ module PapierkramApi
             body[:price] = price if price
             body[:vat_rate] = vat_rate if vat_rate
 
-            post("#{@url_api_path}/income/propositions", body)
+            http_post("#{@url_api_path}/income/propositions", body)
           end
 
           def update_by(id:, attributes: {})
@@ -41,19 +41,19 @@ module PapierkramApi
               raise ArgumentError, 'vat_rate must be a percentage and include a % sign'
             end
 
-            put("#{@url_api_path}/income/propositions/#{id}", attributes)
+            http_put("#{@url_api_path}/income/propositions/#{id}", attributes)
           end
 
           def delete_by(id:)
-            delete("#{@url_api_path}/income/propositions/#{id}")
+            http_delete("#{@url_api_path}/income/propositions/#{id}")
           end
 
           def archive_by(id:)
-            post("#{@url_api_path}/income/propositions/#{id}/archive")
+            http_post("#{@url_api_path}/income/propositions/#{id}/archive")
           end
 
           def unarchive_by(id:)
-            post("#{@url_api_path}/income/propositions/#{id}/unarchive")
+            http_post("#{@url_api_path}/income/propositions/#{id}/unarchive")
           end
         end
       end

@@ -6,7 +6,7 @@ class TestIncomeEstimates < Minitest::Test
   describe 'Income::Estimate Requests' do
     it 'downloads a pdf', :vcr do
       client = PapierkramApi::Client.new('simonneutert')
-      response = client.income_estimates.by(id: 1, pdf: true)
+      response = client.income_estimates.find_by(id: 1, pdf: true)
 
       assert_equal(200, response.status)
       assert_equal('application/pdf', response.headers['content-type'])

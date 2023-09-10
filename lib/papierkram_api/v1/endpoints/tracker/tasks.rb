@@ -6,8 +6,8 @@ module PapierkramApi
       module Tracker
         # This class is responsible for all the API calls related to tracker tasks connections.
         class Tasks < PapierkramApi::V1::Endpoints::Base
-          def by(id:)
-            get("#{@url_api_path}/tracker/tasks/#{id}")
+          def find_by(id:)
+            http_get("#{@url_api_path}/tracker/tasks/#{id}")
           end
 
           def all(page: 1,
@@ -24,7 +24,7 @@ module PapierkramApi
             query[:order_direction] = order_direction if order_direction
             query[:project_id] = project_id if project_id
             query[:proposition_id] = proposition_id if proposition_id
-            get("#{@url_api_path}/tracker/tasks", query)
+            http_get("#{@url_api_path}/tracker/tasks", query)
           end
         end
       end

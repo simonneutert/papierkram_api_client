@@ -6,7 +6,7 @@ class TestBankingTransactions < Minitest::Test
   describe 'Banking::Transaction Requests' do
     it 'get a banking transaction', :vcr do
       client = PapierkramApi::Client.new('simonneutert')
-      response = client.banking_transactions.by(id: 4)
+      response = client.banking_transactions.find_by(id: 4)
       response_body = response.body
 
       assert_equal(200, response.status)

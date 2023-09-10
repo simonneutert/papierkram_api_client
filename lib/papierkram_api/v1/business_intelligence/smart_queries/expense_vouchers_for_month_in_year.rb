@@ -24,7 +24,7 @@ module PapierkramApi
 
           def collect_expense_vouchers
             all_expense_vouchers_in_date_range.map do |voucher|
-              @expense_voucher_api.by(id: voucher['id']).body
+              @expense_voucher_api.find_by(id: voucher['id']).body
             end
           end
 
@@ -49,7 +49,7 @@ module PapierkramApi
           end
 
           def expense_voucher(id)
-            @expense_voucher_api.by(id: id)
+            @expense_voucher_api.find_by(id: id)
           end
         end
       end

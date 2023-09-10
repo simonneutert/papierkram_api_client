@@ -22,24 +22,24 @@ module PapierkramApi
           raise ArgumentError, "No remaining quota found in response: #{response}"
         end
 
-        def get(url, params = {}, headers = {})
+        def http_get(url, params = {}, headers = {})
           validate_get!(params)
           call_wrapper!(:get, url, params, headers)
         end
 
-        def post(url, params = {}, headers = {})
+        def http_post(url, params = {}, headers = {})
           call_wrapper!(:post, url, params, headers)
         end
 
-        def put(url, params = {}, headers = {})
+        def http_put(url, params = {}, headers = {})
           call_wrapper!(:put, url, params, headers)
         end
 
-        def patch(url, params = {}, headers = {})
+        def http_patch(url, params = {}, headers = {})
           call_wrapper!(:patch, url, params, headers)
         end
 
-        def delete(url, params = {}, headers = {})
+        def http_delete(url, params = {}, headers = {})
           call_wrapper!(:delete, url, params, headers)
         end
 

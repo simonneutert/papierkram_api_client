@@ -6,7 +6,7 @@ class TestExpenseVouchers < Minitest::Test
   describe 'Expense::Vouchers Requests' do
     it 'gets a single expense voucher', :vcr do
       client = PapierkramApi::Client.new('simonneutert')
-      response = client.expense_vouchers.by(id: 650)
+      response = client.expense_vouchers.find_by(id: 650)
       response_body = response.body
 
       assert_equal(200, response.status)

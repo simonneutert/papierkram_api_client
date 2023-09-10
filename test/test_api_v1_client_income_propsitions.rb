@@ -6,7 +6,7 @@ class TestIncomePropositions < Minitest::Test
   describe 'Income::Propositions Requests' do
     it 'gets a single income proposition', :vcr do
       client = PapierkramApi::Client.new('simonneutert')
-      response = client.income_propositions.by(id: 2)
+      response = client.income_propositions.find_by(id: 2)
       response_body = response.body
 
       assert_equal(200, response.status)

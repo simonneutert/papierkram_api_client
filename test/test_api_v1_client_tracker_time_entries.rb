@@ -6,7 +6,7 @@ class TestTrackerTimeEntries < Minitest::Test
   describe 'Tracker::TimeEntries Requests' do
     it 'gets a tracker time_entry', :vcr do
       client = PapierkramApi::Client.new('simonneutert')
-      response = client.tracker_time_entries.by(id: 1)
+      response = client.tracker_time_entries.find_by(id: 1)
       response_body = response.body
 
       assert_equal(200, response.status)

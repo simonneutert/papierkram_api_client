@@ -6,13 +6,16 @@ module PapierkramApi
       module Income
         # This class is responsible for all the API calls related to income invoices.
         class Invoices < PapierkramApi::V1::Endpoints::Base
-          def by(id:, pdf: false)
+          def find_by(id:, pdf: false)
             if pdf == true
-              return get("#{@url_api_path}/income/invoices/#{id}/pdf", nil,
-                         { headers: { 'Content-Type' => 'application/pdf' } })
+              return http_get(
+                "#{@url_api_path}/income/invoices/#{id}/pdf",
+                nil,
+                { headers: { 'Content-Type' => 'application/pdf' } }
+              )
             end
 
-            get("#{@url_api_path}/income/invoices/#{id}")
+            http_get("#{@url_api_path}/income/invoices/#{id}")
           end
 
           def all(page: 1, # rubocop:disable Metrics/CyclomaticComplexity
@@ -37,7 +40,7 @@ module PapierkramApi
                 document_date_range_end
             end
 
-            get("#{@url_api_path}/income/invoices", query)
+            http_get("#{@url_api_path}/income/invoices", query)
           end
         end
       end
