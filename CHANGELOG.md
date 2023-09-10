@@ -2,6 +2,7 @@
 
 [next] - unreleased
 
+- [#63](https://github.com/simonneutert/papierkram_api_client/pull/63) Re-Wrapping of the API client V1 (cleaner abstraction). [@simonneutert](https://github.com/simonneutert)
 - [#61](https://github.com/simonneutert/papierkram_api_client/pull/61) Adds ENV to make Minitest pass ([follow Alice](https://github.com/ordinaryzelig/minispec-metadata/pull/18)). [@simonneutert](https://github.com/simonneutert)
 - [#55](https://github.com/simonneutert/papierkram_api_client/pull/55) Adds missing chapter for Transactions. [@simonneutert](https://github.com/simonneutert)
 - [#<PRNUMBER>](https://github.com/simonneutert/papierkram_api_client/pull/<PRNUMBER>) description. [@<githubusername>](https://github.com/<githubusername>)
