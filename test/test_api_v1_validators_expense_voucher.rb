@@ -10,7 +10,7 @@ class TestValidatorsExpenseVoucher < Minitest::Test
 
       assert_equal(200, res_all_page1.status)
 
-      res_voucher = client.expense_vouchers.by(id: res_all_page1.body['entries'].first['id'])
+      res_voucher = client.expense_vouchers.find_by(id: res_all_page1.body['entries'].first['id'])
 
       assert_equal(200, res_voucher.status)
 

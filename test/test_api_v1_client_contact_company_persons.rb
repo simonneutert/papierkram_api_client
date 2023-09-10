@@ -6,7 +6,7 @@ class TestContactCompany < Minitest::Test
   describe 'Contact::CompanyPersons Requests' do
     it 'get a contact company person', :vcr do
       client = PapierkramApi::Client.new('simonneutert')
-      response = client.contact_companies_persons.by(company_id: 3, id: 3)
+      response = client.contact_companies_persons.find_by(company_id: 3, id: 3)
       response_body = response.body
 
       assert_equal(200, response.status)

@@ -6,8 +6,8 @@ module PapierkramApi
       module Tracker
         # This class is responsible for all the API calls related to tracker time entries connections.
         class TimeEntries < PapierkramApi::V1::Endpoints::Base
-          def by(id:)
-            get("#{@url_api_path}/tracker/time_entries/#{id}")
+          def find_by(id:)
+            http_get("#{@url_api_path}/tracker/time_entries/#{id}")
           end
 
           def all(page: 1, # rubocop:disable Metrics/AbcSize, Metrics/CyclomaticComplexity, Metrics/PerceivedComplexity, Metrics/ParameterLists
@@ -38,7 +38,8 @@ module PapierkramApi
             query[:billing_state] = billing_state if billing_state
             query[:start_time_range_start] = start_time_range_start if start_time_range_start
             query[:start_time_range_end] = start_time_range_end if start_time_range_end
-            get("#{@url_api_path}/tracker/time_entries", query)
+
+            http_get("#{@url_api_path}/tracker/time_entries", query)
           end
 
           private

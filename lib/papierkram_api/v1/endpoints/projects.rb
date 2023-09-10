@@ -5,8 +5,8 @@ module PapierkramApi
     module Endpoints
       # This class is responsible for all the API calls related to projects connections.
       class Projects < PapierkramApi::V1::Endpoints::Base
-        def by(id:)
-          get("#{@url_api_path}/projects/#{id}")
+        def find_by(id:)
+          http_get("#{@url_api_path}/projects/#{id}")
         end
 
         def all(page: 1, per_page: 100, order_by: nil, order_direction: nil, company_id: nil)
@@ -18,7 +18,7 @@ module PapierkramApi
           query[:order_direction] = order_direction if order_direction
           query[:company_id] = company_id if company_id
 
-          get("#{@url_api_path}/projects", query)
+          http_get("#{@url_api_path}/projects", query)
         end
 
         def create( # rubocop:disable Metrics/ParameterLists, Metrics/AbcSize, Metrics/CyclomaticComplexity, Metrics/PerceivedComplexity
@@ -52,25 +52,25 @@ module PapierkramApi
           body[:default_proposition] = default_proposition if default_proposition
           body[:team_members] = team_members if team_members
 
-          post("#{@url_api_path}/projects", body)
+          http_post("#{@url_api_path}/projects", body)
         end
 
         def update_by(id:, attributes: {})
           raise ArgumentError, 'attributes must be a Hash' unless attributes.is_a?(Hash)
 
-          put("#{@url_api_path}/projects/#{id}", attributes)
+          http_put("#{@url_api_path}/projects/#{id}", attributes)
         end
 
         def delete_by(id:)
-          delete("#{@url_api_path}/projects/#{id}")
+          http_delete("#{@url_api_path}/projects/#{id}")
         end
 
         def archive_by(id:)
-          post("#{@url_api_path}/projects/#{id}/archive")
+          http_post("#{@url_api_path}/projects/#{id}/archive")
         end
 
         def unarchive_by(id:)
-          post("#{@url_api_path}/projects/#{id}/unarchive")
+          http_post("#{@url_api_path}/projects/#{id}/unarchive")
         end
       end
     end

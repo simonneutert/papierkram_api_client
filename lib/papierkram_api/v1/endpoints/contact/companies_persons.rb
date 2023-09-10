@@ -6,8 +6,8 @@ module PapierkramApi
       module Contact
         # This class is responsible for all the API calls related to companies' persons connections.
         class CompaniesPersons < PapierkramApi::V1::Endpoints::Base
-          def by(company_id:, id:)
-            get("#{@url_api_path}/contact/companies/#{company_id}/persons/#{id}")
+          def find_by(company_id:, id:)
+            http_get("#{@url_api_path}/contact/companies/#{company_id}/persons/#{id}")
           end
 
           def all(company_id:, page: 1, page_size: 100, order_by: nil, order_direction: nil)
@@ -19,7 +19,7 @@ module PapierkramApi
             query[:order_by] = order_by if order_by
             query[:order_direction] = order_direction if order_direction
 
-            get("#{@url_api_path}/contact/companies/#{company_id}/persons", query)
+            http_get("#{@url_api_path}/contact/companies/#{company_id}/persons", query)
           end
 
           def create( # rubocop:disable Metrics/ParameterLists, Metrics/AbcSize, Metrics/CyclomaticComplexity, Metrics/PerceivedComplexity
@@ -51,7 +51,7 @@ module PapierkramApi
             body[:skype] = skype if skype
             body[:comment] = comment if comment
 
-            post("#{@url_api_path}/contact/companies/#{company_id}/persons", body)
+            http_post("#{@url_api_path}/contact/companies/#{company_id}/persons", body)
           end
 
           def update_by(company_id:, id:, attributes: {})
@@ -59,14 +59,14 @@ module PapierkramApi
             raise ArgumentError, 'company_id must be an Integer' unless company_id.is_a?(Integer)
             raise ArgumentError, 'id must be an Integer' unless id.is_a?(Integer)
 
-            put("#{@url_api_path}/contact/companies/#{company_id}/persons/#{id}", attributes)
+            http_put("#{@url_api_path}/contact/companies/#{company_id}/persons/#{id}", attributes)
           end
 
           def delete_by(company_id:, id:)
             raise ArgumentError, 'company_id must be an Integer' unless company_id.is_a?(Integer)
             raise ArgumentError, 'id must be an Integer' unless id.is_a?(Integer)
 
-            delete("#{@url_api_path}/contact/companies/#{company_id}/persons/#{id}")
+            http_delete("#{@url_api_path}/contact/companies/#{company_id}/persons/#{id}")
           end
         end
       end

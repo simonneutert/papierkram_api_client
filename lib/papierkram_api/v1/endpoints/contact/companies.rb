@@ -6,8 +6,8 @@ module PapierkramApi
       module Contact
         # This class is responsible for all the API calls related to banking bank connections.
         class Companies < PapierkramApi::V1::Endpoints::Base
-          def by(id:)
-            get("#{@url_api_path}/contact/companies/#{id}")
+          def find_by(id:)
+            http_get("#{@url_api_path}/contact/companies/#{id}")
           end
 
           def all(page: 1,
@@ -21,7 +21,7 @@ module PapierkramApi
             query[:order_by] = order_by if order_by
             query[:order_direction] = order_direction if order_direction
 
-            get("#{@url_api_path}/contact/companies", query)
+            http_get("#{@url_api_path}/contact/companies", query)
           end
 
           def create_supplier( # rubocop:disable Metrics/ParameterLists, Metrics/AbcSize, Metrics/CyclomaticComplexity, Metrics/MethodLength, Metrics/PerceivedComplexity
@@ -76,7 +76,7 @@ module PapierkramApi
             body[:notes] = notes if notes
             body[:color] = color if color
 
-            post("#{@url_api_path}/contact/companies", body)
+            http_post("#{@url_api_path}/contact/companies", body)
           end
 
           def create_customer( # rubocop:disable Metrics/ParameterLists, Metrics/AbcSize, Metrics/CyclomaticComplexity, Metrics/MethodLength, Metrics/PerceivedComplexity
@@ -131,32 +131,32 @@ module PapierkramApi
             body[:notes] = notes if notes
             body[:color] = color if color
 
-            post("#{@url_api_path}/contact/companies", body)
+            http_post("#{@url_api_path}/contact/companies", body)
           end
 
           def update_by(id:, attributes: {})
             raise ArgumentError, 'id must be an Integer' unless id.is_a?(Integer)
             raise ArgumentError, 'attributes must be a Hash' unless attributes.is_a?(Hash)
 
-            put("#{@url_api_path}/contact/companies/#{id}", attributes)
+            http_put("#{@url_api_path}/contact/companies/#{id}", attributes)
           end
 
           def delete_by(id:)
             raise ArgumentError, 'id must be an Integer' unless id.is_a?(Integer)
 
-            delete("#{@url_api_path}/contact/companies/#{id}")
+            http_delete("#{@url_api_path}/contact/companies/#{id}")
           end
 
           def archive_by(id:)
             raise ArgumentError, 'id must be an Integer' unless id.is_a?(Integer)
 
-            post("#{@url_api_path}/contact/companies/#{id}/archive")
+            http_post("#{@url_api_path}/contact/companies/#{id}/archive")
           end
 
           def unarchive_by(id:)
             raise ArgumentError, 'id must be an Integer' unless id.is_a?(Integer)
 
-            post("#{@url_api_path}/contact/companies/#{id}/unarchive")
+            http_post("#{@url_api_path}/contact/companies/#{id}/unarchive")
           end
         end
       end

@@ -1,14 +1,21 @@
 # Changelog
 
-[next] - unreleased
+## [next] - unreleased
+
+### Changes (BREAKING! ⚠️)
+
+- [#63](https://github.com/simonneutert/papierkram_api_client/pull/63) Cleaner abstraction for the API client to return a certain item by id. [@simonneutert](https://github.com/simonneutert)
+
+### Added
 
 - [#61](https://github.com/simonneutert/papierkram_api_client/pull/61) Adds ENV to make Minitest pass ([follow Alice](https://github.com/ordinaryzelig/minispec-metadata/pull/18)). [@simonneutert](https://github.com/simonneutert)
 - [#55](https://github.com/simonneutert/papierkram_api_client/pull/55) Adds missing chapter for Transactions. [@simonneutert](https://github.com/simonneutert)
+
 - [#<PRNUMBER>](https://github.com/simonneutert/papierkram_api_client/pull/<PRNUMBER>) description. [@<githubusername>](https://github.com/<githubusername>)
 
-[0.2.4] - 2023-06-30
+## [0.2.4] - 2023-06-30
 
-#### Fixed
+### Fixed
 
 - [#48](https://github.com/simonneutert/papierkram_api_client/pull/48) Arguments weren't truly optional when possible. [@simonneutert](https://github.com/simonneutert)
 

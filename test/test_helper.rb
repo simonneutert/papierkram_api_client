@@ -3,8 +3,11 @@
 $LOAD_PATH.unshift File.expand_path('../lib', __dir__)
 require 'papierkram_api_client'
 require 'minitest/autorun'
-require 'vcr'
+require 'minispec-metadata'
 require 'minitest-vcr'
+require 'webmock'
+require 'faraday'
+require 'vcr'
 require 'pry'
 require 'uri'
 
@@ -25,6 +28,8 @@ end
 VCR.configure do |c|
   c.cassette_library_dir = 'test/cassettes'
   c.hook_into :faraday
+  c.allow_http_connections_when_no_cassette = false
+
   c.filter_sensitive_data('<API BEARER>') { ENV.fetch('PAPIERKRAM_API_KEY', nil) }
   c.filter_sensitive_data('<UNICORN>') do |interaction|
     next unless interaction.response.headers['set-cookie']
@@ -53,4 +58,5 @@ VCR.configure do |c|
   # c.filter_sensitive_data('<DOMAIN>') { ENV.fetch('PAPIERKRAM_API_SUBDOMAIN', nil) }
   # c.filter_sensitive_data('<DOMAIN>') { 'http://localhost:3000/' }
 end
+
 MinitestVcr::Spec.configure!

@@ -6,7 +6,7 @@ class TestProjects < Minitest::Test
   describe 'Project Requests' do
     it 'gets a project', :vcr do
       client = PapierkramApi::Client.new('simonneutert')
-      response = client.projects.by(id: 5)
+      response = client.projects.find_by(id: 5)
       response_body = response.body
 
       assert_equal(200, response.status)
