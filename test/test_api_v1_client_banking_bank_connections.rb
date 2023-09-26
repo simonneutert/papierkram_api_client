@@ -71,7 +71,7 @@ class TestBankingBankConnections < Minitest::Test
       assert_equal 1, response_body['total_pages']
       assert response_body['total_pages'].is_a?(Integer)
       assert_equal 1, response_body['total_entries']
-      refute response_body['has_more']
+      refute_operator response_body, :[], 'has_more'
 
       assert response_body['entries'].is_a?(Array)
       bank_connection = response_body['entries'].first

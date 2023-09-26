@@ -28,8 +28,8 @@ class TestExpenseVouchers < Minitest::Test
       response_body = response.body
 
       assert_equal(200, response.status)
-      assert(response_body['entries'].first['id'] > response_body['entries'].last['id'])
-      assert(response_body['entries'].first['id'] > response_body['entries'][1]['id'])
+      assert_operator(response_body['entries'].first['id'], :>, response_body['entries'].last['id'])
+      assert_operator(response_body['entries'].first['id'], :>, response_body['entries'][1]['id'])
       refute_empty(response_body)
     end
 
@@ -39,8 +39,8 @@ class TestExpenseVouchers < Minitest::Test
       response_body = response.body
 
       assert_equal(200, response.status)
-      assert(response_body['entries'].first['id'] < response_body['entries'].last['id'])
-      assert(response_body['entries'].first['id'] < response_body['entries'][1]['id'])
+      assert_operator(response_body['entries'].first['id'], :<, response_body['entries'].last['id'])
+      assert_operator(response_body['entries'].first['id'], :<, response_body['entries'][1]['id'])
       refute_empty(response_body)
     end
   end
