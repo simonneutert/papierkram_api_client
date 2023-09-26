@@ -63,7 +63,7 @@ class TestBankingTransactions < Minitest::Test
       assert_equal(5, response_body['total_pages'])
       assert(response_body['total_pages'].is_a?(Integer))
       assert_equal(9, response_body['total_entries'])
-      assert(response_body['has_more'])
+      assert_operator(response_body, :[], 'has_more')
 
       assert(response_body['entries'].is_a?(Array))
       bank_connection = response_body['entries'].first
@@ -78,7 +78,7 @@ class TestBankingTransactions < Minitest::Test
       assert(bank_connection['currency'].is_a?(String))
       assert_equal('EUR', bank_connection['currency'])
       assert(bank_connection['storno'].is_a?(FalseClass) || bank_connection['storno'].nil?)
-      refute(!bank_connection['storno'].nil?)
+      assert_nil(bank_connection['storno'])
       assert(bank_connection['transaction_type'].is_a?(String))
     end
   end
