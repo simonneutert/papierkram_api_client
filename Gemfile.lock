@@ -22,7 +22,7 @@ GEM
     faraday-net_http (3.0.2)
     hashdiff (1.0.1)
     http-2-next (0.5.1)
-    httpx (0.24.5)
+    httpx (0.24.6)
       http-2-next (>= 0.4.1)
     json (2.6.3)
     language_server-protocol (3.17.0.3)
