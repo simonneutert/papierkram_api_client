@@ -8,7 +8,7 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - Faraday v2.7.4
+      - Faraday v2.7.12
       Authorization:
       - Bearer <API BEARER>
   response:
@@ -29,32 +29,34 @@ http_interactions:
       referrer-policy:
       - strict-origin-when-cross-origin
       x-remaining-quota:
-      - '9880'
+      - '9924'
       x-permitted-cross-domain-policies:
       - none
       pragma:
       - no-cache
+      x-consumed-quota:
+      - '1'
       x-request-id:
-      - d7f93bb3-1a13-409f-a8c8-a28501e18315
+      - 6e56d059-0fcd-4c40-bd83-1030d53a69f2
       x-download-options:
       - noopen
       etag:
-      - W/"469f5798a25b35ab5d3c9409d284ed1a"
+      - W/"a9686f83639a74569e71612e9f22481b"
       x-frame-options:
       - SAMEORIGIN
       x-runtime:
-      - '0.103401'
+      - '0.142725'
       expires:
       - Fri, 01 Jan 1990 00:00:00 GMT
       date:
-      - Wed, 12 Apr 2023 15:19:20 GMT
+      - Sat, 02 Dec 2023 21:12:08 GMT
       set-cookie:
-      - redis_session_store=<UNICORN>; path=/; expires=Wed, 26 Apr 2023 15:19:20 GMT;
+      - redis_session_store=<UNICORN>; path=/; expires=Sat, 16 Dec 2023 21:12:08 GMT;
         HttpOnly; SameSite=Lax
       x-powered-by:
-      - Phusion Passenger(R) 6.0.15
+      - Phusion Passenger(R) 6.0.19
       server:
-      - nginx/1.18.0 + Phusion Passenger(R) 6.0.15
+      - nginx/1.18.0 + Phusion Passenger(R) 6.0.19
       x-version:
       - STABLE
       x-robots-tag:
@@ -69,7 +71,8 @@ http_interactions:
       - simonneutert
     body:
       encoding: UTF-8
-      string: '{"type":"list","page":1,"page_size":100,"total_pages":1,"total_entries":1,"has_more":false,"entries":[{"type":"company","id":3,"name":"Büffelranch
-        Johnny","contact_type":"customer","supplier_no":null,"customer_no":"K-00001","email":"<EMAIL>","phone":"","website":"","twitter":"","fax":"","postal_street":null,"postal_zip":null,"postal_city":null,"postal_country":"Deutschland","physical_street":null,"physical_zip":null,"physical_city":null,"physical_country":"Deutschland","delivery_method":"pdf","ust_idnr":"","logo_file_name":null,"logo_content_type":null,"logo_file_size":null,"logo_updated_at":null,"bank_blz":"","bank_institute":"","bank_account_no":"","bank_bic":"","bank_sepa_mandate_reference":"SEPAMRK00001BJ","bank_sepa_mandate_accepted":null,"bank_iban":"","inbound_address":"euch","notes":"","record_state":"active","flagged":null,"created_at":"2018-03-06T15:57:36.000+01:00","updated_at":"2023-04-12T08:13:56.000+02:00","color":"blue"}]}'
-  recorded_at: Wed, 12 Apr 2023 15:19:20 GMT
-recorded_with: VCR 6.1.0
+      string: '{"type":"list","page":1,"page_size":100,"total_pages":1,"total_entries":1,"has_more":false,"entries":[{"type":"company","id":3,"name":"adsad
+        asd","contact_type":"customer","supplier_no":null,"customer_no":"K-00001","email":null,"phone":"<PHONE>","website":"","twitter":"","fax":"<FAX>","postal_street":"as
+        d","postal_zip":"16845","postal_city":"Kyritz Holzhausen","postal_country":"Deutschland","physical_street":null,"physical_zip":null,"physical_city":null,"physical_country":"Deutschland","delivery_method":"pdf","ust_idnr":"","logo_file_name":null,"logo_content_type":null,"logo_file_size":null,"logo_updated_at":null,"bank_blz":"<BLZ>","bank_institute":"","bank_account_no":"<ACCOUNT_NO>","bank_bic":"<BIC>","bank_sepa_mandate_reference":"SEPAMRK00001AA","bank_sepa_mandate_accepted":null,"bank_iban":"<IBAN>","inbound_address":"xaja","notes":"","record_state":"active","flagged":null,"created_at":"2023-04-27T17:07:47.000+02:00","updated_at":"2023-12-02T21:55:59.000+01:00","color":"blue"}]}'
+  recorded_at: Sat, 02 Dec 2023 21:12:08 GMT
+recorded_with: VCR 6.2.0

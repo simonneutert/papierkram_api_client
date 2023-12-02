@@ -60,10 +60,8 @@ class TestContactCompany < Minitest::Test
       client = PapierkramApi::Client.new('simonneutert')
       response = client.contact_companies_persons.update_by(
         company_id: 3,
-        id: 3,
-        attributes: {
-          last_name: 'Musterwoman'
-        }
+        id: 6,
+        last_name: 'Musterwoman'
       )
 
       assert_equal(200, response.status)

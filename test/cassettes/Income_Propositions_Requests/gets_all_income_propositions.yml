@@ -8,7 +8,7 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - Faraday v2.7.4
+      - Faraday v2.7.12
       Authorization:
       - Bearer <API BEARER>
   response:
@@ -29,32 +29,34 @@ http_interactions:
       referrer-policy:
       - strict-origin-when-cross-origin
       x-remaining-quota:
-      - '9872'
+      - '9925'
       x-permitted-cross-domain-policies:
       - none
       pragma:
       - no-cache
+      x-consumed-quota:
+      - '1'
       x-request-id:
-      - 91d64b23-352a-4e8a-aa77-d47839257155
+      - 39817c59-87be-4f0e-85dd-981bfefdade8
       x-download-options:
       - noopen
       etag:
-      - W/"f296a5971831d69e69812a6002255be1"
+      - W/"326b0f92928a1c0905fd5ab06a998e59"
       x-frame-options:
       - SAMEORIGIN
       x-runtime:
-      - '0.082171'
+      - '0.091544'
       expires:
       - Fri, 01 Jan 1990 00:00:00 GMT
       date:
-      - Wed, 12 Apr 2023 15:19:22 GMT
+      - Sat, 02 Dec 2023 21:11:02 GMT
       set-cookie:
-      - redis_session_store=<UNICORN>; path=/; expires=Wed, 26 Apr 2023 15:19:22 GMT;
+      - redis_session_store=<UNICORN>; path=/; expires=Sat, 16 Dec 2023 21:11:02 GMT;
         HttpOnly; SameSite=Lax
       x-powered-by:
-      - Phusion Passenger(R) 6.0.15
+      - Phusion Passenger(R) 6.0.19
       server:
-      - nginx/1.18.0 + Phusion Passenger(R) 6.0.15
+      - nginx/1.18.0 + Phusion Passenger(R) 6.0.19
       x-version:
       - STABLE
       x-robots-tag:
@@ -69,7 +71,8 @@ http_interactions:
       - simonneutert
     body:
       encoding: UTF-8
-      string: '{"type":"list","page":1,"page_size":100,"total_pages":1,"total_entries":1,"has_more":false,"entries":[{"type":"proposition","id":2,"name":"Website","proposition_type":"service","description":"Codes
-        n Clicks","price":"13.37","time_unit":"hour","unit_name_1":"Stunde","unit_name_n":"Stunden","record_state":"active","flagged":null,"favorite":null,"created_at":"2018-03-06T15:57:18.000+01:00","updated_at":"2018-03-06T15:57:18.000+01:00"}]}'
-  recorded_at: Wed, 12 Apr 2023 15:19:22 GMT
-recorded_with: VCR 6.1.0
+      string: '{"type":"list","page":1,"page_size":100,"total_pages":1,"total_entries":1,"has_more":false,"entries":[{"type":"proposition","id":6,"name":"Software
+        design","article_no":"123456","proposition_type":"service","description":"Here,
+        we can describe what \"Software design\" actually entails.","price":"150.0","time_unit":"hour","unit_name_1":"Stunde","unit_name_n":"Stunden","record_state":"active","flagged":null,"favorite":null,"created_at":"2023-06-30T09:38:31.000+02:00","updated_at":"2023-06-30T09:39:40.000+02:00"}]}'
+  recorded_at: Sat, 02 Dec 2023 21:11:02 GMT
+recorded_with: VCR 6.2.0

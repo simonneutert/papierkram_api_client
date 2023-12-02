@@ -54,12 +54,44 @@ module PapierkramApi
             http_post("#{@url_api_path}/contact/companies/#{company_id}/persons", body)
           end
 
-          def update_by(company_id:, id:, attributes: {})
-            raise ArgumentError, 'attributes must be a Hash' unless attributes.is_a?(Hash)
+          def update_by( # rubocop:disable Metrics/AbcSize, Metrics/CyclomaticComplexity, Metrics/PerceivedComplexity, Metrics/ParameterLists, Metrics/MethodLength
+            id:,
+            company_id:,
+            title: nil,
+            salutation: nil,
+            first_name: nil,
+            last_name: nil,
+            position: nil,
+            department: nil,
+            phone: nil,
+            skype: nil,
+            fax: nil,
+            email: nil,
+            flagged: nil,
+            mobile: nil,
+            comment: nil,
+            default: nil
+          )
             raise ArgumentError, 'company_id must be an Integer' unless company_id.is_a?(Integer)
             raise ArgumentError, 'id must be an Integer' unless id.is_a?(Integer)
 
-            http_put("#{@url_api_path}/contact/companies/#{company_id}/persons/#{id}", attributes)
+            body = {}
+            body[:title] = title if title
+            body[:salutation] = salutation if salutation
+            body[:first_name] = first_name if first_name
+            body[:last_name] = last_name if last_name
+            body[:position] = position if position
+            body[:department] = department if department
+            body[:phone] = phone if phone
+            body[:skype] = skype if skype
+            body[:fax] = fax if fax
+            body[:email] = email if email
+            body[:flagged] = flagged if flagged
+            body[:mobile] = mobile if mobile
+            body[:comment] = comment if comment
+            body[:default] = default if default
+
+            http_put("#{@url_api_path}/contact/companies/#{company_id}/persons/#{id}", body)
           end
 
           def delete_by(company_id:, id:)
