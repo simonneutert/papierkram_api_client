@@ -110,6 +110,11 @@ Ziele:
   - [Tracker::Task (Aufgabe)](#trackertask-aufgabe)
     - [alle Aufgaben](#alle-aufgaben)
     - [eine Aufgabe](#eine-aufgabe)
+    - [erstelle eine Aufgabe](#erstelle-eine-aufgabe)
+    - [aktualisiere eine Aufgabe](#aktualisiere-eine-aufgabe)
+    - [lösche eine Aufgabe](#lösche-eine-aufgabe)
+    - [archiviere eine Aufgabe](#archiviere-eine-aufgabe)
+    - [unarchiviere eine Aufgabe](#unarchiviere-eine-aufgabe)
   - [Tracker::TimeEntry (Zeiteintrag)](#trackertimeentry-zeiteintrag)
     - [alle Zeiteinträge](#alle-zeiteinträge)
     - [einen Zeiteintrag](#einen-zeiteintrag)
@@ -387,10 +392,8 @@ puts company.body
 ```ruby
 company = client.contact_companies_persons.create(
   company_id: 1,
-  attributes: {
-    first_name: 'Max',
-    last_name: 'Mustermann'
-  }
+  first_name: 'Max',
+  last_name: 'Mustermann'
 )
 puts company.headers
 puts company.body
@@ -401,8 +404,10 @@ Siehe [CompaniesPersons#create](lib/papierkram_api/v1/endpoints/contact/companie
 #### aktualisiere eine Kontaktperson (eines Unternehmens)
 
 ```ruby
-company = client.contact_companies_persons
-                .update_by(company_id: 1, id: 1, attributes: { first_name: 'Moritz' })
+company = client.contact_companies_persons.update_by(
+  id: 1,
+  company_id: 1,
+  attributes: { first_name: 'Moritz' })
 puts company.headers
 puts company.body
 ```
@@ -675,6 +680,50 @@ puts tasks.body
 
 ```ruby
 task = client.tracker_tasks.find_by(id: 1)
+puts task.headers
+puts task.body
+```
+
+#### erstelle eine Aufgabe
+
+siehe [Tasks#create](lib/papierkram_api/v1/endpoints/tracker/tasks.rb) für mögliche Parameter.
+
+```ruby
+task = client.tracker_tasks.create(name: 'Aufgabe 1')
+puts task.headers
+puts task.body
+```
+
+#### aktualisiere eine Aufgabe
+
+siehe [Tasks#update_by](lib/papierkram_api/v1/endpoints/tracker/tasks.rb) für mögliche Parameter.
+
+```ruby
+task = client.tracker_tasks.update_by(id: 1, name: 'Aufgabe 2' )
+puts task.headers
+puts task.body
+```
+
+#### lösche eine Aufgabe
+
+```ruby
+task = client.tracker_tasks.delete_by(id: 1)
+puts task.headers
+puts task.body
+```
+
+#### archiviere eine Aufgabe
+
+```ruby
+task = client.tracker_tasks.archive_by(id: 1)
+puts task.headers
+puts task.body
+```
+
+#### unarchiviere eine Aufgabe
+
+```ruby
+task = client.tracker_tasks.unarchive_by(id: 1)
 puts task.headers
 puts task.body
 ```
