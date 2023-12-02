@@ -36,12 +36,27 @@ module PapierkramApi
             http_post("#{@url_api_path}/income/propositions", body)
           end
 
-          def update_by(id:, attributes: {})
-            if attributes[:vat_rate] && (attributes[:vat_rate].empty? || !attributes[:vat_rate].include?('%'))
-              raise ArgumentError, 'vat_rate must be a percentage and include a % sign'
-            end
+          def update_by( # rubocop:disable Metrics/CyclomaticComplexity
+            id:,
+            name: nil,
+            description: nil,
+            article_no: nil,
+            price: nil,
+            proposition_type: nil,
+            time_unit: nil,
+            vat_rate: nil
+          )
 
-            http_put("#{@url_api_path}/income/propositions/#{id}", attributes)
+            body = {}
+            body[:name] = name if name
+            body[:description] = description if description
+            body[:article_no] = article_no if article_no
+            body[:price] = price if price
+            body[:proposition_type] = proposition_type if proposition_type
+            body[:time_unit] = time_unit if time_unit
+            body[:vat_rate] = vat_rate if vat_rate
+
+            http_put("#{@url_api_path}/income/propositions/#{id}", body)
           end
 
           def delete_by(id:)

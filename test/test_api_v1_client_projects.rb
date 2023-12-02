@@ -80,10 +80,8 @@ class TestProjects < Minitest::Test
     it 'update a project', :vcr do
       client = PapierkramApi::Client.new('simonneutert')
       response = client.projects.update_by(
-        id: 12,
-        attributes: {
-          name: 'Test Projecticles'
-        }
+        id: 9,
+        name: 'Test Projecticles'
       )
 
       assert_equal(200, response.status)

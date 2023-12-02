@@ -339,8 +339,10 @@ Siehe [Companies#create_customer](lib/papierkram_api/v1/endpoints/contact/compan
 #### aktualisiere ein Unternehmen
 
 ```ruby
-company = client.contact_companies
-                .update_by(id: 1, attributes: { name: 'Test GmbH' })
+company = client.contact_companies.update_by(
+  id: 1, 
+  name: 'Test GmbH'
+)
 puts company.headers
 puts company.body
 ```
@@ -411,7 +413,8 @@ Siehe [CompaniesPersons#create](lib/papierkram_api/v1/endpoints/contact/companie
 company = client.contact_companies_persons.update_by(
   id: 1,
   company_id: 1,
-  attributes: { first_name: 'Moritz' })
+  first_name: 'Moritz'
+)
 puts company.headers
 puts company.body
 ```
@@ -583,10 +586,8 @@ Siehe [Propositions#create](lib/papierkram_api/v1/endpoints/income/propositions.
 ```ruby
 client.income_propositions.update_by(
   id: 1,
-  attributes: {
-    name: 'Software design',
-    vat_rate: '19%' # verpflichtend bei Änderung
-  }
+  name: 'Software design',
+  vat_rate: '19%' # verpflichtend bei Änderung
 )
 ```
 
@@ -657,7 +658,10 @@ Siehe [Projects](lib/papierkram_api/v1/endpoints/projects.rb) für mögliche Par
 #### aktualisiere ein Projekt
 
 ```ruby
-project = client.projects.update_by(id: 1, attributes: { name: 'Projekt 2' })
+project = client.projects.update_by(
+  id: 1,
+  name: 'Projekt 2'
+)
 puts project.headers
 puts project.body
 ```

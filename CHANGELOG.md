@@ -2,6 +2,10 @@
 
 ## [next] - unreleased
 
+### Changes (BREAKING! ⚠️)
+
+- [#92](https://github.com/simonneutert/papierkram_api_client/pull/92) changes how updating a company person works. [@simonneutert](https://github.com/simonneutert)
+
 ### Added
 
 - [#90](https://github.com/simonneutert/papierkram_api_client/pull/90) crud ops for time_entries. [@simonneutert](https://github.com/simonneutert)

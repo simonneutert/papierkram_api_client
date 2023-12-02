@@ -134,11 +134,62 @@ module PapierkramApi
             http_post("#{@url_api_path}/contact/companies", body)
           end
 
-          def update_by(id:, attributes: {})
+          def update_by( # rubocop:disable Metrics/AbcSize, Metrics/CyclomaticComplexity, Metrics/MethodLength, Metrics/PerceivedComplexity, Metrics/ParameterLists
+            id:,
+            name: nil,
+            contact_type: nil,
+            phone: nil,
+            fax: nil,
+            email: nil,
+            website: nil,
+            twitter: nil,
+            ust_idnr: nil,
+            delivery_method: nil,
+            postal_street: nil,
+            postal_zip: nil,
+            postal_city: nil,
+            postal_country: nil,
+            physical_street: nil,
+            physical_zip: nil,
+            physical_city: nil,
+            physical_country: nil,
+            bank_account_no: nil,
+            bank_blz: nil,
+            bank_institute: nil,
+            bank_bic: nil,
+            bank_iban: nil,
+            notes: nil,
+            color: nil
+          )
             raise ArgumentError, 'id must be an Integer' unless id.is_a?(Integer)
-            raise ArgumentError, 'attributes must be a Hash' unless attributes.is_a?(Hash)
 
-            http_put("#{@url_api_path}/contact/companies/#{id}", attributes)
+            body = {}
+            body[:name] = name if name
+            body[:contact_type] = contact_type if contact_type
+            body[:phone] = phone if phone
+            body[:fax] = fax if fax
+            body[:email] = email if email
+            body[:website] = website if website
+            body[:twitter] = twitter if twitter
+            body[:ust_idnr] = ust_idnr if ust_idnr
+            body[:delivery_method] = delivery_method if delivery_method
+            body[:postal_street] = postal_street if postal_street
+            body[:postal_zip] = postal_zip if postal_zip
+            body[:postal_city] = postal_city if postal_city
+            body[:postal_country] = postal_country if postal_country
+            body[:physical_street] = physical_street if physical_street
+            body[:physical_zip] = physical_zip if physical_zip
+            body[:physical_city] = physical_city if physical_city
+            body[:physical_country] = physical_country if physical_country
+            body[:bank_account_no] = bank_account_no if bank_account_no
+            body[:bank_blz] = bank_blz if bank_blz
+            body[:bank_institute] = bank_institute if bank_institute
+            body[:bank_bic] = bank_bic if bank_bic
+            body[:bank_iban] = bank_iban if bank_iban
+            body[:notes] = notes if notes
+            body[:color] = color if color
+
+            http_put("#{@url_api_path}/contact/companies/#{id}", body)
           end
 
           def delete_by(id:)

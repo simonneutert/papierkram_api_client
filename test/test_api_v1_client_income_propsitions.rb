@@ -44,9 +44,7 @@ class TestIncomePropositions < Minitest::Test
       client = PapierkramApi::Client.new('simonneutert')
       response = client.income_propositions.update_by(
         id: 6,
-        attributes: {
-          article_no: '123456'
-        }
+        article_no: '123456'
       )
 
       assert_equal(200, response.status)
