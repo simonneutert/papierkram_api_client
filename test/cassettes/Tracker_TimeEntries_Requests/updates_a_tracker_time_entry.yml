@@ -1,0 +1,81 @@
+---
+http_interactions:
+- request:
+    method: put
+    uri: https://simonneutert.papierkram.de/api/v1/tracker/time_entries/3
+    body:
+      encoding: UTF-8
+      string: '{"comments":"Worked very hard"}'
+    headers:
+      User-Agent:
+      - Faraday v2.7.12
+      Authorization:
+      - Bearer <API BEARER>
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      content-type:
+      - application/json; charset=utf-8
+      status:
+      - 200 OK
+      cache-control:
+      - no-store
+      access-control-allow-origin:
+      - "*"
+      vary:
+      - Accept
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      x-remaining-quota:
+      - '9933'
+      x-permitted-cross-domain-policies:
+      - none
+      pragma:
+      - no-cache
+      x-consumed-quota:
+      - '1'
+      x-request-id:
+      - 246a7ce8-ecfb-49df-af57-870bfdb4f891
+      x-download-options:
+      - noopen
+      etag:
+      - W/"f88e448e7b3c7aba09227aac73107de9"
+      x-frame-options:
+      - SAMEORIGIN
+      x-runtime:
+      - '0.131772'
+      expires:
+      - Fri, 01 Jan 1990 00:00:00 GMT
+      date:
+      - Sat, 02 Dec 2023 20:27:43 GMT
+      set-cookie:
+      - redis_session_store=<UNICORN>; path=/; expires=Sat, 16 Dec 2023 20:27:43 GMT;
+        HttpOnly; SameSite=Lax
+      x-powered-by:
+      - Phusion Passenger(R) 6.0.19
+      server:
+      - nginx/1.18.0 + Phusion Passenger(R) 6.0.19
+      x-version:
+      - STABLE
+      x-robots-tag:
+      - noindex, nofollow;
+      strict-transport-security:
+      - max-age=31536000; includeSubdomains;;
+      x-xss-protection:
+      - 1; mode=block;
+      x-content-type-options:
+      - nosniff;
+      x-debug-subdomain:
+      - simonneutert
+    body:
+      encoding: UTF-8
+      string: '{"type":"time_entry","id":3,"user_id":3,"task_id":3,"project_id":9,"invoice_id":null,"started_at":"2020-05-11T10:00:00.000+02:00","ended_at":"2020-05-11T12:00:00.000+02:00","duration":7200,"comments":"Worked
+        very hard","fingerprint":"20231202202743597","record_state":"active","billable_duration":7200,"unbillable":false,"created_at":"2023-12-02T21:23:52.000+01:00","updated_at":"2023-12-02T21:27:43.000+01:00","project":{"type":"project","id":9,"name":"Test
+        Project","description":null,"start_date":"2020-01-01","end_date":"2020-12-31","flagged":null,"budget_type":null,"budget_money":null,"budget_time":null,"budget_time_unit":null,"customer_default":false,"record_state":"active","created_at":"2023-06-28T20:17:59.000+02:00","updated_at":"2023-12-02T21:27:43.000+01:00","company_id":3,"color":null},"task":{"type":"task","id":3,"name":"Test
+        Tracker Taski","project_id":9,"relative_costs":null,"complete":null,"deadline":null,"flagged":null,"record_state":"active","created_at":"2023-12-02T20:59:29.000+01:00","updated_at":"2023-12-02T21:27:43.000+01:00"},"user":{"type":"user","id":3,"full_name":"<FULL_NAME>","first_name":"Simon","last_name":"Neutert","role":"owner","role_f":"Accountinhaber","email":"<EMAIL>"},"invoice":null}'
+  recorded_at: Sat, 02 Dec 2023 20:27:43 GMT
+recorded_with: VCR 6.2.0

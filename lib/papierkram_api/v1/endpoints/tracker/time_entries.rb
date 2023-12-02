@@ -42,6 +42,65 @@ module PapierkramApi
             http_get("#{@url_api_path}/tracker/time_entries", query)
           end
 
+          def create(
+            entry_date:,
+            started_at_time:,
+            ended_at_time:,
+            task_id:,
+            user_id:,
+            comments: nil,
+            billable_duration: nil,
+            unbillable: nil
+          )
+            body = {}
+            body[:entry_date] = entry_date
+            body[:started_at_time] = started_at_time
+            body[:ended_at_time] = ended_at_time
+            body[:task] = { id: task_id }
+            body[:user] = { id: user_id }
+            body[:comments] = comments if comments
+            body[:billable_duration] = billable_duration if billable_duration
+            body[:unbillable] = unbillable if unbillable
+
+            http_post("#{@url_api_path}/tracker/time_entries", body)
+          end
+
+          def update_by( # rubocop:disable Metrics/ParameterLists, Metrics/CyclomaticComplexity, Metrics/PerceivedComplexity
+            id:,
+            entry_date: nil,
+            started_at_time: nil,
+            ended_at_time: nil,
+            task_id: nil,
+            user_id: nil,
+            comments: nil,
+            billable_duration: nil,
+            unbillable: nil
+          )
+            body = {}
+            body[:entry_date] = entry_date if entry_date
+            body[:started_at_time] = started_at_time if started_at_time
+            body[:ended_at_time] = ended_at_time if ended_at_time
+            body[:task] = { id: task_id } if task_id
+            body[:user] = { id: user_id } if user_id
+            body[:comments] = comments if comments
+            body[:billable_duration] = billable_duration if billable_duration
+            body[:unbillable] = unbillable if unbillable
+
+            http_put("#{@url_api_path}/tracker/time_entries/#{id}", body)
+          end
+
+          def delete_by(id:)
+            http_delete("#{@url_api_path}/tracker/time_entries/#{id}")
+          end
+
+          def archive_by(id:)
+            http_post("#{@url_api_path}/tracker/time_entries/#{id}/archive")
+          end
+
+          def unarchive_by(id:)
+            http_post("#{@url_api_path}/tracker/time_entries/#{id}/unarchive")
+          end
+
           private
 
           def validate!(billing_state:, start_time_range_start:, start_time_range_end:)
