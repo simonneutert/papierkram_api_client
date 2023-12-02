@@ -1,0 +1,97 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://simonneutert.papierkram.de/api/v1/income/payment_terms?page=1&page_size=100
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.12
+      Authorization:
+      - Bearer <API BEARER>
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      content-type:
+      - application/json; charset=utf-8
+      status:
+      - 200 OK
+      cache-control:
+      - no-store
+      access-control-allow-origin:
+      - "*"
+      vary:
+      - Accept
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      x-remaining-quota:
+      - '9998'
+      x-permitted-cross-domain-policies:
+      - none
+      pragma:
+      - no-cache
+      x-consumed-quota:
+      - '1'
+      x-request-id:
+      - 242243ab-ca68-48c5-8ae5-f0da6dc00f69
+      x-download-options:
+      - noopen
+      etag:
+      - W/"c88be12c4524237b89346cee6d40b925"
+      x-frame-options:
+      - SAMEORIGIN
+      x-runtime:
+      - '0.145105'
+      expires:
+      - Fri, 01 Jan 1990 00:00:00 GMT
+      date:
+      - Sat, 02 Dec 2023 19:35:43 GMT
+      set-cookie:
+      - redis_session_store=<UNICORN>; path=/; expires=Sat, 16 Dec 2023 19:35:43 GMT;
+        HttpOnly; SameSite=Lax
+      x-powered-by:
+      - Phusion Passenger(R) 6.0.19
+      server:
+      - nginx/1.18.0 + Phusion Passenger(R) 6.0.19
+      x-version:
+      - STABLE
+      x-robots-tag:
+      - noindex, nofollow;
+      strict-transport-security:
+      - max-age=31536000; includeSubdomains;;
+      x-xss-protection:
+      - 1; mode=block;
+      x-content-type-options:
+      - nosniff;
+      x-debug-subdomain:
+      - simonneutert
+    body:
+      encoding: UTF-8
+      string: '{"type":"list","page":1,"page_size":100,"total_pages":1,"total_entries":21,"has_more":false,"entries":[{"type":"payment_term","id":3,"name":"10
+        Tage Zahlungsfrist","cash_discount":null,"cash_discount_time":null,"cash_discount_unit":null,"due_time":10,"due_time_unit":"day","number_reminders":null,"number_dunnings":null,"dunning_fee":null,"created_at":"2018-03-06T15:55:56.000+01:00","updated_at":"2018-03-06T15:55:56.000+01:00","template":true,"default_template":false,"template_id":null,"default_reminder_template":false,"template_text":null,"payment_required":true},{"type":"payment_term","id":43,"name":"10
+        Tage Zahlungsfrist","cash_discount":null,"cash_discount_time":null,"cash_discount_unit":null,"due_time":10,"due_time_unit":"day","number_reminders":null,"number_dunnings":null,"dunning_fee":null,"created_at":"2018-03-06T15:55:56.000+01:00","updated_at":"2018-03-06T15:55:56.000+01:00","template":false,"default_template":false,"template_id":3,"default_reminder_template":false,"template_text":null,"payment_required":true},{"type":"payment_term","id":15,"name":"3
+        Monate Zahlungsfrist","cash_discount":null,"cash_discount_time":null,"cash_discount_unit":null,"due_time":3,"due_time_unit":"month","number_reminders":null,"number_dunnings":null,"dunning_fee":null,"created_at":"2018-03-06T15:55:56.000+01:00","updated_at":"2018-03-06T15:55:56.000+01:00","template":true,"default_template":false,"template_id":null,"default_reminder_template":false,"template_text":null,"payment_required":true},{"type":"payment_term","id":34,"name":"2
+        Wochen Zahlungsfrist","cash_discount":null,"cash_discount_time":null,"cash_discount_unit":null,"due_time":2,"due_time_unit":"week","number_reminders":null,"number_dunnings":null,"dunning_fee":null,"created_at":"2019-07-17T12:00:46.000+02:00","updated_at":"2019-07-17T12:00:46.000+02:00","template":false,"default_template":false,"template_id":9,"default_reminder_template":false,"template_text":null,"payment_required":true},{"type":"payment_term","id":66,"name":"2
+        Wochen Zahlungsfrist","cash_discount":null,"cash_discount_time":null,"cash_discount_unit":null,"due_time":2,"due_time_unit":"week","number_reminders":null,"number_dunnings":null,"dunning_fee":null,"created_at":"2018-03-06T15:55:56.000+01:00","updated_at":"2018-03-06T15:55:56.000+01:00","template":false,"default_template":false,"template_id":9,"default_reminder_template":false,"template_text":null,"payment_required":true},{"type":"payment_term","id":63,"name":"2
+        Wochen Zahlungsfrist","cash_discount":null,"cash_discount_time":null,"cash_discount_unit":null,"due_time":2,"due_time_unit":"week","number_reminders":null,"number_dunnings":null,"dunning_fee":null,"created_at":"2018-03-06T15:55:56.000+01:00","updated_at":"2018-03-06T15:55:56.000+01:00","template":false,"default_template":false,"template_id":9,"default_reminder_template":false,"template_text":null,"payment_required":true},{"type":"payment_term","id":60,"name":"2
+        Wochen Zahlungsfrist","cash_discount":null,"cash_discount_time":null,"cash_discount_unit":null,"due_time":2,"due_time_unit":"week","number_reminders":null,"number_dunnings":null,"dunning_fee":null,"created_at":"2018-03-06T15:55:56.000+01:00","updated_at":"2018-03-06T15:55:56.000+01:00","template":false,"default_template":false,"template_id":9,"default_reminder_template":false,"template_text":null,"payment_required":true},{"type":"payment_term","id":56,"name":"2
+        Wochen Zahlungsfrist","cash_discount":null,"cash_discount_time":null,"cash_discount_unit":null,"due_time":2,"due_time_unit":"week","number_reminders":null,"number_dunnings":null,"dunning_fee":null,"created_at":"2020-11-03T10:31:42.000+01:00","updated_at":"2020-11-03T10:31:42.000+01:00","template":false,"default_template":false,"template_id":9,"default_reminder_template":false,"template_text":null,"payment_required":true},{"type":"payment_term","id":53,"name":"2
+        Wochen Zahlungsfrist","cash_discount":null,"cash_discount_time":null,"cash_discount_unit":null,"due_time":2,"due_time_unit":"week","number_reminders":null,"number_dunnings":null,"dunning_fee":null,"created_at":"2020-11-03T10:30:58.000+01:00","updated_at":"2020-11-03T10:30:58.000+01:00","template":false,"default_template":false,"template_id":9,"default_reminder_template":false,"template_text":null,"payment_required":true},{"type":"payment_term","id":50,"name":"2
+        Wochen Zahlungsfrist","cash_discount":null,"cash_discount_time":null,"cash_discount_unit":null,"due_time":2,"due_time_unit":"week","number_reminders":null,"number_dunnings":null,"dunning_fee":null,"created_at":"2020-11-03T10:22:33.000+01:00","updated_at":"2020-11-03T10:22:33.000+01:00","template":false,"default_template":false,"template_id":9,"default_reminder_template":false,"template_text":null,"payment_required":true},{"type":"payment_term","id":49,"name":"2
+        Wochen Zahlungsfrist","cash_discount":null,"cash_discount_time":null,"cash_discount_unit":null,"due_time":2,"due_time_unit":"week","number_reminders":null,"number_dunnings":null,"dunning_fee":null,"created_at":"2020-01-29T13:35:21.000+01:00","updated_at":"2020-01-29T13:35:21.000+01:00","template":false,"default_template":false,"template_id":9,"default_reminder_template":false,"template_text":null,"payment_required":true},{"type":"payment_term","id":46,"name":"2
+        Wochen Zahlungsfrist","cash_discount":null,"cash_discount_time":null,"cash_discount_unit":null,"due_time":2,"due_time_unit":"week","number_reminders":null,"number_dunnings":null,"dunning_fee":null,"created_at":"2020-01-29T08:06:22.000+01:00","updated_at":"2020-01-29T08:06:22.000+01:00","template":false,"default_template":false,"template_id":9,"default_reminder_template":false,"template_text":null,"payment_required":true},{"type":"payment_term","id":40,"name":"2
+        Wochen Zahlungsfrist","cash_discount":null,"cash_discount_time":null,"cash_discount_unit":null,"due_time":2,"due_time_unit":"week","number_reminders":null,"number_dunnings":null,"dunning_fee":null,"created_at":"2019-12-19T12:26:36.000+01:00","updated_at":"2019-12-19T12:26:36.000+01:00","template":false,"default_template":false,"template_id":9,"default_reminder_template":false,"template_text":null,"payment_required":true},{"type":"payment_term","id":33,"name":"2
+        Wochen Zahlungsfrist","cash_discount":null,"cash_discount_time":null,"cash_discount_unit":null,"due_time":2,"due_time_unit":"week","number_reminders":null,"number_dunnings":null,"dunning_fee":null,"created_at":"2019-04-10T10:33:46.000+02:00","updated_at":"2019-04-10T10:33:46.000+02:00","template":false,"default_template":false,"template_id":9,"default_reminder_template":false,"template_text":null,"payment_required":true},{"type":"payment_term","id":31,"name":"2
+        Wochen Zahlungsfrist","cash_discount":null,"cash_discount_time":null,"cash_discount_unit":null,"due_time":2,"due_time_unit":"week","number_reminders":null,"number_dunnings":null,"dunning_fee":null,"created_at":"2019-03-04T12:44:46.000+01:00","updated_at":"2019-03-04T12:44:46.000+01:00","template":false,"default_template":false,"template_id":9,"default_reminder_template":false,"template_text":null,"payment_required":true},{"type":"payment_term","id":28,"name":"2
+        Wochen Zahlungsfrist","cash_discount":null,"cash_discount_time":null,"cash_discount_unit":null,"due_time":2,"due_time_unit":"week","number_reminders":null,"number_dunnings":null,"dunning_fee":null,"created_at":"2019-02-28T17:22:11.000+01:00","updated_at":"2019-02-28T17:22:11.000+01:00","template":false,"default_template":false,"template_id":9,"default_reminder_template":false,"template_text":null,"payment_required":true},{"type":"payment_term","id":26,"name":"2
+        Wochen Zahlungsfrist","cash_discount":null,"cash_discount_time":null,"cash_discount_unit":null,"due_time":2,"due_time_unit":"week","number_reminders":null,"number_dunnings":null,"dunning_fee":null,"created_at":"2019-01-21T08:31:50.000+01:00","updated_at":"2019-01-21T08:31:50.000+01:00","template":false,"default_template":false,"template_id":9,"default_reminder_template":false,"template_text":null,"payment_required":true},{"type":"payment_term","id":18,"name":"2
+        Wochen Zahlungsfrist","cash_discount":null,"cash_discount_time":null,"cash_discount_unit":null,"due_time":2,"due_time_unit":"week","number_reminders":null,"number_dunnings":null,"dunning_fee":null,"created_at":"2018-11-30T11:59:50.000+01:00","updated_at":"2018-11-30T11:59:50.000+01:00","template":false,"default_template":false,"template_id":9,"default_reminder_template":false,"template_text":null,"payment_required":true},{"type":"payment_term","id":9,"name":"2
+        Wochen Zahlungsfrist","cash_discount":null,"cash_discount_time":null,"cash_discount_unit":null,"due_time":2,"due_time_unit":"week","number_reminders":null,"number_dunnings":null,"dunning_fee":null,"created_at":"2018-03-06T15:55:56.000+01:00","updated_at":"2018-03-06T15:55:56.000+01:00","template":true,"default_template":true,"template_id":null,"default_reminder_template":false,"template_text":null,"payment_required":true},{"type":"payment_term","id":12,"name":"4
+        Wochen Zahlungsfrist","cash_discount":null,"cash_discount_time":null,"cash_discount_unit":null,"due_time":4,"due_time_unit":"week","number_reminders":null,"number_dunnings":null,"dunning_fee":null,"created_at":"2018-03-06T15:55:56.000+01:00","updated_at":"2018-03-06T15:55:56.000+01:00","template":true,"default_template":false,"template_id":null,"default_reminder_template":false,"template_text":null,"payment_required":true},{"type":"payment_term","id":6,"name":"10
+        Arbeitstage Zahlungsfrist","cash_discount":null,"cash_discount_time":null,"cash_discount_unit":null,"due_time":10,"due_time_unit":"work_day","number_reminders":null,"number_dunnings":null,"dunning_fee":null,"created_at":"2018-03-06T15:55:56.000+01:00","updated_at":"2018-03-06T15:55:56.000+01:00","template":true,"default_template":false,"template_id":null,"default_reminder_template":false,"template_text":null,"payment_required":true}]}'
+  recorded_at: Sat, 02 Dec 2023 19:35:43 GMT
+recorded_with: VCR 6.2.0

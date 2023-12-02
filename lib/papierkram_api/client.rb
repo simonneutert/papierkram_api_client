@@ -70,6 +70,11 @@ module PapierkramApi
         PapierkramApi::V1::Endpoints::Income::Invoices.new(@client)
     end
 
+    def income_payment_terms
+      @income_payment_terms ||=
+        PapierkramApi::V1::Endpoints::Income::PaymentTerms.new(@client)
+    end
+
     def income_propositions
       @income_propositions ||=
         PapierkramApi::V1::Endpoints::Income::Propositions.new(@client)
