@@ -1,5 +1,9 @@
 # Changelog
 
+## [next] - yyyy-mm-dd
+
+- [#<PRNUMBER>](https://github.com/simonneutert/papierkram_api_client/pull/<PRNUMBER>) PR description. [@<ghusername>](https://github.com/<ghusername>)
+
 ## [0.4.0] - 2023-12-02
 
 ### Changes (BREAKING! ⚠️)
