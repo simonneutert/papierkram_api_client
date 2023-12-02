@@ -113,6 +113,11 @@ Ziele:
   - [Tracker::TimeEntry (Zeiteintrag)](#trackertimeentry-zeiteintrag)
     - [alle Zeiteinträge](#alle-zeiteinträge)
     - [einen Zeiteintrag](#einen-zeiteintrag)
+    - [erstelle einen Zeiteintrag](#erstelle-einen-zeiteintrag)
+    - [aktualisiere einen Zeiteintrag](#aktualisiere-einen-zeiteintrag)
+    - [lösche einen Zeiteintrag](#lösche-einen-zeiteintrag)
+    - [archiviere einen Zeiteintrag](#archiviere-einen-zeiteintrag)
+    - [unarchiviere einen Zeiteintrag](#unarchiviere-einen-zeiteintrag)
   - [Verbleibendes Quota](#verbleibendes-quota)
 - [Business Intelligence](#business-intelligence)
   - [Business::Intelligence (BI) ExpenseByCategory (Ausgaben nach Kategorie)](#businessintelligence-bi-expensebycategory-ausgaben-nach-kategorie)
@@ -381,8 +386,8 @@ puts company.body
 
 ```ruby
 company = client.contact_companies_persons.create(
-  company_id: 1, 
-  attributes: { 
+  company_id: 1,
+  attributes: {
     first_name: 'Max',
     last_name: 'Mustermann'
   }
@@ -682,6 +687,8 @@ Der Endpunkt `/papierkram_api/v1/tracker/time_entries` liefert Informationen üb
 
 #### alle Zeiteinträge
 
+siehe [TimeEntries](lib/papierkram_api/v1/endpoints/tracker/time_entries.rb) für mögliche Parameter.
+
 ```ruby
 time_entries = client.tracker_time_entries.all
 puts time_entries.headers
@@ -692,6 +699,58 @@ puts time_entries.body
 
 ```ruby
 time_entry = client.tracker_time_entries.find_by(id: 1)
+puts time_entry.headers
+puts time_entry.body
+```
+
+#### erstelle einen Zeiteintrag
+
+siehe [TimeEntries](lib/papierkram_api/v1/endpoints/tracker/time_entries.rb) für mögliche Parameter.
+
+```ruby
+time_entry = client.tracker_time_entries.create(
+  task_id: 1,
+  date: '2020-01-01',
+  duration: 60,
+  description: 'Test'
+)
+puts time_entry.headers
+puts time_entry.body
+```
+
+#### aktualisiere einen Zeiteintrag
+
+siehe [TimeEntries](lib/papierkram_api/v1/endpoints/tracker/time_entries.rb) für mögliche Parameter.
+
+```ruby
+time_entry = client.tracker_time_entries.update_by(
+  id: 1,
+ comments: 'Test'
+)
+puts time_entry.headers
+puts time_entry.body
+```
+
+#### lösche einen Zeiteintrag
+
+```ruby
+time_entry = client.tracker_time_entries.delete_by(id: 1)
+puts time_entry.headers
+puts time_entry.body
+```
+
+#### archiviere einen Zeiteintrag
+
+```ruby
+time_entry = client.tracker_time_entries.archive_by(id: 1)
+puts time_entry.headers
+puts time_entry.body
+```
+
+#### unarchiviere einen Zeiteintrag
+
+```ruby
+time_entry = client.tracker_time_entries.unarchive_by(id: 1)
 puts time_entry.headers
 puts time_entry.body
 ```
