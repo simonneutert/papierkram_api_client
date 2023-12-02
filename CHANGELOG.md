@@ -1,6 +1,6 @@
 # Changelog
 
-## [next] - unreleased
+## [0.4.0] - 2023-12-02
 
 ### Changes (BREAKING! ⚠️)
 
