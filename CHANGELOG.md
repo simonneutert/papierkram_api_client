@@ -2,7 +2,10 @@
 
 ## [next] - unreleased
 
+### Added
+
 - [#90](https://github.com/simonneutert/papierkram_api_client/pull/90) crud ops for time_entries. [@simonneutert](https://github.com/simonneutert)
+- [#89](https://github.com/simonneutert/papierkram_api_client/pull/89) CRUD for tracker tasks. [@simonneutert](https://github.com/simonneutert)
 
 ## [0.3.1] - 2023-10-05
 
