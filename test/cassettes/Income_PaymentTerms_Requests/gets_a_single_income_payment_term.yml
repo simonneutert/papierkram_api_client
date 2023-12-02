@@ -1,0 +1,76 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://simonneutert.papierkram.de/api/v1/income/payment_terms/3
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.12
+      Authorization:
+      - Bearer <API BEARER>
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      content-type:
+      - application/json; charset=utf-8
+      status:
+      - 200 OK
+      cache-control:
+      - no-store
+      access-control-allow-origin:
+      - "*"
+      vary:
+      - Accept
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      x-remaining-quota:
+      - '9995'
+      x-permitted-cross-domain-policies:
+      - none
+      pragma:
+      - no-cache
+      x-consumed-quota:
+      - '1'
+      x-request-id:
+      - d5a53276-cdd2-4320-9c02-f4975e625f6b
+      x-download-options:
+      - noopen
+      etag:
+      - W/"7fc2cde9ee77f46664656db2dbba7da9"
+      x-frame-options:
+      - SAMEORIGIN
+      x-runtime:
+      - '0.155629'
+      expires:
+      - Fri, 01 Jan 1990 00:00:00 GMT
+      date:
+      - Sat, 02 Dec 2023 19:42:10 GMT
+      set-cookie:
+      - redis_session_store=<UNICORN>; path=/; expires=Sat, 16 Dec 2023 19:42:10 GMT;
+        HttpOnly; SameSite=Lax
+      x-powered-by:
+      - Phusion Passenger(R) 6.0.19
+      server:
+      - nginx/1.18.0 + Phusion Passenger(R) 6.0.19
+      x-version:
+      - STABLE
+      x-robots-tag:
+      - noindex, nofollow;
+      strict-transport-security:
+      - max-age=31536000; includeSubdomains;;
+      x-xss-protection:
+      - 1; mode=block;
+      x-content-type-options:
+      - nosniff;
+      x-debug-subdomain:
+      - simonneutert
+    body:
+      encoding: UTF-8
+      string: '{"type":"payment_term","id":3,"name":"10 Tage Zahlungsfrist","cash_discount":null,"cash_discount_time":null,"cash_discount_unit":null,"due_time":10,"due_time_unit":"day","number_reminders":null,"number_dunnings":null,"dunning_fee":null,"created_at":"2018-03-06T15:55:56.000+01:00","updated_at":"2018-03-06T15:55:56.000+01:00","template":true,"default_template":false,"template_id":null,"default_reminder_template":false,"template_text":null,"payment_required":true,"banking_bank_connection":null}'
+  recorded_at: Sat, 02 Dec 2023 19:42:10 GMT
+recorded_with: VCR 6.2.0

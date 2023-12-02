@@ -37,6 +37,7 @@ Schau bitte dort um alle Rückgabefelder/-werte zu checken, bis ich (oder du mit
 - [x] Expense::Voucher (Ausgabe Belege)
 - [x] Income::Estimate (Angebote)
 - [x] Income::Invoice (Rechnungen)
+- [x] Income::PaymentTerms (Zahlungsbedingungen)
 - [x] Income::Proposition (Waren / Dienstleistungen)
 - [x] Info
 - [x] Project (Projekte)
@@ -90,6 +91,9 @@ Ziele:
     - [alle Rechnungen](#alle-rechnungen)
     - [eine Rechnung](#eine-rechnung)
     - [eine Rechnung als PDF](#eine-rechnung-als-pdf)
+  - [Income::PaymentTerms (Zahlungsbedingungen)](#incomepaymentterms-zahlungsbedingungen)
+    - [eine Zahlungsbedingung](#eine-zahlungsbedingung)
+    - [alle Zahlungsbedingungen](#alle-zahlungsbedingungen)
   - [Income::Proposition (Waren / Dienstleistungen)](#incomeproposition-waren--dienstleistungen)
     - [alle Waren / Dienstleistungen](#alle-waren--dienstleistungen)
     - [eine Ware / Dienstleistung](#eine-ware--dienstleistung)
@@ -510,6 +514,28 @@ puts invoice.body
 invoice = client.income_invoices.find_by(id: 1, pdf: true)
 puts PapierkramApi::V1::Helpers::PdfFromResponse.new(invoice).to_pdf
 # => {response: Faraday::Response, path_to_pdf_file: 'path/to/tempfile_pdf.pdf'}
+```
+
+### Income::PaymentTerms (Zahlungsbedingungen)
+
+Der Endpunkt `/papierkram_api/v1/endpoints/income/payment_terms` liefert Informationen über die Zahlungsbedingungen. Die Informationen werden als `Faraday::Response` zurückgegeben.
+
+#### eine Zahlungsbedingung
+
+```ruby
+payment_term = client.income_payment_terms.find_by(id: 1)
+puts payment_term.headers
+puts payment_term.body
+```
+
+#### alle Zahlungsbedingungen
+
+Siehe [PaymentTerms](lib/papierkram_api/v1/endpoints/income/payment_terms.rb) für mögliche Parameter.
+
+```ruby
+payment_terms = client.income_payment_terms.all
+puts payment_terms.headers
+puts payment_terms.body
 ```
 
 ### Income::Proposition (Waren / Dienstleistungen)
