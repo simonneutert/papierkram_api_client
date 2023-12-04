@@ -31,11 +31,11 @@ class TestIncomeInvoices < Minitest::Test
       assert_equal 1, response_body['page']
       assert_equal 100, response_body['page_size']
       assert_equal 1, response_body['total_pages']
-      assert_equal 12, response_body['total_entries']
+      assert_equal 3, response_body['total_entries']
       assert response_body['has_more'].is_a?(FalseClass)
       assert_equal 'list', response_body['type']
       assert response_body['entries'].is_a?(Array)
-      assert_equal 12, response_body['entries'].length
+      assert_equal 3, response_body['entries'].length
 
       first_entry = response_body['entries'].first
 
@@ -44,10 +44,12 @@ class TestIncomeInvoices < Minitest::Test
                       customer_no
                       description
                       document_date
+                      down_payment_total_gross
                       due_date
                       id
                       invoice_no
                       name
+                      outstanding_amount
                       paid_at_date
                       record_state
                       sent_on
@@ -58,7 +60,9 @@ class TestIncomeInvoices < Minitest::Test
                       total_gross
                       total_net
                       total_vat
-                      type].sort, first_entry.keys.sort
+                      type
+                      type_of].sort,
+                   first_entry.keys.sort
 
       assert_equal 'invoice', first_entry['type']
       assert_equal '2018-11-30', first_entry['document_date']

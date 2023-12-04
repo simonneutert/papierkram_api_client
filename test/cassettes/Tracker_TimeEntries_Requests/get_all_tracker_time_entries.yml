@@ -8,7 +8,7 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - Faraday v2.7.4
+      - Faraday v2.7.12
       Authorization:
       - Bearer <API BEARER>
   response:
@@ -29,32 +29,34 @@ http_interactions:
       referrer-policy:
       - strict-origin-when-cross-origin
       x-remaining-quota:
-      - '9870'
+      - '9915'
       x-permitted-cross-domain-policies:
       - none
       pragma:
       - no-cache
+      x-consumed-quota:
+      - '1'
       x-request-id:
-      - c4f86e9b-2449-4943-8ddb-5a9e8a19aa40
+      - adc1848b-1270-4bde-b059-fa30f10105aa
       x-download-options:
       - noopen
       etag:
-      - W/"f91cb99f8532a6255ec88c7f92de5fb2"
+      - W/"205ddaa8fa4ab2a2ffd895fbe3b252d9"
       x-frame-options:
       - SAMEORIGIN
       x-runtime:
-      - '0.076337'
+      - '0.109563'
       expires:
       - Fri, 01 Jan 1990 00:00:00 GMT
       date:
-      - Wed, 12 Apr 2023 15:19:22 GMT
+      - Mon, 04 Dec 2023 15:31:50 GMT
       set-cookie:
-      - redis_session_store=<UNICORN>; path=/; expires=Wed, 26 Apr 2023 15:19:22 GMT;
+      - redis_session_store=<UNICORN>; path=/; expires=Mon, 18 Dec 2023 15:31:50 GMT;
         HttpOnly; SameSite=Lax
       x-powered-by:
-      - Phusion Passenger(R) 6.0.15
+      - Phusion Passenger(R) 6.0.19
       server:
-      - nginx/1.18.0 + Phusion Passenger(R) 6.0.15
+      - nginx/1.18.0 + Phusion Passenger(R) 6.0.19
       x-version:
       - STABLE
       x-robots-tag:
@@ -69,6 +71,7 @@ http_interactions:
       - simonneutert
     body:
       encoding: UTF-8
-      string: '{"type":"list","page":1,"page_size":100,"total_pages":1,"total_entries":2,"has_more":false,"entries":[{"type":"time_entry","id":1,"user_id":3,"task_id":1,"project_id":3,"started_at":"2019-05-02T11:32:00.000+02:00","ended_at":"2019-05-02T11:43:00.000+02:00","duration":660,"comments":"Yo","fingerprint":"20230412151922474","record_state":"active","billable_duration":660,"unbillable":false,"created_at":"2019-05-02T11:43:50.000+02:00","updated_at":"2019-05-02T11:43:50.000+02:00"},{"type":"time_entry","id":4,"user_id":3,"task_id":1,"project_id":3,"started_at":"2019-11-19T17:55:00.000+01:00","ended_at":"2019-11-19T17:56:00.000+01:00","duration":60,"comments":"DaniDW","fingerprint":"20230412151922977","record_state":"active","billable_duration":60,"unbillable":false,"created_at":"2019-11-19T17:56:57.000+01:00","updated_at":"2019-11-19T17:56:57.000+01:00"}]}'
-  recorded_at: Wed, 12 Apr 2023 15:19:22 GMT
-recorded_with: VCR 6.1.0
+      string: '{"type":"list","page":1,"page_size":100,"total_pages":1,"total_entries":1,"has_more":false,"entries":[{"type":"time_entry","id":3,"user_id":3,"task_id":3,"project_id":9,"invoice_id":null,"started_at":"2020-05-11T10:00:00.000+02:00","ended_at":"2020-05-11T12:00:00.000+02:00","duration":7200,"comments":"Worked
+        very hard","fingerprint":"20231204153150225","record_state":"active","billable_duration":7200,"unbillable":false,"created_at":"2023-12-02T21:23:52.000+01:00","updated_at":"2023-12-02T21:29:59.000+01:00"}]}'
+  recorded_at: Mon, 04 Dec 2023 15:31:50 GMT
+recorded_with: VCR 6.2.0
