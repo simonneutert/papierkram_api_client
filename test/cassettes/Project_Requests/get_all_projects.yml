@@ -8,7 +8,7 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - Faraday v2.7.4
+      - Faraday v2.7.12
       Authorization:
       - Bearer <API BEARER>
   response:
@@ -29,32 +29,34 @@ http_interactions:
       referrer-policy:
       - strict-origin-when-cross-origin
       x-remaining-quota:
-      - '9876'
+      - '9919'
       x-permitted-cross-domain-policies:
       - none
       pragma:
       - no-cache
+      x-consumed-quota:
+      - '1'
       x-request-id:
-      - 53a02c3e-93da-472f-9dff-facde69796b3
+      - d1e208a6-4b76-4c09-b8af-44d71595f769
       x-download-options:
       - noopen
       etag:
-      - W/"339a445e284fa982ffb37fecc11c19bc"
+      - W/"31dcd33489bdfaa2745d1af509b83ca8"
       x-frame-options:
       - SAMEORIGIN
       x-runtime:
-      - '0.076888'
+      - '0.150474'
       expires:
       - Fri, 01 Jan 1990 00:00:00 GMT
       date:
-      - Wed, 12 Apr 2023 15:19:21 GMT
+      - Mon, 04 Dec 2023 15:31:49 GMT
       set-cookie:
-      - redis_session_store=<UNICORN>; path=/; expires=Wed, 26 Apr 2023 15:19:21 GMT;
+      - redis_session_store=<UNICORN>; path=/; expires=Mon, 18 Dec 2023 15:31:49 GMT;
         HttpOnly; SameSite=Lax
       x-powered-by:
-      - Phusion Passenger(R) 6.0.15
+      - Phusion Passenger(R) 6.0.19
       server:
-      - nginx/1.18.0 + Phusion Passenger(R) 6.0.15
+      - nginx/1.18.0 + Phusion Passenger(R) 6.0.19
       x-version:
       - STABLE
       x-robots-tag:
@@ -69,8 +71,8 @@ http_interactions:
       - simonneutert
     body:
       encoding: UTF-8
-      string: '{"type":"list","page":1,"page_size":100,"total_pages":1,"total_entries":3,"has_more":false,"entries":[{"type":"project","id":3,"name":"Kein
-        Projekt","description":null,"start_date":null,"end_date":null,"flagged":null,"budget_type":null,"budget_money":null,"budget_time":null,"budget_time_unit":null,"customer_default":true,"record_state":"active","created_at":"2018-03-06T15:57:36.000+01:00","updated_at":"2023-04-12T08:13:56.000+02:00","company_id":3,"color":null},{"type":"project","id":4,"name":"Yo","description":"","start_date":null,"end_date":null,"flagged":null,"budget_type":"money","budget_money":null,"budget_time":null,"budget_time_unit":"hour","customer_default":false,"record_state":"active","created_at":"2020-02-26T10:25:15.000+01:00","updated_at":"2020-02-26T10:25:15.000+01:00","company_id":3,"color":"blue"},{"type":"project","id":5,"name":"Simlinger
-        Büffeln","description":"","start_date":null,"end_date":null,"flagged":null,"budget_type":"working_time","budget_money":null,"budget_time":"1.0","budget_time_unit":"hour","customer_default":false,"record_state":"active","created_at":"2020-09-02T11:00:58.000+02:00","updated_at":"2020-09-02T11:00:58.000+02:00","company_id":3,"color":"pink"}]}'
-  recorded_at: Wed, 12 Apr 2023 15:19:21 GMT
-recorded_with: VCR 6.1.0
+      string: '{"type":"list","page":1,"page_size":100,"total_pages":1,"total_entries":2,"has_more":false,"entries":[{"type":"project","id":9,"name":"Test
+        Projecticles","description":null,"start_date":"2020-01-01","end_date":"2020-12-31","flagged":null,"budget_type":null,"budget_money":null,"budget_time":null,"budget_time_unit":null,"customer_default":false,"record_state":"active","created_at":"2023-06-28T20:17:59.000+02:00","updated_at":"2023-12-02T22:17:16.000+01:00","company_id":3,"color":null},{"type":"project","id":15,"name":"Test
+        Projectesticle","description":null,"start_date":"2020-01-01","end_date":"2020-12-31","flagged":null,"budget_type":null,"budget_money":null,"budget_time":null,"budget_time_unit":null,"customer_default":false,"record_state":"active","created_at":"2023-06-28T20:31:30.000+02:00","updated_at":"2023-06-30T17:31:31.000+02:00","company_id":3,"color":null}]}'
+  recorded_at: Mon, 04 Dec 2023 15:31:49 GMT
+recorded_with: VCR 6.2.0

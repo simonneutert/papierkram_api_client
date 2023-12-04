@@ -2,7 +2,7 @@
 
 ## [next] - yyyy-mm-dd
 
-- [#<PRNUMBER>](https://github.com/simonneutert/papierkram_api_client/pull/<PRNUMBER>) PR description. [@<ghusername>](https://github.com/<ghusername>)
+- [#93](https://github.com/simonneutert/papierkram_api_client/pull/93) Fresh set of most endpoints got get_all actions. [@simonneutert](https://github.com/simonneutert)
 
 ## [0.4.0] - 2023-12-02
 
