@@ -1,0 +1,70 @@
+---
+http_interactions:
+- request:
+    method: delete
+    uri: https://simonneutert.papierkram.de/api/v1/expense/vouchers/3/documents/3
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.9.0
+      Authorization:
+      - Bearer <API BEARER>
+  response:
+    status:
+      code: 204
+      message: No Content
+    headers:
+      status:
+      - 204 No Content
+      cache-control:
+      - no-store
+      access-control-allow-origin:
+      - "*"
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      x-remaining-quota:
+      - '9836'
+      x-permitted-cross-domain-policies:
+      - none
+      pragma:
+      - no-cache
+      x-consumed-quota:
+      - '1'
+      x-request-id:
+      - a2f4c920-b71a-4b11-a7c4-d4637dca4bad
+      x-download-options:
+      - noopen
+      x-runtime:
+      - '0.236963'
+      x-frame-options:
+      - SAMEORIGIN
+      expires:
+      - Fri, 01 Jan 1990 00:00:00 GMT
+      date:
+      - Fri, 12 Jan 2024 20:14:34 GMT
+      set-cookie:
+      - redis_session_store=<UNICORN>; path=/; expires=Fri, 26 Jan 2024 20:14:34 GMT;
+        HttpOnly; SameSite=Lax
+      x-powered-by:
+      - Phusion Passenger(R) 6.0.19
+      server:
+      - nginx/1.18.0 + Phusion Passenger(R) 6.0.19
+      x-version:
+      - STABLE
+      x-robots-tag:
+      - noindex, nofollow;
+      strict-transport-security:
+      - max-age=31536000; includeSubdomains;;
+      x-xss-protection:
+      - 1; mode=block;
+      x-content-type-options:
+      - nosniff;
+      x-debug-subdomain:
+      - simonneutert
+    body:
+      encoding: UTF-8
+      string: "{}"
+  recorded_at: Fri, 12 Jan 2024 20:14:34 GMT
+recorded_with: VCR 6.2.0

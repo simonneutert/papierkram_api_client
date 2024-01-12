@@ -2,6 +2,7 @@
 
 ## [next] - yyyy-mm-dd
 
+- [#99](https://github.com/simonneutert/papierkram_api_client/pull/99) Writing endpoints for (income/expense) vouchers. [@simonneutert](https://github.com/simonneutert)
 - [#93](https://github.com/simonneutert/papierkram_api_client/pull/93) Fresh set of most endpoints got get_all actions. [@simonneutert](https://github.com/simonneutert)
 
 ## [0.4.0] - 2023-12-02

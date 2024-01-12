@@ -83,6 +83,16 @@ Ziele:
     - [alle Ausgabe Belege](#alle-ausgabe-belege)
     - [einen Ausgabe Beleg](#einen-ausgabe-beleg)
     - [einen Ausgabe Beleg als PDF](#einen-ausgabe-beleg-als-pdf)
+    - [einen Ausgabe Beleg erstellen](#einen-ausgabe-beleg-erstellen)
+    - [einen Ausgabe Beleg aktualisieren](#einen-ausgabe-beleg-aktualisieren)
+    - [einen Ausgabe Beleg löschen](#einen-ausgabe-beleg-löschen)
+    - [einen Ausgabe Beleg archivieren](#einen-ausgabe-beleg-archivieren)
+    - [einen Ausgabe Beleg unarchivieren](#einen-ausgabe-beleg-unarchivieren)
+    - [einen Ausgabe Beleg stornieren](#einen-ausgabe-beleg-stornieren)
+    - [einen Ausgabe Beleg rückwirkend stornieren](#einen-ausgabe-beleg-rückwirkend-stornieren)
+    - [einen Ausgabe Beleg als bezahlt markieren](#einen-ausgabe-beleg-als-bezahlt-markieren)
+    - [einem Ausgabe Beleg ein Dokument hinzufügen](#einem-ausgabe-beleg-ein-dokument-hinzufügen)
+    - [einem Ausgabe Beleg ein Dokument entfernen](#einem-ausgabe-beleg-ein-dokument-entfernen)
   - [Income::Estimate (Angebot)](#incomeestimate-angebot)
     - [alle Angebote](#alle-angebote)
     - [ein Angebot](#ein-angebot)
@@ -134,7 +144,7 @@ Ziele:
     - [alle Ausgaben eines Monats nach Kategorie gefiltert nach Steuersatz](#alle-ausgaben-eines-monats-nach-kategorie-gefiltert-nach-steuersatz)
 - [Helpers](#helpers)
   - [Generiere ein PDF aus Response](#generiere-ein-pdf-aus-response)
-- [Development](#development)
+- [Development / Mitentwickeln](#development--mitentwickeln)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -157,7 +167,7 @@ If bundler is not being used to manage dependencies, install the gem by executin
 ```ruby
 # client instanziieren
 
-# wenn ENV gesetzt sind (siehe Readme)
+# wenn ENV gesetzt sind (Siehe Readme)
 client = PapierkramApi::Client.new
 
 # ODER per Variablen
@@ -340,7 +350,7 @@ Siehe [Companies#create_customer](lib/papierkram_api/v1/endpoints/contact/compan
 
 ```ruby
 company = client.contact_companies.update_by(
-  id: 1, 
+  id: 1,
   name: 'Test GmbH'
 )
 puts company.headers
@@ -457,6 +467,142 @@ puts voucher.body
 voucher = client.expense_vouchers.find_by(id: 1, pdf: true)
 puts PapierkramApi::V1::Helpers::PdfFromResponse.new(voucher).to_pdf
 # => {response: Faraday::Response, path_to_pdf_file: 'path/to/tempfile_pdf.pdf'}
+```
+
+#### einen Ausgabe Beleg erstellen
+
+Siehe [Vouchers#create](lib/papierkram_api/v1/endpoints/expense/vouchers.rb) für mögliche Parameter.
+
+```ruby
+voucher = client.expense_vouchers.create(
+  name: "Restaurant visit",
+  due_date: "2020-06-30",
+  document_date: "2020-06-14",
+  description: "Took customer for dinner.",
+  entertainment_reason: "sales meeting",
+  flagged: true,
+  provenance: "domestic",
+  entertainment_persons: [
+    "Carl Customer"
+  ],
+  creditor_id: 85,
+  line_items: [
+    {
+      amount: 150.8,
+      name: "restaurant bill",
+      vat_rate: "19%",
+      category: "Bewirtungskosten"
+    },
+    {
+      amount: 15,
+      name: "tip",
+      vat_rate: "19%",
+      category: "Bewirtungskosten"
+    }
+  ]
+)
+```
+
+#### einen Ausgabe Beleg aktualisieren
+
+Siehe [Vouchers#update_by](lib/papierkram_api/v1/endpoints/expense/vouchers.rb) für mögliche Parameter.
+
+```ruby
+voucher = client.expense_vouchers.update_by(
+  id: 1,
+  document_date: "2020-06-13",
+  creditor_id: 102,
+  line_items: [
+    {
+      amount: 170.8,
+      name: "restaurant bill",
+      vat_rate: "19%",
+      category: "Bewirtungskosten",
+      billing: null,
+      depreciation: null
+    },
+    {
+      amount: 15,
+      name: "tip",
+      vat_rate: "19%",
+      category: "Bewirtungskosten"
+    }
+  ]
+)
+```
+
+#### einen Ausgabe Beleg löschen
+
+```ruby
+voucher = client.expense_vouchers.delete_by(id: 1)
+```
+
+#### einen Ausgabe Beleg archivieren
+
+```ruby
+voucher = client.expense_vouchers.archive_by(id: 1)
+```
+
+#### einen Ausgabe Beleg unarchivieren
+
+```ruby
+voucher = client.expense_vouchers.unarchive_by(id: 1)
+```
+
+#### einen Ausgabe Beleg stornieren
+
+```ruby
+voucher = client.expense_vouchers.cancel_by(id: 1)
+```
+
+#### einen Ausgabe Beleg rückwirkend stornieren
+
+```ruby
+voucher = client.expense_vouchers.cancel_with_reverse_entry_by(id: 1)
+```
+
+#### einen Ausgabe Beleg als bezahlt markieren
+
+Siehe [Vouchers#mark_as_paid_by](lib/papierkram_api/v1/endpoints/expense/vouchers.rb) für mögliche Parameter.
+
+```ruby
+voucher = client.expense_vouchers.mark_as_paid_by(
+  id: 1,
+  value: 119.0
+)
+```
+
+#### einem Ausgabe Beleg ein Dokument hinzufügen
+
+Siehe [Vouchers#add_document_by](lib/papierkram_api/v1/endpoints/expense/vouchers.rb) für mögliche Parameter.
+
+Um ein PDF hinzuzufügen:
+
+```ruby
+voucher = client.expense_vouchers.add_document_by(
+  id: 1,
+  path_to_file: 'path/to/file.pdf',
+  file_type: 'application/pdf'
+)
+```
+
+oder mit einem Bild im jpeg Format
+
+```ruby
+voucher = client.expense_vouchers.add_document_by(
+  id: 1,
+  path_to_file: 'path/to/file.jpeg',
+  file_type: 'image/jpeg'
+)
+```
+
+#### einem Ausgabe Beleg ein Dokument entfernen
+
+```ruby
+voucher = client.expense_vouchers.delete_document_by(
+  id: 1,
+  document_id: 1
+)
 ```
 
 ### Income::Estimate (Angebot)
@@ -716,7 +862,7 @@ puts task.body
 
 #### erstelle eine Aufgabe
 
-siehe [Tasks#create](lib/papierkram_api/v1/endpoints/tracker/tasks.rb) für mögliche Parameter.
+Siehe [Tasks#create](lib/papierkram_api/v1/endpoints/tracker/tasks.rb) für mögliche Parameter.
 
 ```ruby
 task = client.tracker_tasks.create(name: 'Aufgabe 1')
@@ -726,7 +872,7 @@ puts task.body
 
 #### aktualisiere eine Aufgabe
 
-siehe [Tasks#update_by](lib/papierkram_api/v1/endpoints/tracker/tasks.rb) für mögliche Parameter.
+Siehe [Tasks#update_by](lib/papierkram_api/v1/endpoints/tracker/tasks.rb) für mögliche Parameter.
 
 ```ruby
 task = client.tracker_tasks.update_by(id: 1, name: 'Aufgabe 2' )
@@ -766,7 +912,7 @@ Der Endpunkt `/papierkram_api/v1/tracker/time_entries` liefert Informationen üb
 
 #### alle Zeiteinträge
 
-siehe [TimeEntries](lib/papierkram_api/v1/endpoints/tracker/time_entries.rb) für mögliche Parameter.
+Siehe [TimeEntries](lib/papierkram_api/v1/endpoints/tracker/time_entries.rb) für mögliche Parameter.
 
 ```ruby
 time_entries = client.tracker_time_entries.all
@@ -784,7 +930,7 @@ puts time_entry.body
 
 #### erstelle einen Zeiteintrag
 
-siehe [TimeEntries](lib/papierkram_api/v1/endpoints/tracker/time_entries.rb) für mögliche Parameter.
+Siehe [TimeEntries](lib/papierkram_api/v1/endpoints/tracker/time_entries.rb) für mögliche Parameter.
 
 ```ruby
 time_entry = client.tracker_time_entries.create(
@@ -799,7 +945,7 @@ puts time_entry.body
 
 #### aktualisiere einen Zeiteintrag
 
-siehe [TimeEntries](lib/papierkram_api/v1/endpoints/tracker/time_entries.rb) für mögliche Parameter.
+Siehe [TimeEntries](lib/papierkram_api/v1/endpoints/tracker/time_entries.rb) für mögliche Parameter.
 
 ```ruby
 time_entry = client.tracker_time_entries.update_by(
@@ -957,7 +1103,7 @@ puts pdf
 }
 ```
 
-## Development
+## Development / Mitentwickeln
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake test` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
 

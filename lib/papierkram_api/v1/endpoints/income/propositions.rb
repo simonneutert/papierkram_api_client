@@ -27,11 +27,12 @@ module PapierkramApi
             body = {}
             body[:name] = name
             body[:article_no] = article_no
+
+            body[:proposition_type] = proposition_type if proposition_type
             body[:description] = description if description
             body[:time_unit] = time_unit if time_unit
-            body[:proposition_type] = proposition_type if proposition_type
-            body[:price] = price if price
             body[:vat_rate] = vat_rate if vat_rate
+            body[:price] = price if price
 
             http_post("#{@url_api_path}/income/propositions", body)
           end
