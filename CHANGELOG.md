@@ -13,7 +13,8 @@ Schema for new entries:
 ## [0.6.0] - 2026-05-26
 
 - Bumps minimal ruby version to 3.3.0. [@simonneutert](https://github.com/simonneutert)
-- DEPRECATION WARNING 🚨 This gem is no longer maintained.  
+- DEPRECATION WARNING 🚨 This gem is no longer maintained.
+- [#102](https://github.com/simonneutert/papierkram_api_client/pull/102) Removes deprecated Business Intelligence Module. [@simonneutert](https://github.com/simonneutert)
 
 ## [0.5.1] - 2025-03-04
 

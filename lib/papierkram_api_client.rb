@@ -24,8 +24,5 @@ require_relative 'papierkram_api/v1/endpoints/info'
 require_relative 'papierkram_api/v1/endpoints/projects'
 require_relative 'papierkram_api/v1/endpoints/tracker/tasks'
 require_relative 'papierkram_api/v1/endpoints/tracker/time_entries'
-require_relative 'papierkram_api/v1/business_intelligence/base'
-require_relative 'papierkram_api/v1/business_intelligence/expenses_by_category'
-require_relative 'papierkram_api/v1/business_intelligence/smart_queries/expense_vouchers_for_month_in_year'
 
 require_relative 'papierkram_api/client'
