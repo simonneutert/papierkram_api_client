@@ -4,6 +4,11 @@ require 'test_helper'
 
 class TestExpenseVouchers < Minitest::Test
   describe 'Expense::Vouchers Requests' do
+    it 'defines ALLOWED_DIFFERENCE_REASONS' do
+      assert_equal(%w[sonstige mahnung teilzahlung skonto sonstige schmaelerung],
+                   PapierkramApi::V1::Endpoints::Expense::Vouchers::ALLOWED_DIFFERENCE_REASONS)
+    end
+
     it 'gets a single expense voucher', :vcr do
       client = PapierkramApi::Client.new('simonneutert')
       response = client.expense_vouchers.find_by(id: 650)

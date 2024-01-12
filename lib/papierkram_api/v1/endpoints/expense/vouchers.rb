@@ -6,6 +6,8 @@ module PapierkramApi
       module Expense
         # This class is responsible for all the API calls related to expense vouchers.
         class Vouchers < PapierkramApi::V1::Endpoints::Base
+          ALLOWED_DIFFERENCE_REASONS = %w[sonstige mahnung teilzahlung skonto sonstige schmaelerung].freeze
+
           def find_by(id:, pdf: false)
             if pdf == true
               return get("#{@url_api_path}/expense/vouchers/#{id}/pdf", nil,
@@ -144,40 +146,47 @@ module PapierkramApi
             http_post("#{@url_api_path}/expense/vouchers/#{id}/cancel_with_reverse_entry")
           end
 
-          def mark_as_paid_by( # rubocop:disable Metrics/CyclomaticComplexity,Metrics/MethodLength,Metrics/PerceivedComplexity
+          def mark_as_paid_by(
             id:,
             value: nil,
             payment_date: nil,
             banking_transaction_id: nil,
             difference_reason: nil
           )
-
             unless value || banking_transaction_id
-              raise ArgumentError,
-                    'either value or banking_transaction_id must be given'
+              raise ArgumentError, 'either value or banking_transaction_id must be given'
             end
 
-            allowed_difference_reasons = %w[sonstige mahnung teilzahlung skonto sonstige schmaelerung]
             body = {}
-            body[:payment_date] = payment_date if payment_date
-            if value
-              raise ArgumentError, 'value must be a float' unless value.is_a?(Numeric)
 
+            if value
+              validate_value!(value)
               body[:value] = value
             end
-            body[:banking_transaction] = { id: banking_transaction_id } if banking_transaction_id
 
             if difference_reason
-              raise ArgumentError, 'difference_reason must be a string' unless difference_reason.is_a?(String)
-
-              unless allowed_difference_reasons.include?(difference_reason)
-                raise ArgumentError, "difference_reason must be one of: #{allowed_difference_reasons.join(', ')}"
-              end
-
+              validate_difference_reason!(difference_reason)
               body[:difference_reason] = difference_reason
             end
 
+            body[:payment_date] = payment_date if payment_date
+            body[:banking_transaction] = { id: banking_transaction_id } if banking_transaction_id
+
             http_post("#{@url_api_path}/expense/vouchers/#{id}/pay", body)
+          end
+
+          private
+
+          def validate_value!(value)
+            raise ArgumentError, 'value must be a float' unless value.is_a?(Numeric)
+          end
+
+          def validate_difference_reason!(difference_reason)
+            raise ArgumentError, 'difference_reason must be a string' unless difference_reason.is_a?(String)
+
+            return if ALLOWED_DIFFERENCE_REASONS.include?(difference_reason)
+
+            raise ArgumentError, "difference_reason must be one of: #{ALLOWED_DIFFERENCE_REASONS.join(', ')}"
           end
         end
       end
