@@ -2,6 +2,7 @@
 
 ## [next] - yyyy-mm-dd
 
+- [#100](https://github.com/simonneutert/papierkram_api_client/pull/100) Writing endpoints for (income) invoices. [@simonneutert](https://github.com/simonneutert)
 - [#99](https://github.com/simonneutert/papierkram_api_client/pull/99) Writing endpoints for (income/expense) vouchers. [@simonneutert](https://github.com/simonneutert)
 - [#93](https://github.com/simonneutert/papierkram_api_client/pull/93) Fresh set of most endpoints got get_all actions. [@simonneutert](https://github.com/simonneutert)
 
