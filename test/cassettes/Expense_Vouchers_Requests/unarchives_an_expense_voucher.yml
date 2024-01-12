@@ -1,0 +1,81 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://simonneutert.papierkram.de/api/v1/expense/vouchers/3/unarchive
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      User-Agent:
+      - Faraday v2.9.0
+      Authorization:
+      - Bearer <API BEARER>
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      content-type:
+      - application/json; charset=utf-8
+      status:
+      - 200 OK
+      cache-control:
+      - no-store
+      access-control-allow-origin:
+      - "*"
+      vary:
+      - Accept
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      x-remaining-quota:
+      - '9837'
+      x-permitted-cross-domain-policies:
+      - none
+      pragma:
+      - no-cache
+      x-consumed-quota:
+      - '1'
+      x-request-id:
+      - 57d073e6-3ba0-4ed3-8ddd-9eeb57a363a2
+      x-download-options:
+      - noopen
+      etag:
+      - W/"980a4eecb586d88093c144089dd2d884"
+      x-frame-options:
+      - SAMEORIGIN
+      x-runtime:
+      - '0.297320'
+      expires:
+      - Fri, 01 Jan 1990 00:00:00 GMT
+      date:
+      - Thu, 11 Jan 2024 19:56:45 GMT
+      set-cookie:
+      - redis_session_store=<UNICORN>; path=/; expires=Thu, 25 Jan 2024 19:56:45 GMT;
+        HttpOnly; SameSite=Lax
+      x-powered-by:
+      - Phusion Passenger(R) 6.0.19
+      server:
+      - nginx/1.18.0 + Phusion Passenger(R) 6.0.19
+      x-version:
+      - STABLE
+      x-robots-tag:
+      - noindex, nofollow;
+      strict-transport-security:
+      - max-age=31536000; includeSubdomains;;
+      x-xss-protection:
+      - 1; mode=block;
+      x-content-type-options:
+      - nosniff;
+      x-debug-subdomain:
+      - simonneutert
+    body:
+      encoding: UTF-8
+      string: '{"type":"expense_voucher","id":3,"name":"Restaurant lecker Essen essen","due_date":"2020-06-30","document_date":"2020-06-14","description":"Took
+        customer for dinner.","entertainment_reason":"sales meeting","flagged":true,"provenance":"domestic","voucher_no":"B-00001","state":"unpaid","record_state":"active","amount":165.8,"invoice_amount":0.0,"entertainment_persons":["Carl
+        Customer"],"creditor":{"type":"company","id":9,"name":"Luzy Katze","contact_type":"supplier","supplier_no":"L-00001","customer_no":null,"email":null,"phone":"<PHONE>","website":"","twitter":"","fax":"<FAX>","postal_street":null,"postal_zip":null,"postal_city":null,"postal_country":"Deutschland","physical_street":null,"physical_zip":null,"physical_city":null,"physical_country":"Deutschland","delivery_method":"pdf","ust_idnr":"","logo_file_name":null,"logo_content_type":null,"logo_file_size":null,"logo_updated_at":null,"bank_blz":"<BLZ>","bank_institute":"","bank_account_no":"<ACCOUNT_NO>","bank_bic":"<BIC>","bank_sepa_mandate_reference":"SEPAMRL00001LK","bank_sepa_mandate_accepted":null,"bank_iban":"<IBAN>","inbound_address":"456z","notes":"","record_state":"active","flagged":null,"created_at":"2024-01-11T20:22:21.000+01:00","updated_at":"2024-01-11T20:22:21.000+01:00","color":"blue"},"line_items":[{"name":"restaurant
+        bill","amount":150.8,"category":"Bewirtungskosten","vat_rate":"19%","billing":null,"depreciation":null},{"name":"tip","amount":15.0,"category":"Bewirtungskosten","vat_rate":"19%","billing":null,"depreciation":null}],"documents":[{"type":"document","id":3,"uri":"https://simonneutert.papierkram.de/system/attachments/98931/documents/3/51dd3d582736d292ef92ca3a2dd2e600b8a3b1e5/data/original/YES.pdf?1705001516"}]}'
+  recorded_at: Thu, 11 Jan 2024 19:56:45 GMT
+recorded_with: VCR 6.2.0

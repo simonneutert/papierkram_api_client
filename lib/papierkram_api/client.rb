@@ -23,8 +23,10 @@ module PapierkramApi
     def build_client!
       @client = Faraday.new(url: @base_url) do |config|
         config.request :authorization, 'Bearer', @api_key
+        config.request :multipart
         config.request :json
         config.response :json
+
         config.adapter :httpx
         yield(config) if block_given?
       end

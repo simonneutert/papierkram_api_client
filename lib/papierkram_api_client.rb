@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require 'faraday'
+require 'faraday/multipart'
 require 'httpx/adapters/faraday'
 require 'forwardable'
 require 'tempfile'
