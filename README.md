@@ -10,9 +10,8 @@ Der erste ~~illegale~~ inoffizielle API Client in [Ruby](https://www.ruby-lang.o
 
 ---
 
-**Aufruf zur Mitarbeit 🫠**
-JETZT NEU! Ohne Lack und frei von Glamour!  
-Das Gleiche, nur in grün, also für [NodeJS ein Papierkram Api Client](https://github.com/simonneutert/papierkram-api-client). Und als Mega-Baustelle 😬
+**Aufruf zur Mitarbeit für NodeJS/JavaScript 🫠**  
+Das Gleiche, nur in grün, also für [NodeJS ein Papierkram Api Client](https://github.com/simonneutert/papierkram-api-client) 😬
 
 ---
 
@@ -43,9 +42,11 @@ Wenn du dann immer noch nicht weiterkommst, kannst du gerne einen Issue erstelle
 - [x] Income::PaymentTerms (Zahlungsbedingungen)
 - [x] Income::Proposition (Waren / Dienstleistungen)
 - [x] Info
+- [ ] Settings::CustomAttribute (Datenfelder)
 - [x] Project (Projekte)
 - [x] Tracker::Task (Aufgaben)
 - [x] Tracker::TimeEntry (Zeiterfassung)
+- [ ] User
 
 ## Was, wie, warum?<!-- omit in toc -->
 
