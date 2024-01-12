@@ -10,9 +10,9 @@ Der erste ~~illegale~~ inoffizielle API Client in [Ruby](https://www.ruby-lang.o
 
 ---
 
-**WERBUNG** (es ist ein Aufruf zur Mitarbeit 🫠)
+**Aufruf zur Mitarbeit 🫠**
 JETZT NEU! Ohne Lack und frei von Glamour!  
-Das Gleiche, nur in grün, also für [NodeJS](https://github.com/simonneutert/papierkram-api-client). Und als Mega-Baustelle 😬
+Das Gleiche, nur in grün, also für [NodeJS ein Papierkram Api Client](https://github.com/simonneutert/papierkram-api-client). Und als Mega-Baustelle 😬
 
 ---
 
@@ -25,6 +25,9 @@ Schau in [UPGRADING.md](UPGRADING.md), 💃🕺!
 
 Hier geht es zu den [offiziellen API Docs](https://demo.papierkram.de/api/v1/api-docs/index.html).  
 Schau bitte dort um alle Rückgabefelder/-werte zu checken, bis ich (oder du mit deiner Zeit und Hingabe) die Dokumentation hier komplett habe.
+
+**WENN DU PROBLEME HAST,** bitte ich dich erstmal die [offiziellen API Docs](https://demo.papierkram.de/api/v1/api-docs/index.html) zu durchstöbern. Dann lohnt es sich hier die Beispiele (weiter unten) zu lesen und von dort sowohl mal in die Methoden im Code zu springen, oder noch besser in die Tests schauen.  
+Wenn du dann immer noch nicht weiterkommst, kannst du gerne einen Issue erstellen. Poste dabei so viele Informationen wie möglich, damit ich dir bestmöglich weiterhelfen kann. Achte dabei bitte darauf, dass du keine privaten Daten postest. 🙏
 
 ---
 
@@ -167,7 +170,7 @@ If bundler is not being used to manage dependencies, install the gem by executin
 ```ruby
 # client instanziieren
 
-# wenn ENV gesetzt sind (Siehe Readme)
+# wenn ENV gesetzt sind (siehe Readme)
 client = PapierkramApi::Client.new
 
 # ODER per Variablen
