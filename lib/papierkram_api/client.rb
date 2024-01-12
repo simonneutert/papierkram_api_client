@@ -32,11 +32,6 @@ module PapierkramApi
       end
     end
 
-    def business_intelligence
-      @business_intelligence ||=
-        PapierkramApi::V1::BusinessIntelligence::Base.new
-    end
-
     def banking_bank_connections
       @banking_bank_connections ||=
         PapierkramApi::V1::Endpoints::Banking::BankConnections.new(@client)
