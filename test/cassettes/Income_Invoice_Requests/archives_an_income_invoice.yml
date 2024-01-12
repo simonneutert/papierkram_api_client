@@ -1,0 +1,86 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://simonneutert.papierkram.de/api/v1/income/invoices/12/archive
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      User-Agent:
+      - Faraday v2.9.0
+      Authorization:
+      - Bearer <API BEARER>
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      content-type:
+      - application/json; charset=utf-8
+      status:
+      - 200 OK
+      cache-control:
+      - no-store
+      access-control-allow-origin:
+      - "*"
+      vary:
+      - Accept
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      x-remaining-quota:
+      - '9526'
+      x-permitted-cross-domain-policies:
+      - none
+      pragma:
+      - no-cache
+      x-consumed-quota:
+      - '1'
+      x-request-id:
+      - 0143c69f-ef26-480a-990c-71b1edea323c
+      x-download-options:
+      - noopen
+      etag:
+      - W/"c0a748ad69db5e3b2c39a9ab1f4b56f3"
+      x-frame-options:
+      - SAMEORIGIN
+      x-runtime:
+      - '0.298349'
+      expires:
+      - Fri, 01 Jan 1990 00:00:00 GMT
+      date:
+      - Fri, 12 Jan 2024 21:49:39 GMT
+      set-cookie:
+      - redis_session_store=<UNICORN>; path=/; expires=Fri, 26 Jan 2024 21:49:39 GMT;
+        HttpOnly; SameSite=Lax
+      x-powered-by:
+      - Phusion Passenger(R) 6.0.19
+      server:
+      - nginx/1.18.0 + Phusion Passenger(R) 6.0.19
+      x-version:
+      - STABLE
+      x-robots-tag:
+      - noindex, nofollow;
+      strict-transport-security:
+      - max-age=31536000; includeSubdomains;;
+      x-xss-protection:
+      - 1; mode=block;
+      x-content-type-options:
+      - nosniff;
+      x-debug-subdomain:
+      - simonneutert
+    body:
+      encoding: UTF-8
+      string: '{"type":"invoice","id":12,"name":"Neuausstattung des Büros","description":null,"type_of":"","document_date":"2024-01-15","due_date":"2024-01-29","supply_date":"01.01.2024
+        - 14.01.2024","customer_no":"K-00001","invoice_no":null,"sent_on":null,"sent_via":null,"sent_to":null,"paid_at_date":null,"state":"draft","record_state":"archived","custom_template":null,"total_net":26125.0,"total_vat":4963.75,"total_gross":31088.75,"down_payment_total_gross":0,"outstanding_amount":"31088.75","billing":{"company":"adsad
+        asd","email":null,"ust_idnr":"","street":"as d","zip":"16845","city":"Kyritz
+        Holzhausen","country":"Deutschland","contact_person":null,"department":null},"customer":{"type":"company","id":3,"name":"adsad
+        asd","contact_type":"customer"},"contact_person":null,"project":{"type":"project","id":15,"name":"Test
+        Projectesticle"},"line_items":[{"line_item_type":"position","position_in_group":"1.","name":"Anlieferung","description":"Anlieferung
+        der neuen Möbel","quantity":1.25,"unit":"Stunden","price":100.0,"vat_rate":"19%","total_net":125.0,"proposition":null},{"line_item_type":"position","position_in_group":"2.","name":"Bestuhlung","description":"Bestuhlung
+        des Bürogebäudes","quantity":1.25,"unit":"Arbeitstage","price":800.0,"vat_rate":"19%","total_net":1000.0,"proposition":null},{"line_item_type":"position","position_in_group":"3.","name":"Büroartikel","description":"Neue
+        Bürostühle","quantity":200.0,"unit":"Stühle","price":125.0,"vat_rate":"19%","total_net":25000.0,"proposition":null}]}'
+  recorded_at: Fri, 12 Jan 2024 21:49:39 GMT
+recorded_with: VCR 6.2.0
