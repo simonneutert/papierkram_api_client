@@ -97,5 +97,125 @@ class TestIncomeInvoices < Minitest::Test
       assert billing['contact_person'].is_a?(String) || billing['contact_person'].nil?
       assert billing['department'].is_a?(String) || billing['department'].nil?
     end
+
+    it 'creates an income invoice', :vcr do
+      client = PapierkramApi::Client.new('simonneutert')
+      response = client.income_invoices.create(
+        name: 'Neuausstattung des Büros',
+        supply_date: '01.01.2024 - 14.01.2024',
+        document_date: '2024-01-15',
+        payment_term_id: 46,
+        customer_id: 3,
+        project_id: 15,
+        line_items: [
+          {
+            name: 'Anlieferung',
+            description: 'Anlieferung der neuen Möbel',
+            quantity: 1.25,
+            unit: 'Stunden',
+            vat_rate: '19%',
+            price: 100
+          },
+          {
+            name: 'Bestuhlung',
+            description: 'Bestuhlung des Bürogebäudes',
+            quantity: 1.25,
+            unit: 'Arbeitstage',
+            vat_rate: '19%',
+            price: 800
+          },
+          {
+            name: 'Büroartikel',
+            description: 'Neue Bürostühle',
+            quantity: 200,
+            unit: 'Stühle',
+            vat_rate: '19%',
+            price: 125
+          }
+        ]
+      )
+
+      response_body = response.body
+
+      assert_equal(201, response.status)
+      assert(response_body['id'].is_a?(Integer))
+    end
+
+    it 'updates an income invoice', :vcr do
+      client = PapierkramApi::Client.new('simonneutert')
+      response = client.income_invoices.update_by(
+        id: 9,
+        name: 'Neuausstattung eines Büros',
+        line_items: [
+          {
+            name: 'Anlieferung',
+            description: 'Anlieferung der neuen Möbel',
+            quantity: 1.5,
+            unit: 'Stunden',
+            vat_rate: '19%',
+            price: 100
+          },
+          {
+            name: 'Bestuhlung',
+            description: 'Bestuhlung des Bürogebäudes',
+            quantity: 1.5,
+            unit: 'Arbeitstage',
+            vat_rate: '19%',
+            price: 800
+          },
+          {
+            name: 'Büroartikel',
+            description: 'Neue Bürostühle',
+            quantity: 200,
+            unit: 'Stühle',
+            vat_rate: '19%',
+            price: 125
+          }
+        ]
+      )
+
+      response_body = response.body
+
+      assert_equal(200, response.status)
+      assert_equal(9, response_body['id'])
+    end
+
+    it 'deletes an income invoice', :vcr do
+      client = PapierkramApi::Client.new('simonneutert')
+      response = client.income_invoices.delete_by(id: 9)
+
+      assert_equal(204, response.status)
+    end
+
+    it 'archives an income invoice', :vcr do
+      client = PapierkramApi::Client.new('simonneutert')
+      response = client.income_invoices.archive_by(id: 12)
+
+      assert_equal(200, response.status)
+    end
+
+    it 'unarchives an income invoice', :vcr do
+      client = PapierkramApi::Client.new('simonneutert')
+      response = client.income_invoices.unarchive_by(id: 12)
+
+      assert_equal(200, response.status)
+    end
+
+    it 'cancels an income invoice', :vcr do
+      client = PapierkramApi::Client.new('simonneutert')
+      response = client.income_invoices.cancel_by(id: 12)
+
+      assert_equal(200, response.status)
+    end
+
+    it 'delivers an income invoice via pdf', :vcr do
+      client = PapierkramApi::Client.new('simonneutert')
+      response = client.income_invoices.deliver_by(
+        id: 6,
+        send_via: :pdf
+      )
+
+      assert_equal(204, response.status)
+    end
   end
 end

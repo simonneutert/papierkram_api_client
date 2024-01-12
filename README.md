@@ -104,6 +104,13 @@ Ziele:
     - [alle Rechnungen](#alle-rechnungen)
     - [eine Rechnung](#eine-rechnung)
     - [eine Rechnung als PDF](#eine-rechnung-als-pdf)
+    - [eine Rechnung erstellen](#eine-rechnung-erstellen)
+    - [eine Rechnung aktualisieren](#eine-rechnung-aktualisieren)
+    - [eine Rechnung löschen](#eine-rechnung-löschen)
+    - [eine Rechnung archivieren](#eine-rechnung-archivieren)
+    - [eine Rechnung unarchivieren](#eine-rechnung-unarchivieren)
+    - [eine Rechnung stornieren](#eine-rechnung-stornieren)
+    - [eine Rechnung verschicken](#eine-rechnung-verschicken)
   - [Income::PaymentTerms (Zahlungsbedingungen)](#incomepaymentterms-zahlungsbedingungen)
     - [eine Zahlungsbedingung](#eine-zahlungsbedingung)
     - [alle Zahlungsbedingungen](#alle-zahlungsbedingungen)
@@ -666,6 +673,141 @@ puts invoice.body
 invoice = client.income_invoices.find_by(id: 1, pdf: true)
 puts PapierkramApi::V1::Helpers::PdfFromResponse.new(invoice).to_pdf
 # => {response: Faraday::Response, path_to_pdf_file: 'path/to/tempfile_pdf.pdf'}
+```
+
+#### eine Rechnung erstellen
+
+Siehe [Invoices#create](lib/papierkram_api/v1/endpoints/income/invoices.rb) für mögliche Parameter.
+
+```ruby
+invoice = client.income_invoices.create(
+  name: 'Neuausstattung des Büros',
+  supply_date: '01.01.2024 - 14.01.2024',
+  document_date: '2024-01-15',
+  payment_term_id: 46,
+  customer_id: 3,
+  project_id: 15,
+  line_items: [
+    {
+      name: 'Anlieferung',
+      description: 'Anlieferung der neuen Möbel',
+      quantity: 1.25,
+      unit: 'Stunden',
+      vat_rate: '19%',
+      price: 100
+    },
+    {
+      name: 'Bestuhlung',
+      description: 'Bestuhlung des Bürogebäudes',
+      quantity: 1.25,
+      unit: 'Arbeitstage',
+      vat_rate: '19%',
+      price: 800
+    },
+    {
+      name: 'Büroartikel',
+      description: 'Neue Bürostühle',
+      quantity: 200,
+      unit: 'Stühle',
+      vat_rate: '19%',
+      price: 125
+    }
+  ]
+)
+```
+
+#### eine Rechnung aktualisieren
+
+Siehe [Invoices#update_by](lib/papierkram_api/v1/endpoints/income/invoices.rb) für mögliche Parameter.
+
+```ruby
+response = client.income_invoices.update_by(
+  id: 9,
+  name: 'Neuausstattung eines Büros',
+  line_items: [
+    {
+      name: 'Anlieferung',
+      description: 'Anlieferung der neuen Möbel',
+      quantity: 1.5,
+      unit: 'Stunden',
+      vat_rate: '19%',
+      price: 100
+    },
+    {
+      name: 'Bestuhlung',
+      description: 'Bestuhlung des Bürogebäudes',
+      quantity: 1.5,
+      unit: 'Arbeitstage',
+      vat_rate: '19%',
+      price: 800
+    },
+    {
+      name: 'Büroartikel',
+      description: 'Neue Bürostühle',
+      quantity: 200,
+      unit: 'Stühle',
+      vat_rate: '19%',
+      price: 125
+    }
+  ]
+)
+```
+
+#### eine Rechnung löschen
+
+Siehe [Invoices#delete_by](lib/papierkram_api/v1/endpoints/income/invoices.rb) für mögliche Parameter.
+
+```ruby
+invoice = client.income_invoices.delete_by(id: 1)
+```
+
+#### eine Rechnung archivieren
+
+Siehe [Invoices#archive_by](lib/papierkram_api/v1/endpoints/income/invoices.rb) für mögliche Parameter.
+
+```ruby
+invoice = client.income_invoices.archive_by(id: 1)
+```
+
+#### eine Rechnung unarchivieren
+
+Siehe [Invoices#unarchive_by](lib/papierkram_api/v1/endpoints/income/invoices.rb) für mögliche Parameter.
+
+```ruby
+invoice = client.income_invoices.unarchive_by(id: 1)
+```
+
+#### eine Rechnung stornieren
+
+Siehe [Invoices#cancel_by](lib/papierkram_api/v1/endpoints/income/invoices.rb) für mögliche Parameter.
+
+```ruby
+invoice = client.income_invoices.cancel_by(id: 1)
+```
+
+#### eine Rechnung verschicken
+
+Siehe [Invoices#send_by](lib/papierkram_api/v1/endpoints/income/invoices.rb) für mögliche Parameter.
+
+Per E-Mail:
+
+```ruby
+invoice = client.income_invoices.deliver_by(
+  id: 1,
+  send_via: 'email',
+  email_recipient: "test@test.test",
+  email_subject: "Ich verkaufe was du brauchst",
+  email_body: "Sag einfach was du brauchst und ich verkaufe es dir.",
+)
+```
+
+Per PDF:
+
+```ruby
+invoice = client.income_invoices.deliver_by(
+  id: 1,
+  send_via: 'pdf'
+)
 ```
 
 ### Income::PaymentTerms (Zahlungsbedingungen)
