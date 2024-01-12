@@ -1143,6 +1143,8 @@ quota = client.info.remaining_quota(response)
 
 ## Business Intelligence
 
+> **DEPRECATED** Bitte verwende dieses Modul nicht mehr, es wird in Zukunft entfernt werden.
+
 Ich lasse diesen ersten Ausflug in Auswertungen erstmal hier im Gem. Aber sollte ich die Zeit finden und weitere KPIs wichtig finden, dann gehören die Auswertungen eigentlich in ein eigenes Package.
 
 TODO ergänzen wie man `SmartQueries` erstellt und verwendet.  
@@ -1150,6 +1152,8 @@ TODO ergänzen wie man `SmartQueries` funktioneren.
 TODO ergänzen wie die Rückgabewerte von `SmartQueries` gestaltet werden sollten.
 
 ### Business::Intelligence (BI) ExpenseByCategory (Ausgaben nach Kategorie)
+
+> **DEPRECATED** Bitte verwende dieses Modul nicht mehr, es wird in Zukunft entfernt werden.
 
 Der Endpunkt `/papierkram_api/v1/business_intelligence/expense_by_categories` liefert Informationen über die Ausgaben nach Kategorie. Die Informationen werden als `Hash` zurückgegeben.
 
