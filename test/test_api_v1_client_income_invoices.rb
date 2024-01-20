@@ -10,7 +10,7 @@ class TestIncomeInvoices < Minitest::Test
 
       assert_equal(200, response.status)
       assert_equal('application/pdf', response.headers['content-type'])
-      assert response.body.is_a?(String)
+      assert_kind_of String, response.body
       assert_predicate response.body.length, :positive?
       assert response.body.start_with?('%PDF-1.4')
     end
@@ -32,9 +32,9 @@ class TestIncomeInvoices < Minitest::Test
       assert_equal 100, response_body['page_size']
       assert_equal 1, response_body['total_pages']
       assert_equal 3, response_body['total_entries']
-      assert response_body['has_more'].is_a?(FalseClass)
+      assert_kind_of FalseClass, response_body['has_more']
       assert_equal 'list', response_body['type']
-      assert response_body['entries'].is_a?(Array)
+      assert_kind_of Array, response_body['entries']
       assert_equal 3, response_body['entries'].length
 
       first_entry = response_body['entries'].first
@@ -86,8 +86,8 @@ class TestIncomeInvoices < Minitest::Test
                       street
                       ust_idnr
                       zip].sort, billing.keys.sort
-      assert billing.is_a?(Hash)
-      assert billing['company'].is_a?(String)
+      assert_kind_of Hash, billing
+      assert_kind_of String, billing['company']
       assert billing['email'].is_a?(String) || billing['email'].nil?
       assert billing['ust_idnr'].is_a?(String) || billing['ust_idnr'].nil?
       assert billing['street'].is_a?(String) || billing['street'].nil?
@@ -138,7 +138,7 @@ class TestIncomeInvoices < Minitest::Test
       response_body = response.body
 
       assert_equal(201, response.status)
-      assert(response_body['id'].is_a?(Integer))
+      assert_kind_of(Integer, response_body['id'])
     end
 
     it 'updates an income invoice', :vcr do

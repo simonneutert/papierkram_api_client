@@ -58,22 +58,22 @@ class TestProjects < Minitest::Test
         vouchers
       ], response.body.keys.sort
       assert_equal('Test Project', response.body['name'])
-      assert response.body['customer'].is_a?(Hash)
+      assert_kind_of Hash, response.body['customer']
       assert_equal('company', response.body['customer']['type'])
-      assert response.body['team_members'].is_a?(Array)
-      assert response.body['tasks'].is_a?(Hash)
+      assert_kind_of Array, response.body['team_members']
+      assert_kind_of Hash, response.body['tasks']
       assert_equal('list', response.body['tasks']['type'])
-      assert response.body['tasks']['entries'].is_a?(Array)
+      assert_kind_of Array, response.body['tasks']['entries']
       assert_includes response.body['tasks']['url'], 'api/v1/tracker/tasks?project_id'
 
-      assert response.body['invoices'].is_a?(Hash)
+      assert_kind_of Hash, response.body['invoices']
       assert_equal('list', response.body['invoices']['type'])
-      assert response.body['invoices']['entries'].is_a?(Array)
+      assert_kind_of Array, response.body['invoices']['entries']
       assert_includes response.body['invoices']['url'], 'api/v1/income/invoices?project_id'
 
-      assert response.body['vouchers'].is_a?(Hash)
+      assert_kind_of Hash, response.body['vouchers']
       assert_equal('list', response.body['vouchers']['type'])
-      assert response.body['vouchers']['entries'].is_a?(Array)
+      assert_kind_of Array, response.body['vouchers']['entries']
       assert_includes response.body['vouchers']['url'], 'api/v1/expense/vouchers?project_id'
     end
 
@@ -113,22 +113,22 @@ class TestProjects < Minitest::Test
       ].sort, response.body.keys.sort
 
       assert_equal('Test Projecticles', response.body['name'])
-      assert response.body['customer'].is_a?(Hash)
+      assert_kind_of Hash, response.body['customer']
       assert_equal('company', response.body['customer']['type'])
-      assert response.body['team_members'].is_a?(Array)
-      assert response.body['tasks'].is_a?(Hash)
+      assert_kind_of Array, response.body['team_members']
+      assert_kind_of Hash, response.body['tasks']
       assert_equal('list', response.body['tasks']['type'])
-      assert response.body['tasks']['entries'].is_a?(Array)
+      assert_kind_of Array, response.body['tasks']['entries']
       assert_includes response.body['tasks']['url'], 'api/v1/tracker/tasks?project_id'
 
-      assert response.body['invoices'].is_a?(Hash)
+      assert_kind_of Hash, response.body['invoices']
       assert_equal('list', response.body['invoices']['type'])
-      assert response.body['invoices']['entries'].is_a?(Array)
+      assert_kind_of Array, response.body['invoices']['entries']
       assert_includes response.body['invoices']['url'], 'api/v1/income/invoices?project_id'
 
-      assert response.body['vouchers'].is_a?(Hash)
+      assert_kind_of Hash, response.body['vouchers']
       assert_equal('list', response.body['vouchers']['type'])
-      assert response.body['vouchers']['entries'].is_a?(Array)
+      assert_kind_of Array, response.body['vouchers']['entries']
       assert_includes response.body['vouchers']['url'], 'api/v1/expense/vouchers?project_id'
     end
 

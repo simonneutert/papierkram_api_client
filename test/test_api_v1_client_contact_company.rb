@@ -56,23 +56,23 @@ class TestContactCompany < Minitest::Test
                       vouchers
                       website].sort, response_body.keys.sort
 
-      assert(response_body['custom_attributes'].is_a?(Array))
+      assert_kind_of(Array, response_body['custom_attributes'])
 
       assert_equal 'company', response_body['type']
-      assert response_body['type'].is_a?(String)
+      assert_kind_of String, response_body['type']
       assert_equal 3, response_body['id']
-      assert response_body['id'].is_a?(Integer)
+      assert_kind_of Integer, response_body['id']
       assert_equal 'adsad asd', response_body['name']
-      assert response_body['name'].is_a?(String)
+      assert_kind_of String, response_body['name']
       assert_equal 'customer', response_body['contact_type']
 
-      assert response_body['people'].is_a?(Hash)
+      assert_kind_of Hash, response_body['people']
       assert_equal 'list', response_body['people']['type']
       assert_equal '/api/v1/contact/companies/3/persons', response_body['people']['url']
 
       people_entries = response_body['people']['entries']
 
-      assert people_entries.is_a?(Array)
+      assert_kind_of Array, people_entries
     end
 
     it 'get all contact companies paginated', :vcr do
@@ -83,25 +83,25 @@ class TestContactCompany < Minitest::Test
       assert_equal 200, response.status
 
       assert_equal 'list', response_body['type']
-      assert response_body['type'].is_a?(String)
+      assert_kind_of String, response_body['type']
       assert_equal 1, response_body['page']
-      assert response_body['page'].is_a?(Integer)
+      assert_kind_of Integer, response_body['page']
       assert_equal 100, response_body['page_size']
-      assert response_body['page_size'].is_a?(Integer)
+      assert_kind_of Integer, response_body['page_size']
       assert_equal 1, response_body['total_pages']
-      assert response_body['total_pages'].is_a?(Integer)
+      assert_kind_of Integer, response_body['total_pages']
       assert_equal 1, response_body['total_entries']
       refute_operator response_body, :[], 'has_more'
 
-      assert response_body['entries'].is_a?(Array)
+      assert_kind_of Array, response_body['entries']
       contact_company = response_body['entries'].first
 
-      assert contact_company.is_a?(Hash)
-      assert contact_company['type'].is_a?(String)
+      assert_kind_of Hash, contact_company
+      assert_kind_of String, contact_company['type']
       assert_equal 'company', contact_company['type']
-      assert contact_company['id'].is_a?(Integer)
+      assert_kind_of Integer, contact_company['id']
       assert_equal 3, contact_company['id']
-      assert contact_company['name'].is_a?(String)
+      assert_kind_of String, contact_company['name']
       assert_equal 'adsad asd', contact_company['name']
     end
 
