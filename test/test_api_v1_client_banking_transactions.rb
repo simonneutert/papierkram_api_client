@@ -39,9 +39,9 @@ class TestBankingTransactions < Minitest::Test
                       valuta].sort,
                    response_body.keys.sort)
 
-      assert(response_body['type'].is_a?(String))
+      assert_kind_of(String, response_body['type'])
       assert_equal('banking_transaction', response_body['type'])
-      assert(response_body['id'].is_a?(Integer))
+      assert_kind_of(Integer, response_body['id'])
       assert_equal(4, response_body['id'])
     end
 
@@ -55,31 +55,31 @@ class TestBankingTransactions < Minitest::Test
       assert_equal(200, response.status)
 
       assert_equal('list', response_body['type'])
-      assert(response_body['type'].is_a?(String))
+      assert_kind_of(String, response_body['type'])
       assert_equal(1, response_body['page'])
-      assert(response_body['page'].is_a?(Integer))
+      assert_kind_of(Integer, response_body['page'])
       assert_equal(2, response_body['page_size'])
-      assert(response_body['page_size'].is_a?(Integer))
+      assert_kind_of(Integer, response_body['page_size'])
       assert_equal(5, response_body['total_pages'])
-      assert(response_body['total_pages'].is_a?(Integer))
+      assert_kind_of(Integer, response_body['total_pages'])
       assert_equal(9, response_body['total_entries'])
       assert_operator(response_body, :[], 'has_more')
 
-      assert(response_body['entries'].is_a?(Array))
+      assert_kind_of(Array, response_body['entries'])
       bank_connection = response_body['entries'].first
 
-      assert(bank_connection.is_a?(Hash))
-      assert(bank_connection['type'].is_a?(String))
+      assert_kind_of(Hash, bank_connection)
+      assert_kind_of(String, bank_connection['type'])
       assert_equal('banking_transaction', bank_connection['type'])
-      assert(bank_connection['id'].is_a?(Integer))
+      assert_kind_of(Integer, bank_connection['id'])
       assert_equal(145, bank_connection['id'])
-      assert(bank_connection['state'].is_a?(String))
+      assert_kind_of(String, bank_connection['state'])
       assert_equal('cleared', bank_connection['state'])
-      assert(bank_connection['currency'].is_a?(String))
+      assert_kind_of(String, bank_connection['currency'])
       assert_equal('EUR', bank_connection['currency'])
       assert(bank_connection['storno'].is_a?(FalseClass) || bank_connection['storno'].nil?)
       assert_nil(bank_connection['storno'])
-      assert(bank_connection['transaction_type'].is_a?(String))
+      assert_kind_of(String, bank_connection['transaction_type'])
     end
   end
 end

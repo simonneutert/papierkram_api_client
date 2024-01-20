@@ -10,7 +10,7 @@ class TestIncomeEstimates < Minitest::Test
 
       assert_equal(200, response.status)
       assert_equal('application/pdf', response.headers['content-type'])
-      assert response.body.is_a?(String)
+      assert_kind_of String, response.body
       assert_predicate response.body.length, :positive?
       assert response.body.start_with?('%PDF-1.4')
     end
@@ -27,9 +27,9 @@ class TestIncomeEstimates < Minitest::Test
       assert_equal 100, response_body['page_size']
       assert_equal 1, response_body['total_pages']
       assert_equal 1, response_body['total_entries']
-      assert response_body['has_more'].is_a?(FalseClass)
+      assert_kind_of FalseClass, response_body['has_more']
       assert_equal 'list', response_body['type']
-      assert response_body['entries'].is_a?(Array)
+      assert_kind_of Array, response_body['entries']
       assert_equal 1, response_body['entries'].length
 
       first_entry = response_body['entries'].first
@@ -57,7 +57,7 @@ class TestIncomeEstimates < Minitest::Test
       assert_equal '2020-01-29', first_entry['document_date']
       assert_nil first_entry['due_date']
       assert_nil first_entry['supply_date']
-      assert first_entry['name'].is_a?(String)
+      assert_kind_of String, first_entry['name']
       assert_equal 'K-00001', first_entry['customer_no']
       assert_in_delta(26.74, first_entry['total_net'])
       assert_in_delta(5.08, first_entry['total_vat'])
@@ -74,8 +74,8 @@ class TestIncomeEstimates < Minitest::Test
                       street
                       ust_idnr
                       zip].sort, billing.keys.sort
-      assert billing.is_a?(Hash)
-      assert billing['company'].is_a?(String)
+      assert_kind_of Hash, billing
+      assert_kind_of String, billing['company']
       assert billing['email'].is_a?(String) || billing['email'].nil?
       assert billing['ust_idnr'].is_a?(String) || billing['ust_idnr'].nil?
       assert billing['street'].is_a?(String) || billing['street'].nil?

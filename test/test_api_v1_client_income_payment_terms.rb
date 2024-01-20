@@ -70,9 +70,9 @@ class TestIncomePaymentTerms < Minitest::Test
       assert_equal 100, response_body['page_size']
       assert_equal 1, response_body['total_pages']
       assert_equal 21, response_body['total_entries']
-      assert response_body['has_more'].is_a?(FalseClass)
+      assert_kind_of FalseClass, response_body['has_more']
       assert_equal 'list', response_body['type']
-      assert response_body['entries'].is_a?(Array)
+      assert_kind_of Array, response_body['entries']
       assert_equal 21, response_body['entries'].length
 
       first_entry = response_body['entries'].first

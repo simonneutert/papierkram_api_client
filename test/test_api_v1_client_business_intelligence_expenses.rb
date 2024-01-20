@@ -14,14 +14,14 @@ class TestBusinessIntelligenceExpenses < Minitest::Test
       service = client.business_intelligence.expenses_by_category
       result = service.call(expense_vouchers: expense_vouchers_in_date_range)
 
-      assert(result.is_a?(Hash))
+      assert_kind_of(Hash, result)
       assert(result.keys.all?(String))
       assert(result.values.all?(Hash))
 
       assert(result[result.keys.first].keys.all?(String))
       assert_includes(result[result.keys.first].keys, 'amount')
       assert_includes(result[result.keys.first].keys, 'amount_by_creditor')
-      assert(result[result.keys.first]['amount'].is_a?(Float))
+      assert_kind_of(Float, result[result.keys.first]['amount'])
       refute_empty(result)
     end
 
@@ -37,7 +37,7 @@ class TestBusinessIntelligenceExpenses < Minitest::Test
         line_items.select { |v| v['vat_rate'] == '19%' }
       end
 
-      assert(result.is_a?(Hash))
+      assert_kind_of(Hash, result)
       assert(result.keys.all?(String))
       assert(result.values.all?(Hash))
       refute_empty(result)
