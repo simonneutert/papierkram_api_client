@@ -10,14 +10,14 @@ AllCops:
     - "vendor/**/*"
     - "papierkram_api_client.gemspec"
 
+Layout/LineLength:
+  Exclude:
+    - "test/cassettes/**/*"
+
 Metrics/BlockLength:
   Enabled: true
   Exclude:
     - "test/**/*"
-
-Layout/LineLength:
-  Exclude:
-    - "test/cassettes/**/*"
 
 Metrics/MethodLength:
   Max: 16
