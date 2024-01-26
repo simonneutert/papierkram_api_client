@@ -105,6 +105,8 @@ module PapierkramApi
     private
 
     def base_url_env
+      return 'http://localhost:3000' if ENV.fetch('DEBUG_LOCALHOST', false).to_s == 'true'
+
       "https://#{@subdomain}.papierkram.de"
     end
   end
