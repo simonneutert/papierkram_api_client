@@ -16,8 +16,11 @@ module PapierkramApi
       class Base
         def expenses_by_category
           warning = <<~MSG
-            [DEPRECATION] `expenses_by_category` is deprecated.#{' '}
+            [DEPRECATION] `expenses_by_category` is deprecated. #{' '}
             It will be removed in a version after 0.4.0, most probably in 0.5.0.
+
+            [DEPRECATION] Support for RUBY 2.7 will be dropped#{' '}
+            in a version after 0.4.0, most probably in 0.5.0.
           MSG
           warn(warning)
 
