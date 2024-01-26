@@ -12,7 +12,7 @@ Gem::Specification.new do |spec|
   spec.description = 'Papierkram API Client, um deine Buchhaltung auf das nächste Level zu bringen.'
   spec.homepage = 'https://github.com/simonneutert/papierkram_api_client'
   spec.license = 'MIT'
-  spec.required_ruby_version = '>= 2.7.0'
+  spec.required_ruby_version = '>= 3.0.0'
 
   # spec.metadata["allowed_push_host"] = "TODO: Set to your gem server 'https://example.com'"
 
