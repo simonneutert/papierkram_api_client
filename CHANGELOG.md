@@ -8,7 +8,7 @@ Schema for new entries:
 
 ## [next] - yyyy-mm-dd
 
-- [#<PR_NUMBER>](https://github.com/simonneutert/papierkram_api_client/pull/<PR_NUMBER>) Description. [@<username>](https://github.com/<username>)
+- [#102](https://github.com/simonneutert/papierkram_api_client/pull/102) Removes deprecated Business Intelligence Module. [@simonneutert](https://github.com/simonneutert)
 
 ## [0.4.1] - 2024-01-26
 
