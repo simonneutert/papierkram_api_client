@@ -20,14 +20,16 @@ module PapierkramApi
             http_get("#{@url_api_path}/income/invoices/#{id}")
           end
 
-          def all(page: 1, # rubocop:disable Metrics/CyclomaticComplexity
-                  page_size: 100,
-                  order_by: nil,
-                  order_direction: nil,
-                  creditor_id: nil,
-                  project_id: nil,
-                  document_date_range_start: nil,
-                  document_date_range_end: nil)
+          def all( # rubocop:disable Metrics/CyclomaticComplexity
+            page: 1,
+            page_size: 100,
+            order_by: nil,
+            order_direction: nil,
+            creditor_id: nil,
+            project_id: nil,
+            document_date_range_start: nil,
+            document_date_range_end: nil
+          )
             query = {
               page: page,
               page_size: page_size
@@ -144,7 +146,7 @@ module PapierkramApi
             http_put("#{@url_api_path}/income/invoices/#{id}", body)
           end
 
-          def deliver_by(
+          def deliver_by( # rubocop:disable Metrics/AbcSize
             id:,
             email_recipient: nil,
             email_subject: nil,
@@ -162,6 +164,7 @@ module PapierkramApi
                 raise ArgumentError, 'email_recipient, email_subject and email_body must be set'
               end
 
+              body[:email] = {}
               body[:email][:recipient] = email_recipient
               body[:email][:subject] = email_subject
               body[:email][:body] = email_body
