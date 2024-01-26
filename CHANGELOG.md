@@ -2,6 +2,7 @@
 
 ## [next] - yyyy-mm-dd
 
+- [#111](https://github.com/simonneutert/papierkram_api_client/pull/111) Updates dependencies via bundler. [@simonneutert](https://github.com/simonneutert)
 - [#110](https://github.com/simonneutert/papierkram_api_client/pull/110) Adds debug option to shoot against localhost:3000. [@simonneutert](https://github.com/simonneutert)
 - [#109](https://github.com/simonneutert/papierkram_api_client/pull/109) Housekeeping. [@simonneutert](https://github.com/simonneutert)
 - [#108](https://github.com/simonneutert/papierkram_api_client/pull/108) Fixes bug in `Income::Invoice.deliver`. [@simonneutert](https://github.com/simonneutert)
