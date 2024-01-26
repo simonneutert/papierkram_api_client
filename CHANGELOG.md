@@ -6,9 +6,9 @@ Schema for new entries:
 - [#<PR_NUMBER>](https://github.com/simonneutert/papierkram_api_client/pull/<PR_NUMBER>) Description. [@<username>](https://github.com/<username>)
 ```
 
-## [next] - YYYY-MM-DD
+## [0.5.0] - 2024-09-24
 
-- [#<PR_NUMBER>](https://github.com/simonneutert/papierkram_api_client/pull/<PR_NUMBER>) Description. [@<username>](https://github.com/<username>)
+- [#112](https://github.com/simonneutert/papierkram_api_client/pull/112) Drops support for ruby v2.x. [@simonneutert](https://github.com/simonneutert)
 
 ## [0.4.2] - 2024-02-04
 

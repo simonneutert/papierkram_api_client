@@ -9,3 +9,5 @@
 .env
 .envrc
 .vscode
+
+.tool-versions
