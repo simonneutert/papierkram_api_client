@@ -158,6 +158,7 @@ Ziele:
 - [Development / Mitentwickeln](#development--mitentwickeln)
   - [Localhost 3000! 🤫](#localhost-3000-)
 - [Contributing](#contributing)
+- [Releasing](#releasing)
 - [License](#license)
 
 ## Installation
@@ -1279,6 +1280,23 @@ Bitte achte darauf, dass du die Tests ausführst und die Tests dann auch grün s
 🚨 **NOCH WICHTIGER!** deine Kundendaten, also Klarnamen, E-Mails und Telefonnummern haben hier nichts verloren! Bitte sorge dafür, dass du deine Tests mit einem Testaccount ausführst. 🙏 ODER editiere deine Kundendaten in den _VCR Cassettes_ nach dem Test. 🙏
 
 Wenn du unsicher bist, sprich mich an oder erstelle ein Issue. Ich helfe dir gerne weiter. 🤗
+
+## Releasing
+
+1. checkout `main`
+2. close the changelog
+3. Set the correct/desired version number in `version.rb` and run `bundle install` just for sure
+4. commit if needed
+5. `bundle exec rake release`
+
+After a successful release, the gem is pushed to [rubygems.org](https://rubygems.org/gems/papierkram_api_client).
+
+Here are the steps you need to take after a successful release:
+
+1. edit `lib/papierkram_api_client/version.rb` and bump the version number to the next patch version
+2. run `bundle install`
+3. open the changelog again
+4. commit and push the changes
 
 ## License
 

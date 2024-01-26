@@ -1,6 +1,16 @@
 # Changelog
 
+Schema for new entries:
+
+```markdown
+- [#<PR_NUMBER>](https://github.com/simonneutert/papierkram_api_client/pull/<PR_NUMBER>) Description. [@<username>](https://github.com/<username>)
+```
+
 ## [next] - yyyy-mm-dd
+
+- [#<PR_NUMBER>](https://github.com/simonneutert/papierkram_api_client/pull/<PR_NUMBER>) Description. [@<username>](https://github.com/<username>)
+
+## [0.4.1] - 2024-01-26
 
 - [#111](https://github.com/simonneutert/papierkram_api_client/pull/111) Updates dependencies via bundler. [@simonneutert](https://github.com/simonneutert)
 - [#110](https://github.com/simonneutert/papierkram_api_client/pull/110) Adds debug option to shoot against localhost:3000. [@simonneutert](https://github.com/simonneutert)
