@@ -2,6 +2,7 @@
 
 ## [next] - yyyy-mm-dd
 
+- [#110](https://github.com/simonneutert/papierkram_api_client/pull/110) Adds debug option to shoot against localhost:3000. [@simonneutert](https://github.com/simonneutert)
 - [#108](https://github.com/simonneutert/papierkram_api_client/pull/108) Fixes bug in `Income::Invoice.deliver`. [@simonneutert](https://github.com/simonneutert)
 - [#101](https://github.com/simonneutert/papierkram_api_client/pull/101) Adds DEPRECATION WARNING 🚨 of experimental Business Intelligence Module. [@simonneutert](https://github.com/simonneutert)
 - [#100](https://github.com/simonneutert/papierkram_api_client/pull/100) Writing endpoints for (income) invoices. [@simonneutert](https://github.com/simonneutert)

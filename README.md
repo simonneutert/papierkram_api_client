@@ -156,6 +156,7 @@ Ziele:
 - [Helpers](#helpers)
   - [Generiere ein PDF aus Response](#generiere-ein-pdf-aus-response)
 - [Development / Mitentwickeln](#development--mitentwickeln)
+  - [Localhost 3000! 🤫](#localhost-3000-)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -1258,6 +1259,14 @@ puts pdf
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake test` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
 
 To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and the created tag, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+
+### Localhost 3000! 🤫
+
+`DEBUG_LOCALHOST=true bin/console`
+
+OR to make it stick:  
+- Set `export DEBUG_LOCALHOST=true` in your `.env` or `.envrc` file.  
+- Enjoy the magic: `bin/setup && bin/console` 🎉
 
 ## Contributing
 

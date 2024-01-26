@@ -1,3 +1,6 @@
 export PAPIERKRAM_API_SUBDOMAIN=princescammer3000
 export PAPIERKRAM_API_KEY=123lang33shlang321
+
+# needed, but you don't need to worry about it
 export MT_COMPAT=true
+export DEBUG_LOCALHOST=false
