@@ -4,6 +4,7 @@ $LOAD_PATH.unshift File.expand_path('../lib', __dir__)
 require 'papierkram_api_client'
 require 'minitest/autorun'
 require 'minispec-metadata'
+require 'minitest/spec'
 require 'minitest-vcr'
 require 'webmock'
 require 'faraday'

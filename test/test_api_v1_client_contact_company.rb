@@ -58,21 +58,21 @@ class TestContactCompany < Minitest::Test
 
       assert_kind_of(Array, response_body['custom_attributes'])
 
-      assert_equal 'company', response_body['type']
-      assert_kind_of String, response_body['type']
-      assert_equal 3, response_body['id']
-      assert_kind_of Integer, response_body['id']
-      assert_equal 'adsad asd', response_body['name']
-      assert_kind_of String, response_body['name']
-      assert_equal 'customer', response_body['contact_type']
+      assert_equal('company', response_body['type'])
+      assert_kind_of(String, response_body['type'])
+      assert_equal(3, response_body['id'])
+      assert_kind_of(Integer, response_body['id'])
+      assert_equal('adsad asd', response_body['name'])
+      assert_kind_of(String, response_body['name'])
+      assert_equal('customer', response_body['contact_type'])
 
-      assert_kind_of Hash, response_body['people']
-      assert_equal 'list', response_body['people']['type']
-      assert_equal '/api/v1/contact/companies/3/persons', response_body['people']['url']
+      assert_kind_of(Hash, response_body['people'])
+      assert_equal('list', response_body['people']['type'])
+      assert_equal('/api/v1/contact/companies/3/persons', response_body['people']['url'])
 
       people_entries = response_body['people']['entries']
 
-      assert_kind_of Array, people_entries
+      assert_kind_of(Array, people_entries)
     end
 
     it 'get all contact companies paginated', :vcr do
@@ -82,27 +82,27 @@ class TestContactCompany < Minitest::Test
 
       assert_equal 200, response.status
 
-      assert_equal 'list', response_body['type']
-      assert_kind_of String, response_body['type']
-      assert_equal 1, response_body['page']
-      assert_kind_of Integer, response_body['page']
-      assert_equal 100, response_body['page_size']
+      assert_equal('list', response_body['type'])
+      assert_kind_of(String, response_body['type'])
+      assert_equal(1, response_body['page'])
+      assert_kind_of(Integer, response_body['page'])
+      assert_equal(100, response_body['page_size'])
       assert_kind_of Integer, response_body['page_size']
-      assert_equal 1, response_body['total_pages']
+      assert_equal(1, response_body['total_pages'])
       assert_kind_of Integer, response_body['total_pages']
-      assert_equal 1, response_body['total_entries']
-      refute_operator response_body, :[], 'has_more'
+      assert_equal(1, response_body['total_entries'])
+      refute_operator(response_body, :[], 'has_more')
 
-      assert_kind_of Array, response_body['entries']
+      assert_kind_of(Array, response_body['entries'])
       contact_company = response_body['entries'].first
 
-      assert_kind_of Hash, contact_company
-      assert_kind_of String, contact_company['type']
-      assert_equal 'company', contact_company['type']
-      assert_kind_of Integer, contact_company['id']
-      assert_equal 3, contact_company['id']
-      assert_kind_of String, contact_company['name']
-      assert_equal 'adsad asd', contact_company['name']
+      assert_kind_of(Hash, contact_company)
+      assert_kind_of(String, contact_company['type'])
+      assert_equal('company', contact_company['type'])
+      assert_kind_of(Integer, contact_company['id'])
+      assert_equal(3, contact_company['id'])
+      assert_kind_of(String, contact_company['name'])
+      assert_equal('adsad asd', contact_company['name'])
     end
 
     it 'creates a contact company', :vcr do
@@ -176,22 +176,22 @@ class TestContactCompany < Minitest::Test
       assert_equal('error', response_body['type'])
       assert_equal('Name muss ausgefüllt werden', response_body['message'])
       assert_equal('unprocessable_entity', response_body['error_type'])
-      assert response_body.key?('correlation_id')
-      assert_equal 422, response.status
+      assert(response_body.key?('correlation_id'))
+      assert_equal(422, response.status)
     end
 
     it 'updates a contact company', :vcr do
       client = PapierkramApi::Client.new('simonneutert')
       response = client.contact_companies.update_by(id: 3, phone: '123456789')
 
-      assert_equal 200, response.status
+      assert_equal(200, response.status)
     end
 
     it 'cannot delete contact company without matching ID', :vcr do
       client = PapierkramApi::Client.new('simonneutert')
       response = client.contact_companies.delete_by(id: 123_456_789)
 
-      assert_equal 404, response.status
+      assert_equal(404, response.status)
       response_body = response.body
 
       assert_equal('error', response_body['type'])
@@ -204,11 +204,11 @@ class TestContactCompany < Minitest::Test
       client = PapierkramApi::Client.new('simonneutert')
       response = client.contact_companies.archive_by(id: 3)
 
-      assert_equal 200, response.status
+      assert_equal(200, response.status)
 
       response = client.contact_companies.unarchive_by(id: 3)
 
-      assert_equal 200, response.status
+      assert_equal(200, response.status)
     end
   end
 end

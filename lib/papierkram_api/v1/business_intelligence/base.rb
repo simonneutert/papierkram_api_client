@@ -15,7 +15,11 @@ module PapierkramApi
       #
       class Base
         def expenses_by_category
-          warn '[DEPRECATION] `expenses_by_category` is deprecated. It will be removed in a version after 0.4.0.'
+          warning = <<~MSG
+            [DEPRECATION] `expenses_by_category` is deprecated.#{' '}
+            It will be removed in a version after 0.4.0, most probably in 0.5.0.
+          MSG
+          warn(warning)
 
           @expenses_by_category ||= PapierkramApi::V1::BusinessIntelligence::ExpensesByCategory.new
         end
