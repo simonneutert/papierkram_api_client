@@ -8,7 +8,7 @@ Schema for new entries:
 
 ## [next] - yyyy-mm-dd
 
-- [#<PR_NUMBER>](https://github.com/simonneutert/papierkram_api_client/pull/<PR_NUMBER>) Description. [@<username>](https://github.com/<username>)
+- [#112](https://github.com/simonneutert/papierkram_api_client/pull/112) Description. [@simonneutert](https://github.com/simonneutert)
 
 ## [0.4.1] - 2024-01-26
 
