@@ -216,6 +216,8 @@ client = PapierkramApi::Client.new('subdomain', "SUPER-LONG-API-KEY")
 
 Oder es werden die Umgebungsvariablen `PAPIERKRAM_API_SUBDOMAIN` und `PAPIERKRAM_API_KEY` gesetzt und der Client ohne Argumente initialisiert.
 
+Ich kann dir wärmstes https://direnv.net/ empfehlen, um die Umgebungsvariablen zu setzen. 🤓
+
 ```ruby
 # usage with environment variables
 client = PapierkramApi::Client.new
@@ -1257,13 +1259,36 @@ puts pdf
 
 ## Development / Mitentwickeln
 
+🇬🇧/🇺🇸
+
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake test` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
 
 To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and the created tag, and push the `.gem` file to [rubygems.org](https://rubygems.org).
 
+You need to have at least the following environment variables set to run the tests:
+
+- `MT_COMPAT=true` or `export MT_COMPAT=true` (when in .envrc)
+
+Please, see the [`.envrc.sample`](.envrc.sample) file for more (https://direnv.net/).
+
+🇩🇪
+
+Nachdem du das Repository überprüft hast, führe `bin/setup` aus, um Abhängigkeiten zu installieren. Anschließend führe `rake test` aus, um die Tests durchzuführen. Du kannst auch `bin/console` ausführen, um eine interaktive Konsole zu starten und Experimente durchzuführen.
+
+Um dieses Gem auf deinem lokalen Rechner zu installieren, führe `bundle exec rake install` aus. Um eine neue Version zu veröffentlichen, aktualisiere die Versionsnummer in `version.rb` und führe dann `bundle exec rake release` aus. Dadurch wird ein Git-Tag für die Version erstellt, Git-Commits und das erstellte Tag werden gepusht, und die `.gem`-Datei wird nach [rubygems.org](https://rubygems.org) gepusht.
+
+Um die Tests auszuführen, muss die Umgebungsvariable `MT_COMPAT=true` gesetzt sein.
+
+Bitte, schaue in die Datei [`.envrc.sample`](.envrc.sample) für mehr Details (https://direnv.net/).
+
 ### Localhost 3000! 🤫
 
+Es gibt Menschen da draußen, die können gegen direkt gegen die Papierkram API entwickeln. 🤯  
+Und wie das geht, verrate ich hier allen Lesern! 🤫
+
 `DEBUG_LOCALHOST=true bin/console`
+
+siehe: [test/test_api_v1_client.rb](test/test_api_v1_client.rb)
 
 OR to make it stick:  
 - Set `export DEBUG_LOCALHOST=true` in your `.env` or `.envrc` file.  
