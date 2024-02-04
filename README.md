@@ -505,13 +505,13 @@ voucher = client.expense_vouchers.create(
     {
       amount: 150.8,
       name: "restaurant bill",
-      vat_rate: "19%",
+      vat_rate: 0.19,
       category: "Bewirtungskosten"
     },
     {
       amount: 15,
       name: "tip",
-      vat_rate: "19%",
+      vat_rate: 0.19,
       category: "Bewirtungskosten"
     }
   ]
@@ -531,7 +531,7 @@ voucher = client.expense_vouchers.update_by(
     {
       amount: 170.8,
       name: "restaurant bill",
-      vat_rate: "19%",
+      vat_rate: 0.19,
       category: "Bewirtungskosten",
       billing: null,
       depreciation: null
@@ -539,7 +539,7 @@ voucher = client.expense_vouchers.update_by(
     {
       amount: 15,
       name: "tip",
-      vat_rate: "19%",
+      vat_rate: 0.19,
       category: "Bewirtungskosten"
     }
   ]
@@ -698,7 +698,7 @@ invoice = client.income_invoices.create(
       description: 'Anlieferung der neuen Möbel',
       quantity: 1.25,
       unit: 'Stunden',
-      vat_rate: '19%',
+      vat_rate: 0.19,
       price: 100
     },
     {
@@ -706,7 +706,7 @@ invoice = client.income_invoices.create(
       description: 'Bestuhlung des Bürogebäudes',
       quantity: 1.25,
       unit: 'Arbeitstage',
-      vat_rate: '19%',
+      vat_rate: 0.19,
       price: 800
     },
     {
@@ -714,7 +714,7 @@ invoice = client.income_invoices.create(
       description: 'Neue Bürostühle',
       quantity: 200,
       unit: 'Stühle',
-      vat_rate: '19%',
+      vat_rate: 0.19,
       price: 125
     }
   ]
@@ -735,7 +735,7 @@ response = client.income_invoices.update_by(
       description: 'Anlieferung der neuen Möbel',
       quantity: 1.5,
       unit: 'Stunden',
-      vat_rate: '19%',
+      vat_rate: 0.19,
       price: 100
     },
     {
@@ -743,7 +743,7 @@ response = client.income_invoices.update_by(
       description: 'Bestuhlung des Bürogebäudes',
       quantity: 1.5,
       unit: 'Arbeitstage',
-      vat_rate: '19%',
+      vat_rate: 0.19,
       price: 800
     },
     {
@@ -751,7 +751,7 @@ response = client.income_invoices.update_by(
       description: 'Neue Bürostühle',
       quantity: 200,
       unit: 'Stühle',
-      vat_rate: '19%',
+      vat_rate: 0.19,
       price: 125
     }
   ]
@@ -869,7 +869,7 @@ proposition = client.income_propositions.create(
   time_unit: 'hour',
   proposition_type: 'service',
   price: '150.0',
-  vat_rate: '19%'
+  vat_rate: 0.19
 )
 puts proposition.headers
 puts proposition.body
@@ -883,7 +883,7 @@ Siehe [Propositions#create](lib/papierkram_api/v1/endpoints/income/propositions.
 client.income_propositions.update_by(
   id: 1,
   name: 'Software design',
-  vat_rate: '19%' # verpflichtend bei Änderung
+  vat_rate: 0.19 # verpflichtend bei Änderung
 )
 ```
 

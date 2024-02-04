@@ -123,7 +123,7 @@ class TestIncomeInvoices < Minitest::Test
             description: 'Anlieferung der neuen Möbel',
             quantity: 1.25,
             unit: 'Stunden',
-            vat_rate: '19%',
+            vat_rate: 0.19,
             price: 100
           },
           {
@@ -131,7 +131,7 @@ class TestIncomeInvoices < Minitest::Test
             description: 'Bestuhlung des Bürogebäudes',
             quantity: 1.25,
             unit: 'Arbeitstage',
-            vat_rate: '19%',
+            vat_rate: 0.19,
             price: 800
           },
           {
@@ -139,7 +139,7 @@ class TestIncomeInvoices < Minitest::Test
             description: 'Neue Bürostühle',
             quantity: 200,
             unit: 'Stühle',
-            vat_rate: '19%',
+            vat_rate: 0.19,
             price: 125
           }
         ]
@@ -162,7 +162,7 @@ class TestIncomeInvoices < Minitest::Test
             description: 'Anlieferung der neuen Möbel',
             quantity: 1.5,
             unit: 'Stunden',
-            vat_rate: '19%',
+            vat_rate: 0.19,
             price: 100
           },
           {
@@ -170,7 +170,7 @@ class TestIncomeInvoices < Minitest::Test
             description: 'Bestuhlung des Bürogebäudes',
             quantity: 1.5,
             unit: 'Arbeitstage',
-            vat_rate: '19%',
+            vat_rate: 0.19,
             price: 800
           },
           {
@@ -178,7 +178,7 @@ class TestIncomeInvoices < Minitest::Test
             description: 'Neue Bürostühle',
             quantity: 200,
             unit: 'Stühle',
-            vat_rate: '19%',
+            vat_rate: 0.19,
             price: 125
           }
         ]

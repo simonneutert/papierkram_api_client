@@ -32,7 +32,7 @@ class TestIncomePropositions < Minitest::Test
         time_unit: 'hour',
         proposition_type: 'service',
         price: '150.0',
-        vat_rate: '19%'
+        vat_rate: 0.19
       )
       response_body = response.body
 

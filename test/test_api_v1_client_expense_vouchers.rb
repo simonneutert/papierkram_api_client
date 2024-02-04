@@ -67,13 +67,13 @@ class TestExpenseVouchers < Minitest::Test
           {
             amount: 150.8,
             name: 'restaurant bill',
-            vat_rate: '19%',
+            vat_rate: 0.19,
             category: 'Bewirtungskosten'
           },
           {
             amount: 15,
             name: 'tip',
-            vat_rate: '19%',
+            vat_rate: 0.19,
             category: 'Bewirtungskosten'
           }
         ]
@@ -103,13 +103,13 @@ class TestExpenseVouchers < Minitest::Test
           {
             amount: 150.8,
             name: 'restaurant bill',
-            vat_rate: '19%',
+            vat_rate: 0.19,
             category: 'Bewirtungskosten'
           },
           {
             amount: 15,
             name: 'tip',
-            vat_rate: '19%',
+            vat_rate: 0.19,
             category: 'Bewirtungskosten'
           }
         ]
@@ -144,13 +144,13 @@ class TestExpenseVouchers < Minitest::Test
           {
             amount: 150.8,
             name: 'restaurant bill',
-            vat_rate: '19%',
+            vat_rate: 0.19,
             category: 'Bewirtungskosten'
           },
           {
             amount: 15,
             name: 'tip',
-            vat_rate: '19%',
+            vat_rate: 0.19,
             category: 'Bewirtungskosten'
           }
         ]
