@@ -1311,7 +1311,7 @@ Wenn du unsicher bist, sprich mich an oder erstelle ein Issue. Ich helfe dir ger
 1. checkout `main`
 2. close the changelog
 3. Set the correct/desired version number in `version.rb` and run `bundle install` just for sure
-4. commit if needed
+4. commit changes if needed
 5. `bundle exec rake release`
 
 After a successful release, the gem is pushed to [rubygems.org](https://rubygems.org/gems/papierkram_api_client).
