@@ -68,7 +68,7 @@ module PapierkramApi
               name: 'restaurant bill',
               amount: 150.8,
               category: 'Bewirtungskosten',
-              vat_rate: '19%',
+              vat_rate: 0.19,
               billing: nil,
               depreciation: nil
             },
@@ -76,7 +76,7 @@ module PapierkramApi
               name: 'tip',
               amount: 15,
               category: 'Bewirtungskosten',
-              vat_rate: '19%',
+              vat_rate: 0.19,
               billing: nil,
               depreciation: nil
             }
