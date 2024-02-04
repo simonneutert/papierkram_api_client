@@ -8,6 +8,7 @@ Schema for new entries:
 
 ## [next] - yyyy-mm-dd
 
+- [#114](https://github.com/simonneutert/papierkram_api_client/pull/114) Public API of Papierkram changed, adapt your implementation of `vat_rate` attribute, please. [@simonneutert](https://github.com/simonneutert)
 - [#<PR_NUMBER>](https://github.com/simonneutert/papierkram_api_client/pull/<PR_NUMBER>) Description. [@<username>](https://github.com/<username>)
 
 ## [0.4.1] - 2024-01-26
