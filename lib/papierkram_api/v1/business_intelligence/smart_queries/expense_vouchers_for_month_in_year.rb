@@ -30,9 +30,8 @@ module PapierkramApi
 
           def all_expense_vouchers_in_date_range
             page = 1
-            vouchers = []
             res = expense_vouchers(page: page)
-            res.body['entries'].each { |v| vouchers << v }
+            vouchers = res.body['entries'].map { |v| v }
             while res.body['page'] != res.body['total_pages']
               res = expense_vouchers(page: page)
               res.body['entries'].each { |v| vouchers << v }
