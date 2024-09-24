@@ -3,6 +3,8 @@
 Schema for new entries:
 
 ```markdown
+## [next] - YYYY-MM-DD
+
 - [#<PR_NUMBER>](https://github.com/simonneutert/papierkram_api_client/pull/<PR_NUMBER>) Description. [@<username>](https://github.com/<username>)
 ```
 
