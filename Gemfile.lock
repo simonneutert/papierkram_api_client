@@ -51,12 +51,12 @@ GEM
     pry (0.14.2)
       coderay (~> 1.1)
       method_source (~> 1.0)
-    public_suffix (5.1.1)
+    public_suffix (6.0.1)
     racc (1.8.1)
     rainbow (3.1.1)
     rake (13.2.1)
     regexp_parser (2.9.2)
-    rexml (3.3.7)
+    rexml (3.3.8)
     rubocop (1.66.1)
       json (~> 2.3)
       language_server-protocol (>= 3.17.0)
@@ -82,7 +82,7 @@ GEM
     uri (0.13.1)
     vcr (6.3.1)
       base64
-    webmock (3.23.1)
+    webmock (3.24.0)
       addressable (>= 2.8.0)
       crack (>= 0.3.2)
       hashdiff (>= 0.4.0, < 2.0.0)
@@ -103,7 +103,7 @@ DEPENDENCIES
   rubocop-performance (~> 1.22)
   rubocop-rake (~> 0.6.0)
   vcr (~> 6.3)
-  webmock (~> 3.23)
+  webmock (~> 3.24)
 
 BUNDLED WITH
    2.5.19
