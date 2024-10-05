@@ -14,4 +14,4 @@ gem 'rubocop-minitest', '~> 0.36.0', require: false
 gem 'rubocop-performance', '~> 1.22', require: false
 gem 'rubocop-rake', '~> 0.6.0', require: false
 gem 'vcr', '~> 6.3'
-gem 'webmock', '~> 3.23'
+gem 'webmock', '~> 3.24'
