@@ -36,7 +36,6 @@ module PapierkramApi
           default_proposition: nil,
           team_members: nil
         )
-
           body = {}
           body[:name] = name
           body[:customer] = { id: customer_id }
@@ -71,7 +70,6 @@ module PapierkramApi
           default_proposition: nil,
           team_members: nil
         )
-
           body = {}
           body[:name] = name if name
           body[:customer] = { id: customer_id } if customer_id

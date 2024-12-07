@@ -153,7 +153,6 @@ module PapierkramApi
             email_body: nil,
             send_via: :pdf
           )
-
             raise ArgumentError, 'send_via must be :email or :pdf' unless ALLOWED_SEND_VIA.include?(send_via)
 
             body = {}
