@@ -23,7 +23,6 @@ module PapierkramApi
             price: nil,
             vat_rate: nil
           )
-
             body = {}
             body[:name] = name
             body[:article_no] = article_no
@@ -47,7 +46,6 @@ module PapierkramApi
             time_unit: nil,
             vat_rate: nil
           )
-
             body = {}
             body[:name] = name if name
             body[:description] = description if description

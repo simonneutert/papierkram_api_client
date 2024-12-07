@@ -49,7 +49,6 @@ module PapierkramApi
             notes: nil,
             color: nil
           )
-
             body = {}
             body[:contact_type] = 'supplier'
             body[:name] = name
@@ -104,7 +103,6 @@ module PapierkramApi
             notes: nil,
             color: nil
           )
-
             body = {}
             body[:contact_type] = 'customer'
             body[:name] = name
