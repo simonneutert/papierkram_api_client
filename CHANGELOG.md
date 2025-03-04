@@ -8,9 +8,15 @@ Schema for new entries:
 - [#<PR_NUMBER>](https://github.com/simonneutert/papierkram_api_client/pull/<PR_NUMBER>) Description. [@<username>](https://github.com/<username>)
 ```
 
+---
+
 ## [next] - YYYY-MM-DD
 
 - [#<PR_NUMBER>](https://github.com/simonneutert/papierkram_api_client/pull/<PR_NUMBER>) Description. [@<username>](https://github.com/<username>)
+
+## [0.5.1] - 2025-03-04
+
+- Updates URI Gem [@simonneutert](https://github.com/simonneutert)
 
 ## [0.5.0] - 2024-09-24
 
