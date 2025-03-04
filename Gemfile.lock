@@ -108,4 +108,4 @@ DEPENDENCIES
   webmock (~> 3.24)
 
 BUNDLED WITH
-   2.6.4
+   2.5.19
