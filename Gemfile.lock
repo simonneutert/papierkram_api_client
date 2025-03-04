@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    papierkram_api_client (0.5.1)
+    papierkram_api_client (0.5.2)
       faraday (~> 2.7)
       faraday-multipart (= 1.1.0)
       httpx (>= 0.22.5, < 1.5.0)
