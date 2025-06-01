@@ -46,7 +46,7 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency 'faraday', '~> 2.7'
   spec.add_dependency 'faraday-multipart', '1.1.0'
-  spec.add_dependency 'httpx', '>= 0.22.5', '< 1.5.0'
+  spec.add_dependency 'httpx', '>= 0.22.5', '< 1.6.0'
 
   # For more information and examples about making a new gem, check out our
   # guide at: https://bundler.io/guides/creating_gem.html
