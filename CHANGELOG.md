@@ -10,9 +10,10 @@ Schema for new entries:
 
 ---
 
-## [next] - YYYY-MM-DD
+## [0.6.0] - 2026-05-26
 
-- [#<PR_NUMBER>](https://github.com/simonneutert/papierkram_api_client/pull/<PR_NUMBER>) Description. [@<username>](https://github.com/<username>)
+- Bumps minimal ruby version to 3.3.0. [@simonneutert](https://github.com/simonneutert)
+- DEPRECATION WARNING 🚨 This gem is no longer maintained.  
 
 ## [0.5.1] - 2025-03-04
 
