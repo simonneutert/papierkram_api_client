@@ -1,3 +1,13 @@
+# Deprecated / Unmaintained
+
+This package is no longer maintained as of 2026-05-26.
+
+Existing versions remain available on rubygems.org for compatibility, but no new features, bug fixes, or security fixes are planned.
+
+Please migrate away, replace it, or fork it under a new package name.
+
+---
+
 # Papierkram API Client<!-- omit in toc -->
 
 [![Ruby](https://github.com/simonneutert/papierkram_api_client/actions/workflows/main.yml/badge.svg?branch=main)](https://github.com/simonneutert/papierkram_api_client/actions/workflows/main.yml)
