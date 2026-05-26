@@ -5,7 +5,7 @@ source 'https://rubygems.org'
 # Specify your gem's dependencies in papierkram_api_client.gemspec
 gemspec
 
-gem 'minitest', '~> 5.25'
+gem 'minitest', '~> 6.0'
 gem 'minitest-vcr', '~> 1.4'
 gem 'pry', '~> 0.16.0'
 gem 'rake', '~> 13.4'
