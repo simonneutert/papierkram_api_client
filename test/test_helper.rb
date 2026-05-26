@@ -3,6 +3,10 @@
 $LOAD_PATH.unshift File.expand_path('../lib', __dir__)
 require 'papierkram_api_client'
 require 'minitest/autorun'
+# Compatibility shim: older gems expect `MiniTest` constant (capital T)
+# while modern `minitest` defines `Minitest` (lowercase t). Define
+# `MiniTest` as an alias when missing so legacy libraries work.
+MiniTest = Minitest unless defined?(MiniTest)
 require 'minispec-metadata'
 require 'minitest/spec'
 require 'minitest-vcr'
