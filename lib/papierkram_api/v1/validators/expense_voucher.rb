@@ -91,7 +91,7 @@ module PapierkramApi
         }.freeze
         SWAGGER_SAMPLE_KEYS_STRINGIFIED = SWAGGER_SAMPLE.keys.map(&:to_s).sort.freeze
 
-        def validate!(expense_voucher)
+        def validate!(expense_voucher) # rubocop:disable Naming/PredicateMethod
           unless expense_voucher['type'] == 'expense_voucher' &&
                  expense_voucher.keys.sort == SWAGGER_SAMPLE_KEYS_STRINGIFIED
             raise ArgumentError, 'expense_voucher does not match the expected format'

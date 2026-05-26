@@ -10,6 +10,7 @@ module PapierkramApi
                   :remaining_quota
 
     extend Forwardable
+
     def_delegators :@client, :get, :post, :put, :patch, :delete
 
     def initialize(subdomain = nil, api_key = nil)
