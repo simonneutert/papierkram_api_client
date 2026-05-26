@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.authors = ['Simon Neutert']
   spec.email = ['simonneutert@users.noreply.github.com']
 
-  spec.summary = 'Papierkram API Client'
-  spec.description = 'Papierkram API Client, um deine Buchhaltung auf das nächste Level zu bringen.'
+  spec.summary = 'DEPRECATED AND UNMAINTAINED: Papierkram API Client'
+  spec.description = 'DEPRECATED AND UNMAINTAINED: Papierkram API Client, um deine Buchhaltung auf das nächste Level zu bringen.'
   spec.homepage = 'https://github.com/simonneutert/papierkram_api_client'
   spec.license = 'MIT'
   spec.required_ruby_version = '>= 3.3.0'
